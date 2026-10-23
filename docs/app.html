@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Components - cmu-web-kit - Carnegie Mellon University</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,700,700italic" rel="stylesheet" type="text/css">
+  <link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="../css/cmu-cms.css" rel="stylesheet" type="text/css">
+  <link href="../css/cmu-app.css" rel="stylesheet" type="text/css">
+  <link href="docs.css" rel="stylesheet" type="text/css">
+  <link href="https://www.cmu.edu/favicon.ico" rel="icon">
+</head>
+<body class="cmu-app">
+<div id="container">
+  <header>
+    <div class="roof red invert"><div>
+      <a class="wordmark" href="https://www.cmu.edu/">Carnegie Mellon University</a>
+    </div></div>
+    <div id="sitename"><div>
+      <span class="sitetitle"><a href="index.html">cmu-web-kit</a></span>
+      <h2>Components for the CMU web template</h2>
+    </div></div>
+  </header>
+
+  <main id="content">
+    <div class="content wide"><div>
+      <nav class="cmu-tabs" aria-label="Documentation">
+        <a href="index.html">Overview</a>
+        <a href="start.html">Get Started</a>
+        <a href="cms.html">CMS Components</a>
+        <a href="app.html" aria-current="page">App Components</a>
+      </nav>
+
+      <h1>App Components</h1>
+      <p class="cmu-lead">From <code>cmu-app.css</code>, for web apps on the CMU template. Load it after <code>cmu-cms.css</code>; everything on the CMS Components page works in apps too.</p>
+
+      <div class="cmu-toc">
+        <p><strong>On this page</strong></p>
+        <ul>
+          <li><a href="#setup">Page Setup and Forms</a></li>
+          <li><a href="#tabs">Tabs</a></li>
+          <li><a href="#title">Page Title Row</a></li>
+          <li><a href="#banners">Banners</a></li>
+          <li><a href="#text">Small Text</a></li>
+          <li><a href="#link-button">Link Button</a></li>
+          <li><a href="#dialog">Dialog and File Drop Zone</a></li>
+          <li><a href="#progress">Progress</a></li>
+          <li><a href="#more">Folded Lists</a></li>
+          <li><a href="#filters">Filters</a></li>
+          <li><a href="#tables">Tables With Actions</a></li>
+          <li><a href="#panels">Panels for Framed Pages</a></li>
+          <li><a href="#account">Account Link in the Header</a></li>
+        </ul>
+      </div>
+
+      <div class="cmu-callout">
+        <p class="cmu-label">Behavior</p>
+        <p>These components are styles only. Drag-and-drop, selection counts, filtering and sorting arrive in <code>cmu-app.js</code> (0.2). Until then, each section says which classes and attributes your script should set.</p>
+      </div>
+
+      <h2 id="setup">Page Setup and Forms</h2>
+      <p>Put <code>cmu-app</code> on <code>&lt;body&gt;</code> on pages with the CMU header and footer, or <code>cmu-framed</code> on pages shown inside another tool (such as a Canvas LTI frame) without them. <code>cmu-app</code> also styles forms: full-width text boxes and menus, unbulleted lists of checkboxes, and labels beside their boxes. Add <code>inline</code> to a text box or menu to keep its natural width.</p>
+      <p class="kit-classes"><code>body.cmu-app</code>, <code>body.cmu-framed</code></p>
+      <div class="kit-demo">
+        <fieldset>
+          <legend>Semester</legend>
+          <label for="kit-sem">Choose a semester</label>
+          <select id="kit-sem"><option>Spring 2027</option><option>Fall 2026</option></select>
+          <ul>
+            <li><input type="checkbox" id="kit-a" checked><label for="kit-a">Pittsburgh</label></li>
+            <li><input type="checkbox" id="kit-b"><label for="kit-b">Qatar</label></li>
+          </ul>
+        </fieldset>
+      </div>
+
+      <h2 id="tabs">Tabs</h2>
+      <p>Links between views of the same page, such as semesters. Mark the current one with <code>aria-current="page"</code>. To fold a long row, put the rest in a <code>details.cmu-more.cmu-tabs-more</code> at the end: its link stays on the first row, and the rest wrap below when it opens.</p>
+      <p class="kit-classes"><code>cmu-tabs</code>, <code>cmu-tabs-more</code></p>
+      <div class="kit-demo">
+        <nav class="cmu-tabs" aria-label="Semester">
+          <a href="#tabs" aria-current="page">Spring 2027</a>
+          <a href="#tabs">Fall 2026</a>
+          <a href="#tabs">Summer 2026</a>
+          <details class="cmu-more cmu-tabs-more">
+            <summary><span class="cmu-more-link"><span class="cmu-more-closed">2 more</span><span class="cmu-more-open">Fewer</span></span></summary>
+            <div>
+              <a href="#tabs">Spring 2026</a>
+              <a href="#tabs">Fall 2025</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+
+      <h2 id="title">Page Title Row</h2>
+      <p>The page heading with an action on the right. They wrap onto two lines when there isn't room.</p>
+      <p class="kit-classes"><code>cmu-page-title</code></p>
+      <div class="kit-demo">
+        <div class="cmu-page-title">
+          <h1>Semesters</h1>
+          <a class="btn small" href="#title">Add a Semester</a>
+        </div>
+      </div>
+
+      <h2 id="banners">Banners</h2>
+      <p>The result of what someone just did, at the top of the page. Use <code>role="alert"</code> on errors that appear without a page load.</p>
+      <p class="kit-classes"><code>cmu-banner</code>, <code>cmu-banner--success</code>, <code>cmu-banner--error</code></p>
+      <div class="kit-demo">
+        <div class="cmu-banner cmu-banner--success">Syllabus applied to 3 sections.</div>
+        <div class="cmu-banner cmu-banner--error">That file is too large. The limit is 20&nbsp;MB.</div>
+      </div>
+
+      <h2 id="text">Small Text</h2>
+      <p>Gray secondary text, a smaller hint under a field, a centered empty-list message, and codes kept on one line.</p>
+      <p class="kit-classes"><code>cmu-muted</code>, <code>cmu-hint</code>, <code>cmu-empty</code>, <code>cmu-code</code>, <code>cmu-label</code></p>
+      <div class="kit-demo">
+        <p class="cmu-label">Course</p>
+        <p><span class="cmu-code">15-112</span> Fundamentals of Programming <span class="cmu-muted">(jdoe)</span></p>
+        <p class="cmu-hint">Any document up to 20&nbsp;MB, such as a PDF or Word file.</p>
+        <p class="cmu-empty">No sections match these filters.</p>
+      </div>
+
+      <h2 id="link-button">Link Button</h2>
+      <p>A button that looks like a link, for an action (such as a form post) sitting among plain links. It still behaves as a button.</p>
+      <p class="kit-classes"><code>cmu-link-button</code></p>
+      <div class="kit-demo">
+        <p><a href="#link-button">View</a> | <button type="button" class="cmu-link-button">Sign Out</button></p>
+      </div>
+
+      <h2 id="dialog">Dialog and File Drop Zone</h2>
+      <p>Use the native <code>&lt;dialog&gt;</code> element with <code>showModal()</code>; the browser handles focus, Escape and the backdrop. The drop zone is a label wrapping a file input, so it works by click and keyboard as well as by dragging.</p>
+      <p class="kit-classes"><code>cmu-dialog</code>, <code>cmu-dialog-buttons</code>, <code>cmu-drop</code>, <code>cmu-drop-pick</code>, <code>cmu-drop-file</code></p>
+      <p>Your script sets these on the drop zone: <code>cmu-drop-over</code> while a file is dragged over it, and <code>cmu-drop-has-file</code> once a file is chosen, with the file's name in <code>cmu-drop-file</code>. Inside the dialog, the <code>hidden</code> attribute works on anything, including buttons.</p>
+      <div class="kit-demo">
+        <p data-demo-skip><button type="button" class="btn small" data-open-dialog="kit-dialog">Open the Dialog</button></p>
+        <dialog class="cmu-dialog" id="kit-dialog" aria-labelledby="kit-dialog-title" data-preview>
+          <form method="dialog">
+            <h2 id="kit-dialog-title">Upload Syllabus</h2>
+            <p>For 15-112 A and 15-112 B.</p>
+            <label class="cmu-drop">
+              <input type="file">
+              <span>Drag the file here, or <span class="cmu-drop-pick">choose a file</span></span>
+              <span class="cmu-drop-file" hidden></span>
+            </label>
+            <p class="cmu-hint">Any document up to 20&nbsp;MB.</p>
+            <div class="cmu-dialog-buttons">
+              <button class="btn" type="submit">Upload</button>
+              <button class="btn ghost" type="button" data-close>Cancel</button>
+            </div>
+          </form>
+        </dialog>
+      </div>
+      <p>The drop zone in its three states: waiting, a file dragged over it, and a file chosen.</p>
+      <div class="kit-demo">
+        <label class="cmu-drop"><input type="file"><span>Drag the file here, or <span class="cmu-drop-pick">choose a file</span></span></label>
+        <label class="cmu-drop cmu-drop-over"><input type="file"><span>Drag the file here, or <span class="cmu-drop-pick">choose a file</span></span></label>
+        <label class="cmu-drop cmu-drop-has-file"><input type="file"><span>Drag a different file here, or <span class="cmu-drop-pick">choose one</span></span><span class="cmu-drop-file">15112-syllabus.pdf</span></label>
+      </div>
+
+      <h2 id="progress">Progress</h2>
+      <p>A headline number with a bar, and optional per-item rows below it. Set a bar's width with an inline style on a div (the template strips inline styles from spans). Color the percentage by how far along it is.</p>
+      <p class="kit-classes"><code>cmu-stat</code>, <code>cmu-stat-value</code>, <code>cmu-stat-sub</code>, <code>cmu-meter</code>, <code>cmu-pct</code> with <code>--high</code>, <code>--mid</code>, <code>--low</code>, <code>cmu-breakdown</code></p>
+      <div class="kit-demo">
+        <div class="cmu-stat">
+          <div>
+            <div class="cmu-label">Completion</div>
+            <div class="cmu-stat-value">62%</div>
+            <div class="cmu-stat-sub">42 sections across 3 departments</div>
+          </div>
+          <div class="cmu-meter"><div style="width: 62%"></div></div>
+          <ul class="cmu-breakdown">
+            <li><span class="cmu-code">ARC</span><div class="cmu-meter"><div style="width: 90%"></div></div><span class="cmu-pct cmu-pct--high">90%</span></li>
+            <li><span class="cmu-code">CS</span><div class="cmu-meter"><div style="width: 55%"></div></div><span class="cmu-pct cmu-pct--mid">55%</span></li>
+            <li><span class="cmu-code">ECE</span><div class="cmu-meter"><div style="width: 20%"></div></div><span class="cmu-pct cmu-pct--low">20%</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 id="more">Folded Lists</h2>
+      <p>A <code>&lt;details&gt;</code> whose summary reads as a line of text with a red Show All / Show Fewer link. It needs no script.</p>
+      <p class="kit-classes"><code>cmu-more</code>, <code>cmu-more-link</code>, <code>cmu-more-closed</code>, <code>cmu-more-open</code></p>
+      <div class="kit-demo">
+        <details class="cmu-more">
+          <summary>ARC, CS, ECE and 6 more <span class="cmu-more-link"><span class="cmu-more-closed">Show all</span><span class="cmu-more-open">Show fewer</span></span></summary>
+          <p>HIS, HSS, MSE, MUS, PHI, STA</p>
+        </details>
+      </div>
+
+      <h2 id="filters">Filters</h2>
+      <p>A row of filter groups above a list, each with a label and a search box or checkboxes.</p>
+      <p class="kit-classes"><code>cmu-filters</code>, <code>cmu-filter-group</code>, <code>cmu-filter-checks</code></p>
+      <div class="kit-demo">
+        <div class="cmu-filters">
+          <div class="cmu-filter-group">
+            <label class="cmu-label" for="kit-find">Find Sections</label>
+            <input type="text" id="kit-find" placeholder="Course number or title">
+          </div>
+          <div class="cmu-filter-group">
+            <div class="cmu-label">Status</div>
+            <div class="cmu-filter-checks">
+              <label><input type="checkbox"> Available</label>
+              <label><input type="checkbox"> Unavailable</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="tables">Tables With Actions</h2>
+      <p>The bulk bar sits on top of a <code>table.alternate</code>: the selection count, then actions for the selected rows. Its height is fixed, so buttons appearing don't push the table down. Row buttons repeat the bulk bar's actions in each row, with the same words, at one fixed width and the height of a two-line button, so rows stay even. Pairs stack below 1200px.</p>
+      <p class="kit-classes"><code>cmu-bulk-bar</code>, <code>cmu-selection-count</code>, <code>cmu-has-selection</code>, <code>cmu-select-cell</code>, <code>cmu-sort</code>, <code>cmu-sort-arrow</code>, <code>cmu-fit</code>, <code>cmu-row-buttons</code>, <code>num</code></p>
+      <ul class="cmu-checks">
+        <li><strong>Selection:</strong> your script adds <code>cmu-has-selection</code> to the count when anything is selected, and shows the bulk buttons by removing <code>hidden</code>.</li>
+        <li><strong>Checkbox cells:</strong> the label fills the cell, so the whole cell is the click target.</li>
+        <li><strong>Sorting:</strong> put <code>data-sort-key</code> on the header and a <code>button.cmu-sort</code> inside it; set <code>aria-sort</code> on the sorted column.</li>
+        <li><strong>Filtering:</strong> move hidden rows to the end of the table body, so the template's stripes stay even.</li>
+        <li><strong><code>cmu-fit</code></strong> shrinks a column to its content. <code>num</code> (on <code>th</code> and <code>td</code>) right-aligns numbers.</li>
+        <li><strong>Keep labels together</strong> with <code>&amp;nbsp;</code>, so "a" never ends a line inside a button.</li>
+      </ul>
+      <div class="kit-demo">
+        <div class="cmu-bulk-bar">
+          <span class="cmu-selection-count cmu-has-selection">1 section selected</span>
+          <button class="btn small" type="button">Upload Syllabus</button>
+          <button class="btn small ghost" type="button" hidden>Remove Syllabus</button>
+        </div>
+        <table class="alternate cmu-full">
+          <thead>
+            <tr>
+              <th class="cmu-select-cell"><label><input type="checkbox" aria-label="Select all"></label></th>
+              <th data-sort-key="course" aria-sort="ascending" class="cmu-fit"><button class="cmu-sort" type="button">Course<span class="cmu-sort-arrow"> ▲</span></button></th>
+              <th data-sort-key="title"><button class="cmu-sort" type="button">Title<span class="cmu-sort-arrow"></span></button></th>
+              <th class="num cmu-fit">Seats</th>
+              <th class="cmu-fit">Status</th>
+              <th class="cmu-fit">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cmu-select-cell"><label><input type="checkbox" checked aria-label="Select 15-112 A"></label></td>
+              <td class="cmu-fit">15-112 A</td>
+              <td>Fundamentals of Programming</td>
+              <td class="num">120</td>
+              <td class="cmu-fit"><span class="cmu-pill cmu-pill--amber">Unavailable</span></td>
+              <td class="cmu-fit"><div class="cmu-row-buttons"><button class="btn small" type="button">Upload Syllabus</button><button class="btn small ghost" type="button">Do&nbsp;Not&nbsp;Expect a&nbsp;Syllabus</button></div></td>
+            </tr>
+            <tr>
+              <td class="cmu-select-cell"><label><input type="checkbox" aria-label="Select 15-122 A"></label></td>
+              <td class="cmu-fit">15-122 A</td>
+              <td>Principles of Imperative Computation</td>
+              <td class="num">95</td>
+              <td class="cmu-fit"><span class="cmu-pill cmu-pill--green">Available</span></td>
+              <td class="cmu-fit"><div class="cmu-row-buttons"><button class="btn small ghost" type="button">Replace Syllabus</button><button class="btn small ghost" type="button">Remove Syllabus</button></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="panels">Panels for Framed Pages</h2>
+      <p>For pages inside another tool (<code>body.cmu-framed</code>): plain and left-aligned, since the host already frames them, with the actions at the bottom right.</p>
+      <p class="kit-classes"><code>cmu-panel</code>, <code>cmu-panel-header</code>, <code>cmu-panel-body</code>, <code>cmu-panel-footer</code></p>
+      <div class="kit-demo">
+        <div class="cmu-panel">
+          <div class="cmu-panel-header">
+            <h2>Choose a Page</h2>
+            <p class="cmu-muted">Pages in this Canvas course.</p>
+          </div>
+          <div class="cmu-panel-body">
+            <div class="cmu-label">Pages</div>
+            <ul>
+              <li><label><input type="radio" name="kit-page"> Course Syllabus</label></li>
+              <li><label><input type="radio" name="kit-page"> Welcome</label></li>
+            </ul>
+          </div>
+          <div class="cmu-panel-footer">
+            <a class="btn ghost" href="#panels">Cancel</a>
+            <button class="btn" type="button">Confirm Selection</button>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="account">Account Link in the Header</h2>
+      <p>Your name (or Sign In) in the template's red bar, beside the menu button, and again in the menu. The bar's copy hides when the menu opens and below 768px, where the menu has it instead. Signed out, it looks like the template's header links. Signed in, add <code>cmu-account-open</code>: it's plain text that opens the menu.</p>
+      <p class="kit-classes"><code>cmu-account</code>, <code>cmu-account-open</code>, <code>cmu-account-menu</code>, <code>cmu-account-name</code></p>
+      <pre class="kit-code"><code>&lt;!-- In .roof, after the wordmark. Signed out: --&gt;
+&lt;a class="cmu-account" href="/login"&gt;Sign In&lt;/a&gt;
+&lt;!-- Signed in: --&gt;
+&lt;a class="cmu-account cmu-account-open" href="#nav" aria-label="Account menu for Jane Doe"
+   onclick="document.querySelector('.roof .menu-btn').click(); return false;"&gt;Jane Doe&lt;/a&gt;
+
+&lt;!-- First item in nav#nav &gt; ul. The template shows li.secondary only in the menu.
+     An &lt;a&gt; without href gets the menu's spacing but isn't a link. --&gt;
+&lt;li class="secondary right cmu-account-menu"&gt;
+  &lt;a class="cmu-account-name"&gt;Jane Doe&lt;/a&gt;
+  &lt;a href="/logout"&gt;Sign Out&lt;/a&gt;
+&lt;/li&gt;</code></pre>
+    </div></div>
+  </main>
+
+  <footer class="grid column3 invert">
+    <div>
+      <p>Carnegie Mellon University<br>5000 Forbes Avenue<br>Pittsburgh, PA 15213</p>
+      <ul><li><a href="https://github.com/CMUTLI/cmu-web-kit">cmu-web-kit on GitHub</a></li><li><a href="https://www.cmu.edu/legal/">Legal Info</a></li></ul>
+      <ul><li>&copy; 2026 Carnegie Mellon University</li></ul>
+    </div>
+    <div></div>
+    <div></div>
+  </footer>
+</div>
+<script src="docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "cmu-web-kit",
+  "version": "0.1.0",
+  "description": "Components for pages on Carnegie Mellon's web template: CMS sites and web apps.",
+  "files": [
+    "css"
+  ],
+  "scripts": {
+    "check": "node tools/check-template.mjs && node tools/versions.mjs",
+    "release": "node tools/versions.mjs"
+  },
+  "private": true
+}

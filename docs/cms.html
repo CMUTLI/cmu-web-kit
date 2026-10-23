@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS Components - cmu-web-kit - Carnegie Mellon University</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,700,700italic" rel="stylesheet" type="text/css">
+  <link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="../css/cmu-cms.css" rel="stylesheet" type="text/css">
+  <link href="../css/cmu-app.css" rel="stylesheet" type="text/css">
+  <link href="docs.css" rel="stylesheet" type="text/css">
+  <link href="https://www.cmu.edu/favicon.ico" rel="icon">
+</head>
+<body>
+<div id="container">
+  <header>
+    <div class="roof red invert"><div>
+      <a class="wordmark" href="https://www.cmu.edu/">Carnegie Mellon University</a>
+    </div></div>
+    <div id="sitename"><div>
+      <span class="sitetitle"><a href="index.html">cmu-web-kit</a></span>
+      <h2>Components for the CMU web template</h2>
+    </div></div>
+  </header>
+
+  <main id="content">
+    <div class="content wide"><div>
+      <nav class="cmu-tabs" aria-label="Documentation">
+        <a href="index.html">Overview</a>
+        <a href="start.html">Get Started</a>
+        <a href="cms.html" aria-current="page">CMS Components</a>
+        <a href="app.html">App Components</a>
+      </nav>
+
+      <h1>CMS Components</h1>
+      <p class="cmu-lead">From <code>cmu-cms.css</code>, for Cascade sites and apps alike. In Cascade, paste the markup into a content section's Source code view.</p>
+
+      <div class="cmu-toc">
+        <p><strong>On this page</strong></p>
+        <ul>
+          <li><a href="#colors">Colors</a></li>
+          <li><a href="#intro">Eyebrow, Lead and Call-to-Action Row</a></li>
+          <li><a href="#hero">Hero</a></li>
+          <li><a href="#paths">Path Cards</a></li>
+          <li><a href="#flow">How It Works</a></li>
+          <li><a href="#steps">Numbered Steps</a></li>
+          <li><a href="#checks">Check List</a></li>
+          <li><a href="#callout">Callout and Note</a></li>
+          <li><a href="#qa">Question Teasers</a></li>
+          <li><a href="#split">Text With a Screenshot</a></li>
+          <li><a href="#pills">Pills</a></li>
+          <li><a href="#tables">Tables</a></li>
+          <li><a href="#toc">On This Page Box</a></li>
+        </ul>
+      </div>
+
+      <h2 id="colors">Colors</h2>
+      <p>Use these custom properties in your own stylesheet instead of copying the values, so every site moves together if they change.</p>
+      <table class="alternate cmu-full">
+        <thead><tr><th scope="col">Property</th><th scope="col">Value</th><th scope="col">Used for</th></tr></thead>
+        <tbody>
+          <tr><td><code>--cmu-red</code></td><td>#c41230</td><td>Carnegie Red: accents, step numbers, active tabs, errors</td></tr>
+          <tr><td><code>--cmu-ink</code></td><td>#22262a</td><td>Body text on tinted backgrounds</td></tr>
+          <tr><td><code>--cmu-muted</code></td><td>#5b6670</td><td>Secondary text, labels, captions</td></tr>
+          <tr><td><code>--cmu-line</code></td><td>#d9dde1</td><td>Borders and rules</td></tr>
+          <tr><td><code>--cmu-tint</code></td><td>#f4f5f6</td><td>Tinted panels: callouts, notes, the bulk bar</td></tr>
+          <tr><td><code>--cmu-green</code>, <code>--cmu-green-tint</code></td><td>#1d5a3a, #e3f1ea</td><td>Done, available, success</td></tr>
+          <tr><td><code>--cmu-amber</code>, <code>--cmu-amber-tint</code></td><td>#6b4d00, #fff4d6</td><td>Waiting, missing (amber, not red: not an error)</td></tr>
+          <tr><td><code>--cmu-gray</code>, <code>--cmu-gray-tint</code></td><td>#4a535b, #eceef0</td><td>Neutral, not applicable</td></tr>
+          <tr><td><code>--cmu-red-tint</code></td><td>#fdf2f3</td><td>Error banner background</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="intro">Eyebrow, Lead and Call-to-Action Row</h2>
+      <p>An eyebrow is a short red line above a heading. A lead is the larger first paragraph under a page title. The call-to-action row lines up a button, a link and an optional note.</p>
+      <p class="kit-classes"><code>cmu-eyebrow</code>, <code>cmu-lead</code>, <code>cmu-cta-row</code>, <code>cmu-cta-note</code></p>
+      <div class="kit-demo">
+        <p class="cmu-eyebrow">For instructors</p>
+        <h1>Add Your Syllabus</h1>
+        <p class="cmu-lead">It takes about a minute. Choose whichever way is easiest for you.</p>
+        <div class="cmu-cta-row">
+          <a class="btn" href="#intro">Sign In</a>
+          <p class="cmu-cta-note">Use your Andrew ID.</p>
+        </div>
+      </div>
+
+      <h2 id="hero">Hero</h2>
+      <p>The top of a home page: copy on the left and a screenshot on the right, drawn in a browser frame. It becomes one column below 820px.</p>
+      <p class="kit-classes"><code>cmu-hero</code>, <code>cmu-hero-art</code></p>
+      <div class="kit-demo">
+        <div class="cmu-hero">
+          <div>
+            <h1>CMU syllabi, in one place.</h1>
+            <p class="cmu-lead">Find a course's syllabus before you register.</p>
+            <div class="cmu-cta-row">
+              <a class="btn" href="#hero">Browse Syllabi</a>
+            </div>
+          </div>
+          <div class="cmu-hero-art">
+            <img src="img/screenshot.png" alt="A searchable table of course sections with status pills.">
+          </div>
+        </div>
+      </div>
+
+      <h2 id="paths">Path Cards</h2>
+      <p>Whole-card links that send each audience to its own page. They fit as many columns as the width allows; <code>cmu-paths--two</code> keeps a pair side by side. The <code>cta</code> line is the template's own.</p>
+      <p class="kit-classes"><code>cmu-paths</code>, <code>cmu-paths--two</code>, <code>cmu-path</code></p>
+      <div class="kit-demo">
+        <div class="cmu-paths">
+          <a class="cmu-path" href="#paths">
+            <span class="cmu-eyebrow">Students</span>
+            <strong>Find a syllabus</strong>
+            <span>Search by course number, title, or instructor.</span>
+            <span class="cta">How to browse</span>
+          </a>
+          <a class="cmu-path" href="#paths">
+            <span class="cmu-eyebrow">Instructors</span>
+            <strong>Add your syllabus</strong>
+            <span>Upload a file on the web, or pick it from Canvas.</span>
+            <span class="cta">Instructor guide</span>
+          </a>
+          <a class="cmu-path" href="#paths">
+            <span class="cmu-eyebrow">Administrators</span>
+            <strong>Track your department</strong>
+            <span>See what's missing and upload for many sections at once.</span>
+            <span class="cta">Quick-start guide</span>
+          </a>
+        </div>
+      </div>
+
+      <h2 id="flow">How It Works</h2>
+      <p>A process in a few numbered columns, for an overview. For instructions people follow, use numbered steps instead.</p>
+      <p class="kit-classes"><code>ol.cmu-flow</code></p>
+      <div class="kit-demo">
+        <ol class="cmu-flow">
+          <li><strong>Instructors add syllabi</strong>On the web or from Canvas.</li>
+          <li><strong>Departments fill the gaps</strong>Upload for many sections at once.</li>
+          <li><strong>Everyone can find them</strong>Search by course, semester or department.</li>
+        </ol>
+      </div>
+
+      <h2 id="steps">Numbered Steps</h2>
+      <p>Instructions to follow in order, with the step numbers in red circles.</p>
+      <p class="kit-classes"><code>ol.cmu-steps</code></p>
+      <div class="kit-demo">
+        <ol class="cmu-steps">
+          <li>Go to the site, sign in, and select <strong>My Courses</strong>.</li>
+          <li>Pick the semester from the tabs at the top.</li>
+          <li>Select <strong>Upload Syllabus</strong> in a section's row.</li>
+        </ol>
+      </div>
+
+      <h2 id="checks">Check List</h2>
+      <p>A list of points or tips, each with a red check mark. Start each item with a short bold phrase.</p>
+      <p class="kit-classes"><code>ul.cmu-checks</code></p>
+      <div class="kit-demo">
+        <ul class="cmu-checks">
+          <li><strong>Teaching several sections?</strong> Select them all at once; you only need to upload one file.</li>
+          <li><strong>File types:</strong> any document up to 20&nbsp;MB, such as a PDF or Word file.</li>
+        </ul>
+      </div>
+
+      <h2 id="callout">Callout and Note</h2>
+      <p>A callout is a labeled aside on a page, with roomy spacing: the label sits beside the text when there's space. A note is a plainer tinted box for a message among other content, such as in an app.</p>
+      <p class="kit-classes"><code>cmu-callout</code> with <code>cmu-label</code>, <code>cmu-note</code></p>
+      <div class="kit-demo">
+        <div class="cmu-callout">
+          <p class="cmu-label">When to add it</p>
+          <p>Before the first day of class. Students look for syllabi as they choose their courses.</p>
+        </div>
+        <div class="cmu-note">
+          <p>You aren't listed as teaching any sections this semester.</p>
+        </div>
+      </div>
+
+      <h2 id="qa">Question Teasers</h2>
+      <p>A few common questions and short answers in columns, usually followed by a link to the full FAQ.</p>
+      <p class="kit-classes"><code>cmu-qa</code></p>
+      <div class="kit-demo">
+        <div class="cmu-qa">
+          <div>
+            <h3>Who can see the syllabi?</h3>
+            <p>Anyone with an Andrew ID can sign in to view them.</p>
+          </div>
+          <div>
+            <h3>Can I replace my syllabus?</h3>
+            <p>Yes, at any time. The newest one replaces the old.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="split">Text With a Screenshot</h2>
+      <p>Two columns: text on the left, a framed screenshot with a caption on the right. One column below 760px.</p>
+      <p class="kit-classes"><code>cmu-split</code>, <code>figure.cmu-shot</code></p>
+      <div class="kit-demo">
+        <div class="cmu-split">
+          <div>
+            <ol class="cmu-steps">
+              <li>Search by course number, title, or instructor.</li>
+              <li>Narrow it down with the filters on the left.</li>
+            </ol>
+          </div>
+          <figure class="cmu-shot">
+            <img src="img/screenshot.png" alt="A searchable table of course sections with filters on the left.">
+            <figcaption>Search, then filter.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <h2 id="pills">Pills</h2>
+      <p>A short status label. Gray unless given a tone: green for done or available, amber for waiting or missing. Amber, never red: a missing item isn't an error. Pills stay on one line, except in app tables below 1200px.</p>
+      <p class="kit-classes"><code>cmu-pill</code>, <code>cmu-pill--green</code>, <code>cmu-pill--amber</code></p>
+      <div class="kit-demo">
+        <p>
+          <span class="cmu-pill cmu-pill--green">Syllabus Available</span>
+          <span class="cmu-pill cmu-pill--amber">Syllabus Unavailable</span>
+          <span class="cmu-pill">No Syllabus Expected</span>
+        </p>
+      </div>
+
+      <h2 id="tables">Tables</h2>
+      <p>Use the template's <code>table.alternate</code> for striped rows. Add <code>cmu-full</code> to stretch a table to full width from 768px up (below that, the template lets it scroll sideways). <code>cmu-compare</code> splits a two-column table evenly, for before-and-after comparisons.</p>
+      <p class="kit-classes"><code>table.cmu-full</code>, <code>table.cmu-compare</code></p>
+      <div class="kit-demo">
+        <table class="alternate cmu-full cmu-compare">
+          <thead><tr><th scope="col">Before</th><th scope="col">Now</th></tr></thead>
+          <tbody>
+            <tr><td>One file per section</td><td>One file can cover many sections</td></tr>
+            <tr><td>Count modules to see where you stand</td><td>A completion bar and status filters</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="toc">On This Page Box</h2>
+      <p>A tinted box of links to the sections of a long page, like the one at the top of this page. Give each section heading an <code>id</code> to link to.</p>
+      <p class="kit-classes"><code>cmu-toc</code></p>
+      <div class="kit-demo">
+        <div class="cmu-toc">
+          <p><strong>On this page</strong></p>
+          <ul>
+            <li><a href="#colors">Colors</a></li>
+            <li><a href="#hero">Hero</a></li>
+          </ul>
+        </div>
+      </div>
+    </div></div>
+  </main>
+
+  <footer class="grid column3 invert">
+    <div>
+      <p>Carnegie Mellon University<br>5000 Forbes Avenue<br>Pittsburgh, PA 15213</p>
+      <ul><li><a href="https://github.com/CMUTLI/cmu-web-kit">cmu-web-kit on GitHub</a></li><li><a href="https://www.cmu.edu/legal/">Legal Info</a></li></ul>
+      <ul><li>&copy; 2026 Carnegie Mellon University</li></ul>
+    </div>
+    <div></div>
+    <div></div>
+  </footer>
+</div>
+<script src="docs.js"></script>
+</body>
+</html>

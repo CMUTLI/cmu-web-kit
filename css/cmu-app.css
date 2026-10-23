@@ -1,0 +1,279 @@
+/* cmu-app.css: web-app components for the CMU web template. Load after the
+   template CSS and cmu-cms.css, then the app's own stylesheet.
+
+   Body classes: cmu-app on pages with the full CMU chrome, cmu-framed on
+   pages shown inside another tool (such as a Canvas LTI frame) without it. */
+
+/* Pages framed by another tool: no CMU chrome */
+body.cmu-framed { padding: 1.5rem; }
+
+/* Forms (the idiom of requests.eberly.cmu.edu) */
+body.cmu-app fieldset > ul { list-style-type: none; padding-left: 0; margin: 0; }
+body.cmu-app fieldset { margin: 0 0 2em 0; }
+body.cmu-app input[type="checkbox"],
+body.cmu-app input[type="radio"] { max-width: 100%; margin-right: .5em; }
+body.cmu-app input[type="checkbox"] + label,
+body.cmu-app input[type="radio"] + label { display: inline; font-weight: normal; }
+body.cmu-app select,
+body.cmu-app input[type="text"] { width: 100%; margin-bottom: 2em; }
+body.cmu-app select.inline,
+body.cmu-app input[type="text"].inline { width: auto; margin-bottom: 0; }
+
+/* Account: your name (or Sign In) beside the menu button; in the menu, name and Sign Out (or Sign In) */
+.roof .cmu-account {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 3.4em;
+  display: flex;
+  align-items: center;
+  max-width: 45%;
+  overflow: hidden;
+  line-height: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--cmu-ink);
+}
+/* Signed out, Sign In looks like the template's header links (header li a):
+   bold gray, red on hover. Signed in, the name is plain text. */
+.roof .cmu-account:not(.cmu-account-open) { font-weight: 700; color: rgba(0, 0, 0, .65); }
+.roof .cmu-account:not(.cmu-account-open):hover { color: #c00; }
+/* The name leaves the bar when the menu opens (as the menu button does);
+   the menu's account item has it instead. Below 768px the template's
+   wordmark fills the bar, so there it's only in the menu. */
+.menu-on .roof .cmu-account { display: none; }
+@media (max-width: 767px) { .roof .cmu-account { display: none; } }
+nav#nav li.cmu-account-menu { display: flex; flex-direction: column; align-items: flex-end; }
+.cmu-account-name, .cmu-account-name:hover { cursor: default; color: inherit; }
+
+/* Tabs: the one you're on is red and underlined, like the active nav tab */
+.cmu-tabs { display: flex; flex-wrap: wrap; gap: 0 1.75em; margin: 0 0 1.75em; border-bottom: 1px solid var(--cmu-line); }
+#content .cmu-tabs a, #content .cmu-tabs a:hover {
+  margin-bottom: -1px;
+  padding-top: .2em; /* the template fixes padding-bottom at 1px */
+  line-height: 2.2;
+  border-bottom: 3px solid transparent;
+  color: var(--cmu-ink);
+  font-weight: 600;
+}
+#content .cmu-tabs a:hover { color: var(--cmu-red); }
+#content .cmu-tabs a[aria-current="page"] { color: var(--cmu-red); border-bottom-color: var(--cmu-red); }
+/* Folded tabs (a cmu-more inside the tabs): the link stays at the end of
+   the first row (the details box itself drops out of the layout); opened,
+   the rest wrap below it */
+.cmu-tabs-more { display: contents; }
+.cmu-tabs-more summary { margin: 0; padding: .2em 0 0; line-height: 2.2; }
+.cmu-tabs-more .cmu-more-link { margin-left: 0; }
+.cmu-tabs-more > div { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 0 1.75em; }
+
+/* Page title row: h1 with actions on the right */
+.cmu-page-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5em 1em;
+}
+.cmu-page-title h1 { margin: 0; }
+.cmu-page-title form { margin: 0; }
+
+/* Small text */
+.cmu-muted, .cmu-hint { color: var(--cmu-muted); }
+.cmu-hint { font-size: .85em; }
+.cmu-empty { text-align: center; color: var(--cmu-muted); padding: 1.25em; }
+/* Codes (departments, course numbers) kept on one line */
+.cmu-code { white-space: nowrap; }
+
+/* Banners: the result of what you just did */
+.cmu-banner { margin: 1em 0; padding: .75em 1em; border-left: 4px solid; }
+.cmu-banner--error { background: var(--cmu-red-tint); border-color: var(--cmu-red); color: var(--cmu-red); }
+.cmu-banner--success { background: var(--cmu-green-tint); border-color: var(--cmu-green); color: var(--cmu-green); }
+
+/* Buttons that look like links (POST actions next to plain links) */
+.cmu-link-button {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--cmu-red);
+  text-decoration: underline;
+  text-align: left;
+  cursor: pointer;
+}
+.cmu-link-button:hover { background: none; color: #f00; }
+/* The same look on a real link: drop the template's border underline */
+a.cmu-link-button, a.cmu-link-button:hover { border-bottom: none; }
+
+/* Dialog (<dialog>), with a file drop zone and buttons at the bottom */
+.cmu-dialog {
+  width: min(32em, calc(100vw - 2em));
+  box-sizing: border-box;
+  padding: 1.5em;
+  border: 1px solid var(--cmu-line);
+  background: #fff;
+  color: var(--cmu-ink);
+}
+.cmu-dialog::backdrop { background: rgba(0, 0, 0, .45); }
+.cmu-dialog h2 { margin-top: 0; }
+/* .btn, .cmu-banner and friends set display, which beats a bare [hidden] */
+.cmu-dialog [hidden] { display: none !important; }
+.cmu-dialog-buttons { display: flex; gap: .5em; margin: 1.25em 0 0; }
+.cmu-dialog-buttons .btn { margin: 0; }
+.cmu-drop {
+  position: relative;
+  display: block;
+  margin: 1em 0 .5em;
+  padding: 1.75em 1em;
+  border: 2px dashed var(--cmu-line);
+  text-align: center;
+  cursor: pointer;
+}
+/* The real file input stays focusable for keyboards but out of sight */
+.cmu-drop input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  opacity: 0;
+}
+.cmu-drop-pick { color: var(--cmu-red); text-decoration: underline; }
+.cmu-drop-over, .cmu-drop:focus-within { border-color: var(--cmu-ink); background: #f6f7f8; }
+.cmu-drop-has-file { border-style: solid; }
+.cmu-drop-file { display: block; margin-top: .5em; font-weight: 700; word-break: break-all; }
+
+/* Progress: a headline number and bars */
+.cmu-stat {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25em;
+  margin: 1em 0;
+  padding: 1em 1.25em;
+  border: 1px solid var(--cmu-line);
+}
+.cmu-stat-value { font-size: 1.5em; font-weight: 700; }
+.cmu-stat-sub { font-size: .85em; color: var(--cmu-muted); }
+.cmu-stat > .cmu-meter { flex: 1; height: 12px; }
+/* Divs, not spans: the template script strips style="" from spans */
+.cmu-meter { display: inline-block; vertical-align: middle; width: 8em; height: 10px; background: #e8eaec; }
+.cmu-meter > div { display: block; height: 100%; background: var(--cmu-green); }
+.cmu-pct { font-weight: 700; vertical-align: middle; margin-left: .5em; }
+.cmu-pct--high { color: var(--cmu-green); }
+.cmu-pct--mid { color: var(--cmu-amber); }
+.cmu-pct--low { color: var(--cmu-red); }
+/* Per-item rows under the headline */
+.cmu-breakdown { flex-basis: 100%; list-style: none; margin: .5em 0 0; padding: .75em 0 0; border-top: 1px solid var(--cmu-line); }
+.cmu-breakdown li { display: flex; align-items: center; gap: .75em; margin: .35em 0; }
+.cmu-breakdown .cmu-code { min-width: 4em; }
+.cmu-breakdown .cmu-pct { margin: 0; min-width: 3em; }
+.cmu-breakdown-more { flex-basis: 100%; margin-top: .5em; padding-top: .75em; border-top: 1px solid var(--cmu-line); }
+.cmu-breakdown-more .cmu-breakdown { border-top: 0; }
+.cmu-breakdown-more .cmu-more-link { margin-left: 0; }
+
+/* Folded long lists (<details class="cmu-more">): a summary line with a
+   Show all / Show fewer link (cmu-more-closed / cmu-more-open) */
+.cmu-more summary { cursor: pointer; list-style: none; color: var(--cmu-muted); }
+.cmu-more summary::-webkit-details-marker { display: none; }
+.cmu-more .cmu-more-link { margin-left: .5em; color: var(--cmu-red); font-weight: 600; }
+.cmu-more summary:hover .cmu-more-link { text-decoration: underline; }
+.cmu-more .cmu-more-open, .cmu-more[open] .cmu-more-closed { display: none; }
+.cmu-more[open] .cmu-more-open { display: inline; }
+
+/* Tables: the template's table.alternate, plus numeric and fitted columns.
+   Cells are centered vertically, so one-line cells sit level with wrapped
+   ones. */
+table.alternate th.num, table.alternate td.num { text-align: right; font-variant-numeric: tabular-nums; }
+#content table.alternate td { vertical-align: middle; }
+.cmu-fit { width: 1%; white-space: nowrap; }
+/* Sortable headers: the header text is the button */
+th[data-sort-key] .cmu-sort {
+  all: unset;
+  cursor: pointer;
+  font-weight: inherit;
+  white-space: nowrap;
+}
+th[data-sort-key] .cmu-sort:hover { color: #c00; }
+th[data-sort-key] .cmu-sort:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+th[aria-sort] .cmu-sort { color: #c00; }
+.cmu-sort-arrow { font-size: .7em; vertical-align: .15em; }
+/* Row checkbox: the whole cell is its click target. The label fills the
+   cell, so it has no width of its own to hold the column open: the side
+   padding plus min-width (the box) do that. */
+table .cmu-select-cell { position: relative; padding: 0 .85em; text-align: center; vertical-align: top; min-width: 1.15em; }
+.cmu-select-cell label { position: absolute; inset: 0; margin: 0; padding-top: .6em; cursor: pointer; display: flex; justify-content: center; align-items: flex-start; }
+.cmu-select-cell input[type="checkbox"] { width: 1.15em; height: 1.15em; margin: 0; cursor: pointer; }
+/* The template gives checkboxes a right margin, which pushes this one off center */
+table .cmu-select-cell label input[type="checkbox"] { margin: 0; }
+#content table.alternate td.cmu-select-cell label { padding-top: 0; align-items: center; }
+
+/* Filter rows above a list */
+.cmu-filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 1em 1.5em; margin-bottom: 1em; }
+.cmu-filter-group { display: flex; flex-direction: column; gap: .25em; }
+.cmu-filter-checks { display: flex; flex-wrap: wrap; gap: .75em; }
+.cmu-filter-checks label { display: flex; align-items: center; gap: .25em; margin: 0; font-weight: normal; }
+body.cmu-app .cmu-filter-group input[type="text"] { min-width: 15em; margin-bottom: 0; }
+
+/* Bulk bar: a tinted band on top of a table, the selection count then the
+   actions. Its height is fixed so buttons appearing don't nudge the table. */
+.cmu-bulk-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5em .75em;
+  min-height: 3.5em;
+  padding: .5em .75em;
+  background: var(--cmu-tint);
+  border: 1px solid var(--cmu-line);
+  border-bottom: 0;
+}
+.cmu-bulk-bar .cmu-selection-count { color: var(--cmu-muted); margin-right: .5em; }
+.cmu-bulk-bar .cmu-selection-count.cmu-has-selection { color: var(--cmu-ink); font-weight: 600; }
+.cmu-bulk-bar .btn { margin: 0; }
+/* .btn and button display rules would otherwise beat the template's bare [hidden] */
+.cmu-bulk-bar [hidden] { display: none !important; }
+
+/* Row buttons: the bulk bar's small buttons in a table cell, one fixed
+   width alone or in a pair, as tall as a two-line button (2 lines, padding,
+   border) so rows don't change height with the label. Keep two-word
+   phrases together with &nbsp;. */
+.cmu-row-buttons { display: grid; grid-auto-flow: column; grid-auto-columns: 8.5em; justify-content: start; gap: .4em; }
+.cmu-row-buttons > * { display: flex; }
+.cmu-row-buttons form { margin: 0; }
+.cmu-row-buttons .btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; box-sizing: border-box; min-height: calc(3.2em + 4px);
+  margin: 0; text-align: center; white-space: normal;
+}
+/* Line height for wrapped labels (the template's is 1, with an id
+   selector); slimmer sides so short labels fit on one line */
+#content .cmu-row-buttons .btn { line-height: 1.25; padding-left: .25em; padding-right: .25em; }
+/* Below 1200px a wide table has no room: pills may wrap, and a pair stacks,
+   each label on one line */
+@media (max-width: 1199px) {
+  td .cmu-pill { white-space: normal; }
+  .cmu-row-buttons { grid-auto-flow: row; grid-auto-columns: auto; }
+  td .cmu-row-buttons .btn { white-space: nowrap; min-height: 0; }
+}
+
+/* Panels for framed pages: plain and left-aligned, since the host tool
+   already frames them */
+.cmu-panel { max-width: 44rem; }
+.cmu-panel-header h2 { margin: 0 0 .5rem; }
+.cmu-panel-header .cmu-muted { margin: 0; }
+.cmu-panel-body { padding: 1.5rem 0; }
+.cmu-panel-body > .cmu-label { margin: 0 0 .5rem; }
+.cmu-panel-body table.alternate { margin-bottom: 1.25rem; }
+.cmu-panel-body table.alternate td:first-child { width: 2.5em; text-align: center; }
+.cmu-panel-body input[type="radio"] { width: auto; margin: 0; }
+.cmu-panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cmu-line);
+}
+.cmu-panel-footer .btn, .cmu-panel-footer button { margin: 0; }

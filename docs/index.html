@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cmu-web-kit - Carnegie Mellon University</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,700,700italic" rel="stylesheet" type="text/css">
+  <link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="../css/cmu-cms.css" rel="stylesheet" type="text/css">
+  <link href="../css/cmu-app.css" rel="stylesheet" type="text/css">
+  <link href="docs.css" rel="stylesheet" type="text/css">
+  <link href="https://www.cmu.edu/favicon.ico" rel="icon">
+</head>
+<body>
+<div id="container">
+  <header>
+    <div class="roof red invert"><div>
+      <a class="wordmark" href="https://www.cmu.edu/">Carnegie Mellon University</a>
+    </div></div>
+    <div id="sitename"><div>
+      <span class="sitetitle"><a href="index.html">cmu-web-kit</a></span>
+      <h2>Components for the CMU web template</h2>
+    </div></div>
+  </header>
+
+  <main id="content">
+    <div class="content wide"><div>
+      <nav class="cmu-tabs" aria-label="Documentation">
+        <a href="index.html" aria-current="page">Overview</a>
+        <a href="start.html">Get Started</a>
+        <a href="cms.html">CMS Components</a>
+        <a href="app.html">App Components</a>
+      </nav>
+
+      <div class="cmu-hero">
+        <div>
+          <p class="cmu-eyebrow">For CMU sites and apps</p>
+          <h1>Build on the CMU template, not around it.</h1>
+          <p class="cmu-lead">Page components that fill the gaps in Carnegie Mellon's web template, for Cascade sites and for web apps that wear the same template.</p>
+          <div class="cmu-cta-row">
+            <a class="btn" href="cms.html">See the CMS Components</a>
+            <a class="cta" href="app.html">See the App Components</a>
+          </div>
+        </div>
+        <div class="cmu-hero-art">
+          <img src="img/screenshot.png" alt="An app built with the kit: the Syllabus Registry's searchable table of course sections, with status pills and filters.">
+        </div>
+      </div>
+
+      <h2 id="files">Two Files, Two Layers</h2>
+      <table class="alternate cmu-full">
+        <thead><tr><th scope="col">File</th><th scope="col">Load it on</th><th scope="col">What's in it</th></tr></thead>
+        <tbody>
+          <tr><td class="cmu-fit"><code>cmu-cms.css</code></td><td>CMS sites and apps</td><td>Colors and page content: hero, path cards, steps, check lists, callouts and notes, text with a screenshot, pills, tables, "On this page" box</td></tr>
+          <tr><td class="cmu-fit"><code>cmu-app.css</code></td><td>Apps, after <code>cmu-cms.css</code></td><td>Forms, tabs, banners, dialogs and file drop zones, the bulk selection bar, row buttons, sortable headers, filters, progress bars, folded lists, panels</td></tr>
+        </tbody>
+      </table>
+      <p>Your site or app adds its own stylesheet last, for whatever is particular to it, with its own prefix.</p>
+
+      <h2 id="install">Add It to a Page</h2>
+      <p>Load the template first, then the kit, then your own stylesheet. Use <code>&lt;link&gt;</code> tags rather than CSS <code>@import</code>, which makes the browser load the files one after another.</p>
+      <pre class="kit-code"><code>&lt;link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" rel="stylesheet"&gt;
+&lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-cms.css" rel="stylesheet"&gt;
+&lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css" rel="stylesheet"&gt;  &lt;!-- apps only --&gt;
+&lt;link href="/your-site.css" rel="stylesheet"&gt;</code></pre>
+      <p><a class="cta" href="start.html">How to add it to a Cascade site or an app</a></p>
+
+      <h2 id="rules">Rules</h2>
+      <ul class="cmu-checks">
+        <li><strong>The template comes first.</strong> Use its own classes as they are: <code>btn</code>, <code>btn small</code>, <code>ghost</code>, <code>cta</code>, <code>table.alternate</code>, <code>.sidebar</code>, <code>.sr-only</code>. The kit never copies the template's rules or values, and adds a class only where the template has nothing.</li>
+        <li><strong>Everything in the kit starts with <code>cmu-</code></strong>: classes, custom properties (<code>--cmu-red</code>) and, later, JavaScript hooks. Variations use a double hyphen (<code>cmu-pill--green</code>). Give your own classes your own prefix, never <code>cmu-</code>.</li>
+        <li><strong>Versions follow semver.</strong> Renaming or removing a class is a new major version.</li>
+      </ul>
+
+      <h2 id="quirks">Template Quirks to Know</h2>
+      <ul class="cmu-checks">
+        <li>Tables are <code>display: block</code> so they scroll on phones, which stops them stretching. Add <code>cmu-full</code> to stretch one to full width from 768px up.</li>
+        <li>The template's script removes <code>style=""</code> from spans. Use a div when you need an inline style, such as a bar's width.</li>
+        <li><code>.content</code> lays out its direct children as columns, so put one wrapper <code>&lt;div&gt;</code> inside it.</li>
+        <li><code>.btn</code> and other classes that set <code>display</code> override a bare <code>hidden</code> attribute. The kit restores <code>hidden</code> inside its dialogs and bulk bar.</li>
+      </ul>
+
+      <h2 id="writing">Writing Conventions</h2>
+      <ul class="cmu-checks">
+        <li>Title Case for buttons, headings, labels and navigation; sentence case for sentences. "Sign In", not "Log In".</li>
+        <li>Links go somewhere; buttons do something.</li>
+        <li>A link that needs sign-in gets plain text " [login required]" after it; a link to a file gets its type, " [PDF]". Use one label, never both.</li>
+        <li>Never leave a lone "a" at the end of a line: join it to the next word with <code>&amp;nbsp;</code>.</li>
+      </ul>
+
+      <div class="cmu-callout">
+        <p class="cmu-label">Coming in 0.2</p>
+        <p><code>cmu-app.js</code>: drag-and-drop for the file drop zone, the selection count and select-all, filtering that keeps table stripes even, and sortable headers. Until then, the app components describe the states your own script should set.</p>
+      </div>
+    </div></div>
+  </main>
+
+  <footer class="grid column3 invert">
+    <div>
+      <p>Carnegie Mellon University<br>5000 Forbes Avenue<br>Pittsburgh, PA 15213</p>
+      <ul><li><a href="https://github.com/CMUTLI/cmu-web-kit">cmu-web-kit on GitHub</a></li><li><a href="https://www.cmu.edu/legal/">Legal Info</a></li></ul>
+      <ul><li>&copy; 2026 Carnegie Mellon University</li></ul>
+    </div>
+    <div></div>
+    <div></div>
+  </footer>
+</div>
+<script src="docs.js"></script>
+</body>
+</html>
