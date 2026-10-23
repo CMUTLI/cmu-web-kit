@@ -25,7 +25,7 @@ if (next) {
     if (t !== s) writeFileSync(url, t);
   }
   console.log(`package.json and ${n} mentions now say ${next}. Next:
-  git commit -am "Release ${next}" && git tag ${next} && git push && git push --tags`);
+  git commit -am "chore: release ${next}" && git tag ${next} && git push && git push --tags`);
 } else {
   const wrong = [];
   for (const f of files)
