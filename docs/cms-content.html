@@ -208,7 +208,8 @@
 
             <h2 id="embed" class="rule-top">Embedded Page</h2>
             <p>
-              A page from another site shown in a frame, such as a dashboard or a form. Give the
+              A page from another site shown in a frame, such as a dashboard or a form, as on
+              Environment at CMU's Campus Environmental Sustainability Dashboard. Give the
               <code>&lt;iframe&gt;</code> the <code>cmu-embed</code> class, and it fills its column
               at any screen size; set its height in the <code>height</code> attribute, tall enough
               for what's in it. The template sizes YouTube and other video frames itself (see
@@ -227,6 +228,12 @@
               <li>
                 <strong>Add <code>loading="lazy"</code></strong> so it loads only when someone
                 scrolls to it.
+              </li>
+              <li>
+                <strong>Set <code>height</code> to a number of pixels</strong>, such as
+                <code>height="700"</code>, with no units or CSS in it. Leave out
+                <code>frameborder</code> and <code>scrolling</code>, which are obsolete; the class
+                handles the border and the width.
               </li>
               <li>
                 <strong>Embed only pages that allow it.</strong> Many sites forbid being framed, and
