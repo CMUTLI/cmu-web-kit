@@ -46,6 +46,19 @@ choose to move to a newer one. See the
 [releases](https://github.com/CMUTLI/cmu-web-kit/releases) for what each
 version changed.
 
+## License
+
+The code and documentation are under the BSD 3-Clause License (see
+`LICENSE`), copyright Carnegie Mellon University. It doesn't cover:
+
+* **Carnegie Mellon's names and marks**, including the Scotty image in
+  `docs/images/scotty.png` (the Office of Human Resources' Scotty avatar)
+  and the Core Competencies logo in `docs/images/core4-logo.png`. The
+  license grants no rights to them, and its third clause bars using the
+  university's name to endorse or promote work derived from this code.
+* **CMU's web template**, which the kit builds on. The university hosts it
+  at www.cmu.edu/common/standard-v6; it isn't part of this repository.
+
 ## Questions and Requests
 
 Missing a component, or found a problem?
