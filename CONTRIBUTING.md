@@ -1,64 +1,54 @@
-# Working on the Carnegie Mellon Web Kit
+# Contributing
+
+See [DEVELOPMENT.md](DEVELOPMENT.md) for setup, checks, and releasing, and
+[DEPLOYMENT.md](DEPLOYMENT.md) for how releases reach jsDelivr.
+
+## Issues
+
+For a problem, include the page or app, the browser, what happened, and
+what you expected; a screenshot helps. For a new component, describe where
+you'd use it and link a CMU page that does something like it. Check
+existing issues first.
+
+## Pull Requests
+
+Branch from `main` and open pull requests against `main`. Keep each one to
+a single concern, and explain the problem and the result. Run the
+[checks](DEVELOPMENT.md#checks) and enable the
+[pre-commit hooks](DEVELOPMENT.md#pre-commit-hooks) before submitting.
+Update the docs whenever a component changes.
 
 ## Rules for Components
 
-* **The template comes first.** Link its CSS and use its classes as they
-  are: `btn`, `btn small`, `ghost`, `cta`, `table.alternate`, `.sidebar`,
-  `.sr-only`. Never copy its rules or values. Add a component only where
-  the template has nothing.
-* **Prefix `cmu-`** for every class, custom property (`--cmu-red`), and JS
-  hook. Modifiers use `--` (`cmu-pill--green`).
-* `cmu-cms.css` is for anything a Cascade page could use; `cmu-app.css` is
-  for what only apps need.
-* Every component gets a section in the docs with a live example.
+- **The template comes first.** Link CMU's template CSS and use its
+  classes as they are: `btn`, `btn small`, `ghost`, `cta`,
+  `table.alternate`, `.sidebar`, `.sr-only`. Never copy its rules or
+  values. Add a component only where the template has nothing, and prefer
+  the template's own spacing to an override.
+- **Prefix `cmu-`** for every class, custom property (`--cmu-red`), and
+  JavaScript hook (`data-cmu-copy`). Modifiers use `--` (`cmu-pill--green`).
+- **`cmu-cms.css`** is for anything a Cascade page could use;
+  **`cmu-app.css`** and **`cmu-app.js`** are for what only apps need.
+- **Every component gets a docs section** with a live example, checked at
+  desktop and phone widths.
+- **Base it on CMU's pages.** Name a CMU page that does something like it
+  when you can, and use made-up content in examples, never real people's
+  data.
 
-## Folders
+## Commit Messages
 
-Named the way CMU's own sites name them (`/common/standard-v6/css/`,
-`/common/standard-v6/js/`, `/common/standard-v6/images/`):
+Follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-* `css/`: stylesheets.
-* `js/`: JavaScript that runs in the browser. Never `javascript/` or
-  `scripts/`.
-* `images/`: images, never `img/`.
-* `tools/`: scripts you run from the command line (checks, the
-  components table, releases). Elsewhere these go in `scripts/`; that name
-  is only ever for command-line and ops scripts, never browser code.
+## Style
 
-The docs follow the same rule: `docs/css/`, `docs/js/`, `docs/images/`.
+Prettier formats CSS, JavaScript, Markdown, JSON, and YAML, and ESLint
+checks the JavaScript; see
+[linting and formatting](DEVELOPMENT.md#linting-and-formatting).
 
-## Docs
-
-The docs are in `docs/` and published with GitHub Pages from the `main`
-branch, root folder. They load `../css/`, so the site is served from the
-root, not from `docs/`. To view them locally:
-
-```sh
-python3 -m http.server 8123
-```
-
-then open http://127.0.0.1:8123/docs/.
-
-Write each example once inside a `.kit-demo` block; `docs/js/docs.js` shows
-its markup under it. The live examples use the CSS on `main`, so mark
-anything not yet released ("New in 0.2") until it is.
-
-## Checks
-
-`npm run check` fails if the live CMU template starts defining one of our
-class names, if a version in the docs or README doesn't match
-`package.json`, or if the table of every component on the Components page
-is out of date. Rebuild that table with `npm run components` after adding,
-renaming or removing a section.
-
-## Releasing
-
-1. `npm run release -- 0.2.0` sets the version in `package.json` and in
-   every example in the docs and README.
-2. Commit, tag, and push:
-   `git commit -am "chore: release 0.2.0" && git tag 0.2.0 && git push && git push --tags`
-3. On GitHub, add release notes to the tag. For a major version, list
-   every renamed or removed class.
-
-jsDelivr serves each tag as soon as it's pushed. Versions follow semver:
-renaming or removing a class is a major version.
+For the docs and for text in examples, follow the
+[writing conventions](https://cmutli.github.io/cmu-web-kit/docs/#writing):
+Title Case for headings, buttons, and labels; buttons and calls to action
+that start with a verb; and the Oxford comma. Otherwise, follow the
+[GitHub Docs style guide](https://docs.github.com/en/contributing/style-guide-and-content-model/style-guide)
+and, for grammar and punctuation, the
+[Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/).

@@ -7,32 +7,78 @@
   display: flow-root; /* keep floated photos inside the box */
   background: #fff;
 }
-.kit-demo > :last-child:not(dialog) { margin-bottom: 0; }
+.kit-demo > :last-child:not(dialog) {
+  margin-bottom: 0;
+}
 .kit-code {
   margin: 0 0 2.5rem;
   padding: 1rem 1.25rem;
   overflow-x: auto;
   background: var(--cmu-tint);
   border: 1px solid var(--cmu-line);
-  font-size: .85rem;
+  font-size: 0.85rem;
   line-height: 1.5;
   white-space: pre;
 }
-.kit-code code { font-family: Menlo, Consolas, monospace; background: none; }
+.kit-code code {
+  font-family: Menlo, Consolas, monospace;
+  background: none;
+}
 /* An open <dialog> shown in place, as a picture of the real one */
-.kit-demo dialog[open].kit-inline { position: static; margin: 0; max-width: 100%; }
-.kit-classes { margin: 0 0 .5rem; color: var(--cmu-muted); font-size: .9rem; }
-.kit-classes code { color: var(--cmu-ink); }
+.kit-demo dialog[open].kit-inline {
+  position: static;
+  margin: 0;
+  max-width: 100%;
+}
+.kit-classes {
+  margin: 0 0 0.5rem;
+  color: var(--cmu-muted);
+  font-size: 0.9rem;
+}
+.kit-classes code {
+  color: var(--cmu-ink);
+}
 /* Section headings of the docs pages themselves, not headings inside examples:
    the 64px a CMS page gets between content sections (32px padding each side).
    The line over each is the template's rule-top. */
-#content > .content > div > :is(h1, h2)[id] { margin-top: 4rem; }
-#content > .content > div > .cmu-hero + h1 { margin-top: 0; }
-.cmu-steps .kit-code { margin: .5rem 0 0; }
-.kit-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr)); gap: .5rem; margin: 1rem 0 0; }
-.kit-swatches > div { padding: 1.5rem .75rem .5rem; font-size: .85rem; }
-.kit-swatches--tall > div { min-height: 7rem; }
-.kit-try { display: grid; gap: .6rem; margin: 1rem 0 1.5rem; padding: 1rem 1.25rem; border: 1px solid var(--cmu-line); }
-.kit-try > div { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
-.kit-try .cmu-label { min-width: 13rem; }
-.kit-try .btn { margin: 0; }
+#content > .content > div > :is(h1, h2)[id] {
+  margin-top: 4rem;
+}
+#content > .content > div > .cmu-hero + h1 {
+  margin-top: 0;
+}
+.cmu-steps .kit-code {
+  margin: 0.5rem 0 0;
+}
+.kit-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+}
+.kit-swatches > div {
+  padding: 1.5rem 0.75rem 0.5rem;
+  font-size: 0.85rem;
+}
+.kit-swatches--tall > div {
+  min-height: 7rem;
+}
+.kit-try {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--cmu-line);
+}
+.kit-try > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.kit-try .cmu-label {
+  min-width: 13rem;
+}
+.kit-try .btn {
+  margin: 0;
+}

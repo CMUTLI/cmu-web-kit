@@ -8,9 +8,23 @@
     "js"
   ],
   "scripts": {
-    "check": "node tools/check-template.mjs && node tools/versions.mjs && node tools/components.mjs --check",
+    "check": "npm run lint && npm run format:check && npm run check:versions && npm run check:components && npm run check:template",
+    "check:template": "node tools/check-template.mjs",
+    "check:versions": "node tools/versions.mjs",
+    "check:components": "node tools/components.mjs --check",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "components": "node tools/components.mjs",
     "release": "node tools/versions.mjs"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@j178/prek": "^0.5.7",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10"
+  }
 }

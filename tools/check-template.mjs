@@ -8,7 +8,10 @@ const TEMPLATE = [
 ];
 const ours = new Set();
 for (const f of ["css/cmu-cms.css", "css/cmu-app.css"])
-  for (const m of readFileSync(new URL(`../${f}`, import.meta.url), "utf8").matchAll(/\.(cmu-[\w-]+)/g)) ours.add(m[1]);
+  for (const m of readFileSync(new URL(`../${f}`, import.meta.url), "utf8").matchAll(
+    /\.(cmu-[\w-]+)/g,
+  ))
+    ours.add(m[1]);
 const theirs = new Set();
 for (const url of TEMPLATE) {
   const res = await fetch(url);
@@ -16,5 +19,8 @@ for (const url of TEMPLATE) {
   for (const m of (await res.text()).matchAll(/\.(cmu-[\w-]+)/g)) theirs.add(m[1]);
 }
 const clash = [...ours].filter((c) => theirs.has(c));
-if (clash.length) { console.error("The template now defines:", clash.join(" ")); process.exit(1); }
+if (clash.length) {
+  console.error("The template now defines:", clash.join(" "));
+  process.exit(1);
+}
 console.log(`ok: ${ours.size} classes, none in the template (${theirs.size} cmu- classes there)`);

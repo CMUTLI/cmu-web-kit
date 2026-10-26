@@ -17,7 +17,9 @@
       document.body.appendChild(status);
     }
     status.textContent = "";
-    setTimeout(function () { status.textContent = text; }, 50);
+    setTimeout(function () {
+      status.textContent = text;
+    }, 50);
   }
   function selectText(el) {
     if (el.select) return el.select();
@@ -28,7 +30,8 @@
     sel.addRange(range);
   }
   function flash(button, label) {
-    if (!button.hasAttribute("data-cmu-copy-label")) button.setAttribute("data-cmu-copy-label", button.textContent);
+    if (!button.hasAttribute("data-cmu-copy-label"))
+      button.setAttribute("data-cmu-copy-label", button.textContent);
     button.textContent = label;
     clearTimeout(button.cmuCopyTimer);
     button.cmuCopyTimer = setTimeout(function () {

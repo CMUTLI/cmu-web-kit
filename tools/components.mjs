@@ -15,12 +15,18 @@ const SETS = [
 // Sections that explain rather than show a component
 const SKIP = new Set(["sections", "more-template", "home", "colors"]);
 
-const text = (html) => html.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+const text = (html) =>
+  html
+    .replace(/<[^>]+>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
 const pageTitle = (html) => text(html.match(/<h1>(.*?)<\/h1>/s)[1]);
 
 const rows = [];
 for (const [prefix, set] of SETS) {
-  const pages = readdirSync(docs).filter((f) => f === prefix + ".html" || f.startsWith(prefix + "-")).sort();
+  const pages = readdirSync(docs)
+    .filter((f) => f === prefix + ".html" || f.startsWith(prefix + "-"))
+    .sort();
   pages.sort((a, b) => (a === prefix + ".html" ? -1 : b === prefix + ".html" ? 1 : 0));
   for (const file of pages) {
     const html = read(file);
@@ -30,10 +36,18 @@ for (const [prefix, set] of SETS) {
       const [, id, name] = part.match(/^([\w-]+)"[^>]*>(.*?)<\/h2>/s);
       if (SKIP.has(id)) continue;
       const kit = part.match(/<p class="kit-classes">(.*?)<\/p>/s);
-      const classes = kit ? [...kit[1].matchAll(/<code>(.*?)<\/code>/g)].map((m) => m[1]).join(", ") : "";
+      const classes = kit
+        ? [...kit[1].matchAll(/<code>(.*?)<\/code>/g)].map((m) => m[1]).join(", ")
+        : "";
       // A kit component shown among the template's (marked "From the kit")
       const fromKit = prefix === "standard" && /<strong>From the kit<\/strong>/.test(part);
-      rows.push({ name: text(name), href: `${file}#${id}`, set: fromKit ? "CMS Components" : set, page, classes });
+      rows.push({
+        name: text(name),
+        href: `${file}#${id}`,
+        set: fromKit ? "CMS Components" : set,
+        page,
+        classes,
+      });
     }
   }
 }
@@ -45,7 +59,10 @@ const table = `<!-- components:start (written by tools/components.mjs) -->
         <tbody>
 ${rows
   .sort((a, b) => a.name.localeCompare(b.name))
-  .map((r) => `          <tr><td><a href="${r.href}">${esc(r.name)}</a></td><td>${r.set}</td><td>${esc(r.page)}</td><td>${r.classes ? `<code>${r.classes.split(", ").join("</code>, <code>")}</code>` : ""}</td></tr>`)
+  .map(
+    (r) =>
+      `          <tr><td><a href="${r.href}">${esc(r.name)}</a></td><td>${r.set}</td><td>${esc(r.page)}</td><td>${r.classes ? `<code>${r.classes.split(", ").join("</code>, <code>")}</code>` : ""}</td></tr>`,
+  )
   .join("\n")}
         </tbody>
       </table>
@@ -54,9 +71,13 @@ ${rows
 const file = new URL("components.html", docs);
 const html = readFileSync(file, "utf8");
 const next = html.replace(/<!-- components:start[\s\S]*?<!-- components:end -->/, table);
-if (next === html && !html.includes("<!-- components:start")) throw new Error("components.html has no components:start/end markers");
+if (next === html && !html.includes("<!-- components:start"))
+  throw new Error("components.html has no components:start/end markers");
 if (process.argv.includes("--check")) {
-  if (next !== html) { console.error("The components table is out of date: run node tools/components.mjs"); process.exit(1); }
+  if (next !== html) {
+    console.error("The components table is out of date: run node tools/components.mjs");
+    process.exit(1);
+  }
   console.log(`ok: the components table lists all ${rows.length}`);
 } else {
   writeFileSync(file, next);
