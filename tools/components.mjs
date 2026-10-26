@@ -4,6 +4,8 @@
 //   node tools/components.mjs            write the table into docs/components.html
 //   node tools/components.mjs --check    fail if the table is out of date
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import * as prettier from "prettier";
 
 const docs = new URL("../docs/", import.meta.url);
 const read = (f) => readFileSync(new URL(f, docs), "utf8");
@@ -31,7 +33,9 @@ for (const [prefix, set] of SETS) {
   for (const file of pages) {
     const html = read(file);
     const page = pageTitle(html);
-    const parts = html.split(/^ {6}<h2 id="/m).slice(1);
+    // Each docs section starts with <h2 id="…" class="rule-top">; headings
+    // inside examples have neither
+    const parts = html.split(/<h2 id="(?=[\w-]+" class="rule-top")/).slice(1);
     for (const part of parts) {
       const [, id, name] = part.match(/^([\w-]+)"[^>]*>(.*?)<\/h2>/s);
       if (SKIP.has(id)) continue;
@@ -70,9 +74,29 @@ ${rows
 
 const file = new URL("components.html", docs);
 const html = readFileSync(file, "utf8");
-const next = html.replace(/<!-- components:start[\s\S]*?<!-- components:end -->/, table);
+// Formatted as Prettier would, so writing it and Prettier's check agree
+const path = fileURLToPath(file);
+const next = await prettier.format(
+  html.replace(/<!-- components:start[\s\S]*?<!-- components:end -->/, table),
+  { ...(await prettier.resolveConfig(path)), filepath: path },
+);
 if (next === html && !html.includes("<!-- components:start"))
   throw new Error("components.html has no components:start/end markers");
+// Every live example keeps its markup as written: Prettier must skip it
+const unmarked = readdirSync(docs)
+  .filter((f) => f.endsWith(".html"))
+  .flatMap((f) =>
+    [...read(f).matchAll(/(.*)\n\s*<div class="kit-demo"/g)]
+      .filter((m) => !m[1].includes("<!-- prettier-ignore -->"))
+      .map(() => f),
+  );
+if (unmarked.length) {
+  console.error(
+    `Add <!-- prettier-ignore --> right before each kit-demo in: ${[...new Set(unmarked)].join(", ")}`,
+  );
+  process.exit(1);
+}
+
 if (process.argv.includes("--check")) {
   if (next !== html) {
     console.error("The components table is out of date: run node tools/components.mjs");

@@ -41,8 +41,8 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 ## Style
 
-Prettier formats CSS, JavaScript, Markdown, JSON, and YAML, and ESLint
-checks the JavaScript; see
+Prettier formats CSS, JavaScript, Markdown, JSON, YAML, and the docs' HTML
+(except the live examples), and ESLint checks the JavaScript; see
 [linting and formatting](DEVELOPMENT.md#linting-and-formatting).
 
 For the docs and for text in examples, follow the

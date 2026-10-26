@@ -1,195 +1,707 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Components - Carnegie Mellon Web Kit - Carnegie Mellon University</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,700,700italic" rel="stylesheet" type="text/css">
-  <link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" media="screen" rel="stylesheet" type="text/css">
-  <link href="../css/cmu-cms.css" rel="stylesheet" type="text/css">
-  <link href="../css/cmu-app.css" rel="stylesheet" type="text/css">
-  <link href="css/docs.css" rel="stylesheet" type="text/css">
-  <link href="https://www.cmu.edu/favicon.ico" rel="icon">
-  <link href="https://www.cmu.edu/favicon-152.png" rel="apple-touch-icon-precomposed">
-  <meta content="#9f0000" name="msapplication-TileColor">
-  <meta content="https://www.cmu.edu/favicon-144.png" name="msapplication-TileImage">
-</head>
-<body class="no-js">
-<div id="container">
-  <header>
-    <div class="roof red invert">
-      <div>
-        <a class="wordmark" href="https://www.cmu.edu/">Carnegie Mellon University</a>
-        <button aria-label="toggle menu" aria-pressed="false" class="menu-btn" href="#nav"><b>&#8212;</b><b>&#8212;</b><b>&#8212;</b></button>
-      </div>
-    </div>
-    <div id="sitename">
-      <span class="sitetitle"><a href="index.html">Carnegie Mellon Web Kit</a></span>
-      <h2>Components for the CMU web template</h2>
-    </div>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Components - Carnegie Mellon Web Kit - Carnegie Mellon University</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,700,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="../css/cmu-cms.css" rel="stylesheet" type="text/css" />
+    <link href="../css/cmu-app.css" rel="stylesheet" type="text/css" />
+    <link href="css/docs.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.cmu.edu/favicon.ico" rel="icon" />
+    <link href="https://www.cmu.edu/favicon-152.png" rel="apple-touch-icon-precomposed" />
+    <meta content="#9f0000" name="msapplication-TileColor" />
+    <meta content="https://www.cmu.edu/favicon-144.png" name="msapplication-TileImage" />
+  </head>
+  <body class="no-js">
+    <div id="container">
+      <header>
+        <div class="roof red invert">
+          <div>
+            <a class="wordmark" href="https://www.cmu.edu/">Carnegie Mellon University</a>
+            <button aria-label="toggle menu" aria-pressed="false" class="menu-btn" href="#nav">
+              <b>&#8212;</b><b>&#8212;</b><b>&#8212;</b>
+            </button>
+          </div>
+        </div>
+        <div id="sitename">
+          <span class="sitetitle"><a href="index.html">Carnegie Mellon Web Kit</a></span>
+          <h2>Components for the CMU web template</h2>
+        </div>
+      </header>
 
-  <main id="content">
-    <div class="breadcrumbs">
-      <a href="index.html">Carnegie Mellon Web Kit</a>&nbsp;&rsaquo;&nbsp;Components
-    </div>
-    <div class="content wide"><div>
-      <h1>Components</h1>
-      <p class="cmu-lead">Three sets, from what CMU's template already gives you to what only apps need. Start with the first: use the kit only where the template has nothing.</p>
+      <main id="content">
+        <div class="breadcrumbs">
+          <a href="index.html">Carnegie Mellon Web Kit</a>&nbsp;&rsaquo;&nbsp;Components
+        </div>
+        <div class="content wide">
+          <div>
+            <h1>Components</h1>
+            <p class="cmu-lead">
+              Three sets, from what CMU's template already gives you to what only apps need. Start
+              with the first: use the kit only where the template has nothing.
+            </p>
 
-      <div class="cmu-paths">
-        <a class="cmu-path" href="standard.html">
-          <strong>CMU Standard</strong>
-          <span>What CMU's template already has: buttons, sidebar boxes, colors, grids, feature sections, and more. Nothing here needs the kit.</span>
-          <span class="cta">See CMU Standard</span>
-        </a>
-        <a class="cmu-path" href="cms.html">
-          <strong>CMS Components</strong>
-          <span>For Cascade pages and apps alike: a hero card, path cards, numbered steps, callouts, questions and answers.</span>
-          <span class="cta">See CMS Components</span>
-        </a>
-        <a class="cmu-path" href="app.html">
-          <strong>App Components</strong>
-          <span>For web apps: tabs, dialogs, file drop zones, filters, tables with actions, Load More, and pages.</span>
-          <span class="cta">See App Components</span>
-        </a>
-      </div>
+            <div class="cmu-paths">
+              <a class="cmu-path" href="standard.html">
+                <strong>CMU Standard</strong>
+                <span
+                  >What CMU's template already has: buttons, sidebar boxes, colors, grids, feature
+                  sections, and more. Nothing here needs the kit.</span
+                >
+                <span class="cta">See CMU Standard</span>
+              </a>
+              <a class="cmu-path" href="cms.html">
+                <strong>CMS Components</strong>
+                <span
+                  >For Cascade pages and apps alike: a hero card, path cards, numbered steps,
+                  callouts, questions and answers.</span
+                >
+                <span class="cta">See CMS Components</span>
+              </a>
+              <a class="cmu-path" href="app.html">
+                <strong>App Components</strong>
+                <span
+                  >For web apps: tabs, dialogs, file drop zones, filters, tables with actions, Load
+                  More, and pages.</span
+                >
+                <span class="cta">See App Components</span>
+              </a>
+            </div>
 
-      <h2 id="all" class="rule-top">All Components</h2>
-      <div class="cmu-search-bar">
-        <p>Search by name, set, page, or class.</p>
-        <label for="kit-find-component" class="sr-only">Find a Component</label>
-        <input type="text" id="kit-find-component" placeholder="Find a component&hellip;" data-kit-filter-table="kit-components" data-kit-count="kit-components-count" data-kit-noun="component">
-      </div>
-      <!-- components:start (written by tools/components.mjs) -->
-      <table class="alternate cmu-full" id="kit-components" data-kit-sortable>
-        <thead><tr><th scope="col" data-sort-key="name" aria-sort="ascending"><button class="cmu-sort" type="button">Component<span class="cmu-sort-arrow"> ▲</span></button></th><th scope="col" data-sort-key="set"><button class="cmu-sort" type="button">Set<span class="cmu-sort-arrow"></span></button></th><th scope="col" data-sort-key="page"><button class="cmu-sort" type="button">Page<span class="cmu-sort-arrow"></span></button></th><th scope="col">Classes</th></tr></thead>
-        <tbody>
-          <tr><td><a href="app-users.html#acting-as">Acting as Another User</a></td><td>App Components</td><td>Users</td><td><code>cmu-acting-as</code>, <code>cmu-acting-bar</code></td></tr>
-          <tr><td><a href="standard-sections.html#announcements">Announcements</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>content wide</code>, <code>darkgrey invert</code>, <code>gold</code>, <code>blue invert</code></td></tr>
-          <tr><td><a href="standard-sections.html#big-buttons">Big Buttons</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>grid column2</code>, <code>btn wide</code>, <code>aligncenter</code></td></tr>
-          <tr><td><a href="standard-people.html#bio">Bio Page</a></td><td>CMU Standard</td><td>People</td><td><code>floatleft caption thumb</code>, <code>contact</code>, <code>address</code>, <code>protect</code></td></tr>
-          <tr><td><a href="standard.html#quotes">Block Quotes</a></td><td>CMU Standard</td><td>CMU Standard Components</td><td><code>blockquote</code>, <code>figure</code>, <code>figcaption</code>, <code>invert</code></td></tr>
-          <tr><td><a href="standard-sidebar.html#button-box">Button Box</a></td><td>CMU Standard</td><td>Sidebars</td><td><code>sidebar</code>, <code>red invert</code>, <code>simple</code>, <code>btn wide</code>, <code>ghost</code></td></tr>
-          <tr><td><a href="app.html#button-note">Button With a Note</a></td><td>App Components</td><td>App Components</td><td><code>cmu-button-note</code>, <code>cmu-hint</code></td></tr>
-          <tr><td><a href="standard.html#buttons">Buttons and Links</a></td><td>CMU Standard</td><td>CMU Standard Components</td><td><code>btn</code>, <code>ghost</code>, <code>small</code>, <code>wide</code>, <code>cta</code>, <code>external</code></td></tr>
-          <tr><td><a href="cms-content.html#callout">Callout and Note</a></td><td>CMS Components</td><td>Content Blocks</td><td><code>cmu-callout</code>, <code>cmu-label</code>, <code>cmu-note</code></td></tr>
-          <tr><td><a href="standard-sections.html#grid">Cards on Gray</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>grid</code>, <code>column2</code>, <code>column3</code>, <code>column4</code>, <code>boxes</code></td></tr>
-          <tr><td><a href="standard-sections.html#carousel">Carousel</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>js-flickityCustom</code>, <code>grid column2</code></td></tr>
-          <tr><td><a href="cms-content.html#checks">Check List</a></td><td>CMS Components</td><td>Content Blocks</td><td><code>ul.cmu-checks</code></td></tr>
-          <tr><td><a href="standard-sections.html#circles">Circle Photos</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>circle</code>, <code>grid column2</code></td></tr>
-          <tr><td><a href="cms-content.html#snippet">Code Block</a></td><td>CMS Components</td><td>Content Blocks</td><td><code>pre.cmu-snippet</code>, <code>cmu-snippet--wrap</code></td></tr>
-          <tr><td><a href="standard-people.html#contacts">Contact Cards</a></td><td>CMU Standard</td><td>People</td><td><code>grid column3 grey boxes</code>, <code>rule-bottom</code>, <code>protect</code></td></tr>
-          <tr><td><a href="cms-content.html#copy">Copy Button</a></td><td>CMS Components</td><td>Content Blocks</td><td><code>data-cmu-copy</code>, <code>cmu-snippet</code>, <code>btn</code></td></tr>
-          <tr><td><a href="standard-news.html#dates">Date Blocks and Event Cards</a></td><td>CMS Components</td><td>News and Events</td><td><code>cmu-date</code>, <code>cmu-date-month</code>, <code>cmu-date-day</code>, <code>cmu-date--red</code></td></tr>
-          <tr><td><a href="app-messages.html#dialog">Dialog and File Drop Zone</a></td><td>App Components</td><td>Messages and Dialogs</td><td><code>cmu-dialog</code>, <code>cmu-dialog-buttons</code>, <code>cmu-drop</code>, <code>cmu-drop-pick</code>, <code>cmu-drop-file</code></td></tr>
-          <tr><td><a href="standard-news.html#event-list">Event List</a></td><td>CMU Standard</td><td>News and Events</td><td><code>events</code></td></tr>
-          <tr><td><a href="standard-news.html#events">Events From events.cmu.edu</a></td><td>CMU Standard</td><td>News and Events</td><td></td></tr>
-          <tr><td><a href="cms-top.html#intro">Eyebrow, Lead, and Call-to-Action Row</a></td><td>CMS Components</td><td>Page Tops</td><td><code>cmu-eyebrow</code>, <code>cmu-lead</code>, <code>cmu-cta-row</code>, <code>cmu-cta-note</code></td></tr>
-          <tr><td><a href="standard.html#faq">FAQ</a></td><td>CMU Standard</td><td>CMU Standard Components</td><td><code>collapsed</code></td></tr>
-          <tr><td><a href="standard-sections.html#feature">Feature Section</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>grid column2 red invert</code>, <code>btn</code></td></tr>
-          <tr><td><a href="app.html#field-row">Fields in a Row</a></td><td>App Components</td><td>App Components</td><td><code>cmu-field-row</code>, <code>cmu-field-row--short</code>, <code>cmu-hint</code></td></tr>
-          <tr><td><a href="standard.html#files">File Table</a></td><td>CMU Standard</td><td>CMU Standard Components</td><td><code>table.alternate</code>, <code>cmu-full</code></td></tr>
-          <tr><td><a href="app-lists.html#filters">Filters</a></td><td>App Components</td><td>Lists and Tables</td><td><code>cmu-filters</code>, <code>cmu-filter-group</code>, <code>cmu-filter-checks</code></td></tr>
-          <tr><td><a href="app-messages.html#flash">Flash Messages</a></td><td>App Components</td><td>Messages and Dialogs</td><td><code>cmu-flash</code>, <code>cmu-flash--success</code>, <code>cmu-flash--notice</code>, <code>cmu-flash--error</code></td></tr>
-          <tr><td><a href="app-structure.html#more">Folded Lists</a></td><td>App Components</td><td>Page Structure</td><td><code>cmu-more</code>, <code>cmu-more-link</code>, <code>cmu-more-closed</code>, <code>cmu-more-open</code></td></tr>
-          <tr><td><a href="standard.html#backgrounds">Globe and Plaid</a></td><td>CMU Standard</td><td>CMU Standard Components</td><td><code>globe</code>, <code>plaid</code></td></tr>
-          <tr><td><a href="standard-sections.html#hero">Hero</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>hero</code>, <code>text</code>, <code>box left</code>, <code>box right</code></td></tr>
-          <tr><td><a href="cms-top.html#hero">Hero</a></td><td>CMS Components</td><td>Page Tops</td><td><code>cmu-hero</code>, <code>cmu-hero-art</code>, <code>cmu-hero-art--stack</code>, <code>cmu-hero-art--plain</code></td></tr>
-          <tr><td><a href="cms-content.html#flow">How It Works</a></td><td>CMS Components</td><td>Content Blocks</td><td><code>ol.cmu-flow</code></td></tr>
-          <tr><td><a href="standard-sections.html#i-want">I Want To&hellip;</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>grid column3 boxes</code>, <code>&lt;h2&gt;</code></td></tr>
-          <tr><td><a href="standard-people.html#leadership">Leadership Grid</a></td><td>CMU Standard</td><td>People</td><td><code>grid column3 grey boxes</code>, <code>aligncenter</code></td></tr>
-          <tr><td><a href="standard-sections.html#link-bank">Link Bank</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>grid column3 red invert nav</code>, <code>nav-list</code></td></tr>
-          <tr><td><a href="app.html#link-button">Link Button</a></td><td>App Components</td><td>App Components</td><td><code>cmu-link-button</code></td></tr>
-          <tr><td><a href="app-lists.html#paging">Load More and Pages</a></td><td>App Components</td><td>Lists and Tables</td><td><code>cmu-results-count</code>, <code>cmu-load-more</code>, <code>cmu-pager</code></td></tr>
-          <tr><td><a href="standard-news.html#news">News Grid and Load More</a></td><td>CMU Standard</td><td>News and Events</td><td><code>section-id</code>, <code>grid column3 news</code>, <code>filterable</code>, <code>img</code>, <code>hide</code>, <code>loadmore</code></td></tr>
-          <tr><td><a href="app-users.html#no-access">No Access</a></td><td>App Components</td><td>Users</td><td></td></tr>
-          <tr><td><a href="cms-content.html#steps">Numbered Steps</a></td><td>CMS Components</td><td>Content Blocks</td><td><code>ol.cmu-steps</code></td></tr>
-          <tr><td><a href="standard-sidebar.html#on-this-page">On This Page</a></td><td>CMU Standard</td><td>Sidebars</td><td><code>list left-rule</code>, <code>#id</code></td></tr>
-          <tr><td><a href="app.html#sub-options">Options Under a Choice</a></td><td>App Components</td><td>App Components</td><td><code>cmu-sub-options</code></td></tr>
-          <tr><td><a href="app.html#setup">Page Setup and Forms</a></td><td>App Components</td><td>App Components</td><td><code>body.cmu-app</code>, <code>body.cmu-framed</code></td></tr>
-          <tr><td><a href="app-structure.html#title">Page Title Row</a></td><td>App Components</td><td>Page Structure</td><td><code>cmu-page-title</code></td></tr>
-          <tr><td><a href="app-structure.html#panels">Panels for Framed Pages</a></td><td>App Components</td><td>Page Structure</td><td><code>cmu-panel</code>, <code>cmu-panel-header</code>, <code>cmu-panel-body</code>, <code>cmu-panel-footer</code></td></tr>
-          <tr><td><a href="cms-content.html#paths">Path Cards</a></td><td>CMS Components</td><td>Content Blocks</td><td><code>cmu-paths</code>, <code>cmu-paths--two</code>, <code>cmu-path</code></td></tr>
-          <tr><td><a href="app-lists.html#people">People List</a></td><td>App Components</td><td>Lists and Tables</td><td><code>cmu-people</code>, <code>cmu-search-bar</code>, <code>cmu-results-count</code></td></tr>
-          <tr><td><a href="standard.html#captions">Photo Captions and Credits</a></td><td>CMU Standard</td><td>CMU Standard Components</td><td><code>figure.image</code>, <code>figcaption</code>, <code>floatright</code>, <code>floatleft</code></td></tr>
-          <tr><td><a href="standard-sections.html#photos">Photo Grid</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>grid</code>, <code>column2</code>, <code>column3</code>, <code>column4</code>, <code>photos</code>, <code>photo</code></td></tr>
-          <tr><td><a href="cms-data.html#pills">Pills</a></td><td>CMS Components</td><td>Pills and Tables</td><td><code>cmu-pill</code>, <code>cmu-pill--green</code>, <code>cmu-pill--amber</code></td></tr>
-          <tr><td><a href="app-users.html#preferences">Preferences</a></td><td>App Components</td><td>Users</td><td></td></tr>
-          <tr><td><a href="app-messages.html#progress">Progress</a></td><td>App Components</td><td>Messages and Dialogs</td><td><code>cmu-stat</code>, <code>cmu-stat-value</code>, <code>cmu-stat-sub</code>, <code>cmu-meter</code>, <code>cmu-pct</code>, <code>--high</code>, <code>--mid</code>, <code>--low</code>, <code>cmu-breakdown</code></td></tr>
-          <tr><td><a href="cms-content.html#qa">Question Teasers</a></td><td>CMS Components</td><td>Content Blocks</td><td><code>cmu-qa</code></td></tr>
-          <tr><td><a href="standard-sidebar.html#quick-links">Quick Links</a></td><td>CMU Standard</td><td>Sidebars</td><td><code>list left-rule</code>, <code>darkgrey invert</code>, <code>rule-bottom</code></td></tr>
-          <tr><td><a href="app-lists.html#search">Search</a></td><td>App Components</td><td>Lists and Tables</td><td><code>cmu-search-bar</code>, <code>sr-only</code></td></tr>
-          <tr><td><a href="standard-sections.html#bar">Section Bar</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>content wide</code>, <code>red invert globe</code></td></tr>
-          <tr><td><a href="standard-sections.html#rule-top">Section Headings With a Line</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>rule-top</code>, <code>rule-bottom</code></td></tr>
-          <tr><td><a href="standard-sidebar.html#sidebar">Sidebar Boxes</a></td><td>CMU Standard</td><td>Sidebars</td><td><code>sidebar</code>, <code>simple</code>, <code>left-rule</code>, <code>list</code>, <code>invert</code></td></tr>
-          <tr><td><a href="standard-sidebar.html#sign-in">Sign In</a></td><td>CMU Standard</td><td>Sidebars</td><td><code>sidebar</code>, <code>red invert</code>, <code>btn wide</code>, <code>left-rule</code></td></tr>
-          <tr><td><a href="app-users.html#account">Sign In and Sign Out</a></td><td>App Components</td><td>Users</td><td><code>cmu-account</code>, <code>cmu-account-open</code>, <code>cmu-account-menu</code>, <code>cmu-account-name</code></td></tr>
-          <tr><td><a href="app.html#text">Small Text</a></td><td>App Components</td><td>App Components</td><td><code>cmu-muted</code>, <code>cmu-hint</code>, <code>cmu-empty</code>, <code>cmu-code</code>, <code>cmu-label</code></td></tr>
-          <tr><td><a href="cms-data.html#tables">Tables</a></td><td>CMS Components</td><td>Pills and Tables</td><td><code>table.cmu-full</code>, <code>table.cmu-compare</code></td></tr>
-          <tr><td><a href="app-lists.html#tables">Tables With Actions</a></td><td>App Components</td><td>Lists and Tables</td><td><code>cmu-bulk-bar</code>, <code>cmu-selection-count</code>, <code>cmu-has-selection</code>, <code>cmu-select-cell</code>, <code>cmu-sort</code>, <code>cmu-sort-arrow</code>, <code>cmu-fit</code>, <code>cmu-row-buttons</code>, <code>num</code></td></tr>
-          <tr><td><a href="app-structure.html#tabs">Tabs</a></td><td>App Components</td><td>Page Structure</td><td><code>cmu-tabs</code>, <code>cmu-tabs-more</code></td></tr>
-          <tr><td><a href="standard-people.html#team">Team Grid</a></td><td>CMU Standard</td><td>People</td><td><code>grid column4 boxes</code>, <code>cta</code></td></tr>
-          <tr><td><a href="cms-content.html#split">Text With a Screenshot</a></td><td>CMS Components</td><td>Content Blocks</td><td><code>cmu-split</code>, <code>figure.cmu-shot</code></td></tr>
-          <tr><td><a href="standard-sections.html#timeline">Timeline Cards</a></td><td>CMU Standard</td><td>Page Sections</td><td><code>grid column4 darkgreen boxes</code>, <code>floatright</code>, <code>aligncenter</code></td></tr>
-          <tr><td><a href="standard.html#videos">Videos</a></td><td>CMU Standard</td><td>CMU Standard Components</td><td><code>iframe</code>, <code>grid column2 grey</code></td></tr>
-        </tbody>
-      </table>
-      <!-- components:end -->
-      <p class="cmu-results-count" id="kit-components-count" aria-live="polite"></p>
-    </div></div>
-  </main>
+            <h2 id="all" class="rule-top">All Components</h2>
+            <div class="cmu-search-bar">
+              <p>Search by name, set, page, or class.</p>
+              <label for="kit-find-component" class="sr-only">Find a Component</label>
+              <input
+                type="text"
+                id="kit-find-component"
+                placeholder="Find a component&hellip;"
+                data-kit-filter-table="kit-components"
+                data-kit-count="kit-components-count"
+                data-kit-noun="component"
+              />
+            </div>
+            <!-- components:start (written by tools/components.mjs) -->
+            <table class="alternate cmu-full" id="kit-components" data-kit-sortable>
+              <thead>
+                <tr>
+                  <th scope="col" data-sort-key="name" aria-sort="ascending">
+                    <button class="cmu-sort" type="button">
+                      Component<span class="cmu-sort-arrow"> ▲</span>
+                    </button>
+                  </th>
+                  <th scope="col" data-sort-key="set">
+                    <button class="cmu-sort" type="button">
+                      Set<span class="cmu-sort-arrow"></span>
+                    </button>
+                  </th>
+                  <th scope="col" data-sort-key="page">
+                    <button class="cmu-sort" type="button">
+                      Page<span class="cmu-sort-arrow"></span>
+                    </button>
+                  </th>
+                  <th scope="col">Classes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="app-users.html#acting-as">Acting as Another User</a></td>
+                  <td>App Components</td>
+                  <td>Users</td>
+                  <td><code>cmu-acting-as</code>, <code>cmu-acting-bar</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sections.html#announcements">Announcements</a></td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td>
+                    <code>content wide</code>, <code>darkgrey invert</code>, <code>gold</code>,
+                    <code>blue invert</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sections.html#big-buttons">Big Buttons</a></td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td>
+                    <code>grid column2</code>, <code>btn wide</code>, <code>aligncenter</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard-people.html#bio">Bio Page</a></td>
+                  <td>CMU Standard</td>
+                  <td>People</td>
+                  <td>
+                    <code>floatleft caption thumb</code>, <code>contact</code>,
+                    <code>address</code>, <code>protect</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard.html#quotes">Block Quotes</a></td>
+                  <td>CMU Standard</td>
+                  <td>CMU Standard Components</td>
+                  <td>
+                    <code>blockquote</code>, <code>figure</code>, <code>figcaption</code>,
+                    <code>invert</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sidebar.html#button-box">Button Box</a></td>
+                  <td>CMU Standard</td>
+                  <td>Sidebars</td>
+                  <td>
+                    <code>sidebar</code>, <code>red invert</code>, <code>simple</code>,
+                    <code>btn wide</code>, <code>ghost</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="app.html#button-note">Button With a Note</a></td>
+                  <td>App Components</td>
+                  <td>App Components</td>
+                  <td><code>cmu-button-note</code>, <code>cmu-hint</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard.html#buttons">Buttons and Links</a></td>
+                  <td>CMU Standard</td>
+                  <td>CMU Standard Components</td>
+                  <td>
+                    <code>btn</code>, <code>ghost</code>, <code>small</code>, <code>wide</code>,
+                    <code>cta</code>, <code>external</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="cms-content.html#callout">Callout and Note</a></td>
+                  <td>CMS Components</td>
+                  <td>Content Blocks</td>
+                  <td><code>cmu-callout</code>, <code>cmu-label</code>, <code>cmu-note</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sections.html#grid">Cards on Gray</a></td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td>
+                    <code>grid</code>, <code>column2</code>, <code>column3</code>,
+                    <code>column4</code>, <code>boxes</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sections.html#carousel">Carousel</a></td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td><code>js-flickityCustom</code>, <code>grid column2</code></td>
+                </tr>
+                <tr>
+                  <td><a href="cms-content.html#checks">Check List</a></td>
+                  <td>CMS Components</td>
+                  <td>Content Blocks</td>
+                  <td><code>ul.cmu-checks</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sections.html#circles">Circle Photos</a></td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td><code>circle</code>, <code>grid column2</code></td>
+                </tr>
+                <tr>
+                  <td><a href="cms-content.html#snippet">Code Block</a></td>
+                  <td>CMS Components</td>
+                  <td>Content Blocks</td>
+                  <td><code>pre.cmu-snippet</code>, <code>cmu-snippet--wrap</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-people.html#contacts">Contact Cards</a></td>
+                  <td>CMU Standard</td>
+                  <td>People</td>
+                  <td>
+                    <code>grid column3 grey boxes</code>, <code>rule-bottom</code>,
+                    <code>protect</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="cms-content.html#copy">Copy Button</a></td>
+                  <td>CMS Components</td>
+                  <td>Content Blocks</td>
+                  <td><code>data-cmu-copy</code>, <code>cmu-snippet</code>, <code>btn</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-news.html#dates">Date Blocks and Event Cards</a></td>
+                  <td>CMS Components</td>
+                  <td>News and Events</td>
+                  <td>
+                    <code>cmu-date</code>, <code>cmu-date-month</code>, <code>cmu-date-day</code>,
+                    <code>cmu-date--red</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="app-messages.html#dialog">Dialog and File Drop Zone</a></td>
+                  <td>App Components</td>
+                  <td>Messages and Dialogs</td>
+                  <td>
+                    <code>cmu-dialog</code>, <code>cmu-dialog-buttons</code>, <code>cmu-drop</code>,
+                    <code>cmu-drop-pick</code>, <code>cmu-drop-file</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard-news.html#event-list">Event List</a></td>
+                  <td>CMU Standard</td>
+                  <td>News and Events</td>
+                  <td><code>events</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-news.html#events">Events From events.cmu.edu</a></td>
+                  <td>CMU Standard</td>
+                  <td>News and Events</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><a href="cms-top.html#intro">Eyebrow, Lead, and Call-to-Action Row</a></td>
+                  <td>CMS Components</td>
+                  <td>Page Tops</td>
+                  <td>
+                    <code>cmu-eyebrow</code>, <code>cmu-lead</code>, <code>cmu-cta-row</code>,
+                    <code>cmu-cta-note</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard.html#faq">FAQ</a></td>
+                  <td>CMU Standard</td>
+                  <td>CMU Standard Components</td>
+                  <td><code>collapsed</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sections.html#feature">Feature Section</a></td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td><code>grid column2 red invert</code>, <code>btn</code></td>
+                </tr>
+                <tr>
+                  <td><a href="app.html#field-row">Fields in a Row</a></td>
+                  <td>App Components</td>
+                  <td>App Components</td>
+                  <td>
+                    <code>cmu-field-row</code>, <code>cmu-field-row--short</code>,
+                    <code>cmu-hint</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard.html#files">File Table</a></td>
+                  <td>CMU Standard</td>
+                  <td>CMU Standard Components</td>
+                  <td><code>table.alternate</code>, <code>cmu-full</code></td>
+                </tr>
+                <tr>
+                  <td><a href="app-lists.html#filters">Filters</a></td>
+                  <td>App Components</td>
+                  <td>Lists and Tables</td>
+                  <td>
+                    <code>cmu-filters</code>, <code>cmu-filter-group</code>,
+                    <code>cmu-filter-checks</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="app-messages.html#flash">Flash Messages</a></td>
+                  <td>App Components</td>
+                  <td>Messages and Dialogs</td>
+                  <td>
+                    <code>cmu-flash</code>, <code>cmu-flash--success</code>,
+                    <code>cmu-flash--notice</code>, <code>cmu-flash--error</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="app-structure.html#more">Folded Lists</a></td>
+                  <td>App Components</td>
+                  <td>Page Structure</td>
+                  <td>
+                    <code>cmu-more</code>, <code>cmu-more-link</code>, <code>cmu-more-closed</code>,
+                    <code>cmu-more-open</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard.html#backgrounds">Globe and Plaid</a></td>
+                  <td>CMU Standard</td>
+                  <td>CMU Standard Components</td>
+                  <td><code>globe</code>, <code>plaid</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sections.html#hero">Hero</a></td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td>
+                    <code>hero</code>, <code>text</code>, <code>box left</code>,
+                    <code>box right</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="cms-top.html#hero">Hero</a></td>
+                  <td>CMS Components</td>
+                  <td>Page Tops</td>
+                  <td>
+                    <code>cmu-hero</code>, <code>cmu-hero-art</code>,
+                    <code>cmu-hero-art--stack</code>, <code>cmu-hero-art--plain</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="cms-content.html#flow">How It Works</a></td>
+                  <td>CMS Components</td>
+                  <td>Content Blocks</td>
+                  <td><code>ol.cmu-flow</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sections.html#i-want">I Want To&hellip;</a></td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td><code>grid column3 boxes</code>, <code>&lt;h2&gt;</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-people.html#leadership">Leadership Grid</a></td>
+                  <td>CMU Standard</td>
+                  <td>People</td>
+                  <td><code>grid column3 grey boxes</code>, <code>aligncenter</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sections.html#link-bank">Link Bank</a></td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td><code>grid column3 red invert nav</code>, <code>nav-list</code></td>
+                </tr>
+                <tr>
+                  <td><a href="app.html#link-button">Link Button</a></td>
+                  <td>App Components</td>
+                  <td>App Components</td>
+                  <td><code>cmu-link-button</code></td>
+                </tr>
+                <tr>
+                  <td><a href="app-lists.html#paging">Load More and Pages</a></td>
+                  <td>App Components</td>
+                  <td>Lists and Tables</td>
+                  <td>
+                    <code>cmu-results-count</code>, <code>cmu-load-more</code>,
+                    <code>cmu-pager</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard-news.html#news">News Grid and Load More</a></td>
+                  <td>CMU Standard</td>
+                  <td>News and Events</td>
+                  <td>
+                    <code>section-id</code>, <code>grid column3 news</code>,
+                    <code>filterable</code>, <code>img</code>, <code>hide</code>,
+                    <code>loadmore</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="app-users.html#no-access">No Access</a></td>
+                  <td>App Components</td>
+                  <td>Users</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><a href="cms-content.html#steps">Numbered Steps</a></td>
+                  <td>CMS Components</td>
+                  <td>Content Blocks</td>
+                  <td><code>ol.cmu-steps</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sidebar.html#on-this-page">On This Page</a></td>
+                  <td>CMU Standard</td>
+                  <td>Sidebars</td>
+                  <td><code>list left-rule</code>, <code>#id</code></td>
+                </tr>
+                <tr>
+                  <td><a href="app.html#sub-options">Options Under a Choice</a></td>
+                  <td>App Components</td>
+                  <td>App Components</td>
+                  <td><code>cmu-sub-options</code></td>
+                </tr>
+                <tr>
+                  <td><a href="app.html#setup">Page Setup and Forms</a></td>
+                  <td>App Components</td>
+                  <td>App Components</td>
+                  <td><code>body.cmu-app</code>, <code>body.cmu-framed</code></td>
+                </tr>
+                <tr>
+                  <td><a href="app-structure.html#title">Page Title Row</a></td>
+                  <td>App Components</td>
+                  <td>Page Structure</td>
+                  <td><code>cmu-page-title</code></td>
+                </tr>
+                <tr>
+                  <td><a href="app-structure.html#panels">Panels for Framed Pages</a></td>
+                  <td>App Components</td>
+                  <td>Page Structure</td>
+                  <td>
+                    <code>cmu-panel</code>, <code>cmu-panel-header</code>,
+                    <code>cmu-panel-body</code>, <code>cmu-panel-footer</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="cms-content.html#paths">Path Cards</a></td>
+                  <td>CMS Components</td>
+                  <td>Content Blocks</td>
+                  <td>
+                    <code>cmu-paths</code>, <code>cmu-paths--two</code>, <code>cmu-path</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="app-lists.html#people">People List</a></td>
+                  <td>App Components</td>
+                  <td>Lists and Tables</td>
+                  <td>
+                    <code>cmu-people</code>, <code>cmu-search-bar</code>,
+                    <code>cmu-results-count</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard.html#captions">Photo Captions and Credits</a></td>
+                  <td>CMU Standard</td>
+                  <td>CMU Standard Components</td>
+                  <td>
+                    <code>figure.image</code>, <code>figcaption</code>, <code>floatright</code>,
+                    <code>floatleft</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sections.html#photos">Photo Grid</a></td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td>
+                    <code>grid</code>, <code>column2</code>, <code>column3</code>,
+                    <code>column4</code>, <code>photos</code>, <code>photo</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="cms-data.html#pills">Pills</a></td>
+                  <td>CMS Components</td>
+                  <td>Pills and Tables</td>
+                  <td>
+                    <code>cmu-pill</code>, <code>cmu-pill--green</code>,
+                    <code>cmu-pill--amber</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="app-users.html#preferences">Preferences</a></td>
+                  <td>App Components</td>
+                  <td>Users</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><a href="app-messages.html#progress">Progress</a></td>
+                  <td>App Components</td>
+                  <td>Messages and Dialogs</td>
+                  <td>
+                    <code>cmu-stat</code>, <code>cmu-stat-value</code>, <code>cmu-stat-sub</code>,
+                    <code>cmu-meter</code>, <code>cmu-pct</code>, <code>--high</code>,
+                    <code>--mid</code>, <code>--low</code>, <code>cmu-breakdown</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="cms-content.html#qa">Question Teasers</a></td>
+                  <td>CMS Components</td>
+                  <td>Content Blocks</td>
+                  <td><code>cmu-qa</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sidebar.html#quick-links">Quick Links</a></td>
+                  <td>CMU Standard</td>
+                  <td>Sidebars</td>
+                  <td>
+                    <code>list left-rule</code>, <code>darkgrey invert</code>,
+                    <code>rule-bottom</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="app-lists.html#search">Search</a></td>
+                  <td>App Components</td>
+                  <td>Lists and Tables</td>
+                  <td><code>cmu-search-bar</code>, <code>sr-only</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sections.html#bar">Section Bar</a></td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td><code>content wide</code>, <code>red invert globe</code></td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="standard-sections.html#rule-top">Section Headings With a Line</a>
+                  </td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td><code>rule-top</code>, <code>rule-bottom</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sidebar.html#sidebar">Sidebar Boxes</a></td>
+                  <td>CMU Standard</td>
+                  <td>Sidebars</td>
+                  <td>
+                    <code>sidebar</code>, <code>simple</code>, <code>left-rule</code>,
+                    <code>list</code>, <code>invert</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sidebar.html#sign-in">Sign In</a></td>
+                  <td>CMU Standard</td>
+                  <td>Sidebars</td>
+                  <td>
+                    <code>sidebar</code>, <code>red invert</code>, <code>btn wide</code>,
+                    <code>left-rule</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="app-users.html#account">Sign In and Sign Out</a></td>
+                  <td>App Components</td>
+                  <td>Users</td>
+                  <td>
+                    <code>cmu-account</code>, <code>cmu-account-open</code>,
+                    <code>cmu-account-menu</code>, <code>cmu-account-name</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="app.html#text">Small Text</a></td>
+                  <td>App Components</td>
+                  <td>App Components</td>
+                  <td>
+                    <code>cmu-muted</code>, <code>cmu-hint</code>, <code>cmu-empty</code>,
+                    <code>cmu-code</code>, <code>cmu-label</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="cms-data.html#tables">Tables</a></td>
+                  <td>CMS Components</td>
+                  <td>Pills and Tables</td>
+                  <td><code>table.cmu-full</code>, <code>table.cmu-compare</code></td>
+                </tr>
+                <tr>
+                  <td><a href="app-lists.html#tables">Tables With Actions</a></td>
+                  <td>App Components</td>
+                  <td>Lists and Tables</td>
+                  <td>
+                    <code>cmu-bulk-bar</code>, <code>cmu-selection-count</code>,
+                    <code>cmu-has-selection</code>, <code>cmu-select-cell</code>,
+                    <code>cmu-sort</code>, <code>cmu-sort-arrow</code>, <code>cmu-fit</code>,
+                    <code>cmu-row-buttons</code>, <code>num</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="app-structure.html#tabs">Tabs</a></td>
+                  <td>App Components</td>
+                  <td>Page Structure</td>
+                  <td><code>cmu-tabs</code>, <code>cmu-tabs-more</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-people.html#team">Team Grid</a></td>
+                  <td>CMU Standard</td>
+                  <td>People</td>
+                  <td><code>grid column4 boxes</code>, <code>cta</code></td>
+                </tr>
+                <tr>
+                  <td><a href="cms-content.html#split">Text With a Screenshot</a></td>
+                  <td>CMS Components</td>
+                  <td>Content Blocks</td>
+                  <td><code>cmu-split</code>, <code>figure.cmu-shot</code></td>
+                </tr>
+                <tr>
+                  <td><a href="standard-sections.html#timeline">Timeline Cards</a></td>
+                  <td>CMU Standard</td>
+                  <td>Page Sections</td>
+                  <td>
+                    <code>grid column4 darkgreen boxes</code>, <code>floatright</code>,
+                    <code>aligncenter</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="standard.html#videos">Videos</a></td>
+                  <td>CMU Standard</td>
+                  <td>CMU Standard Components</td>
+                  <td><code>iframe</code>, <code>grid column2 grey</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- components:end -->
+            <p class="cmu-results-count" id="kit-components-count" aria-live="polite"></p>
+          </div>
+        </div>
+      </main>
 
-  <footer class="grid column3 invert">
-    <div>
-      <p>Carnegie Mellon Web Kit<br>Carnegie Mellon University<br>5000 Forbes Avenue<br>Pittsburgh, PA 15213</p>
-      <ul><li><a href="https://www.cmu.edu/legal/">Legal Info</a></li><li><a href="https://www.cmu.edu/">www.cmu.edu</a></li></ul>
-      <ul><li>&copy; 2026 Carnegie Mellon University</li></ul>
-    </div>
-    <div></div>
-    <div>
-      <nav id="nav">
-        <ul>
-        <li><a href="start.html">Get Started</a></li>
-        <li><a href="layout.html">Page Layout</a></li>
-        <li class="active"><a href="components.html" aria-current="page">Components</a>
+      <footer class="grid column3 invert">
+        <div>
+          <p>
+            Carnegie Mellon Web Kit<br />Carnegie Mellon University<br />5000 Forbes Avenue<br />Pittsburgh,
+            PA 15213
+          </p>
           <ul>
-            <li><a href="standard.html">CMU Standard</a>
-              <ul>
-                <li><a href="standard-sections.html">Page Sections</a></li>
-                <li><a href="standard-sidebar.html">Sidebars</a></li>
-                <li><a href="standard-news.html">News and Events</a></li>
-                <li><a href="standard-people.html">People</a></li>
-              </ul>
-            </li>
-            <li><a href="cms.html">CMS Components</a>
-              <ul>
-                <li><a href="cms-top.html">Page Tops</a></li>
-                <li><a href="cms-content.html">Content Blocks</a></li>
-                <li><a href="cms-data.html">Pills and Tables</a></li>
-              </ul>
-            </li>
-            <li><a href="app.html">App Components</a>
-              <ul>
-                <li><a href="app-structure.html">Page Structure</a></li>
-                <li><a href="app-messages.html">Messages and Dialogs</a></li>
-                <li><a href="app-lists.html">Lists and Tables</a></li>
-                <li><a href="app-users.html">Users</a></li>
-              </ul>
-            </li>
+            <li><a href="https://www.cmu.edu/legal/">Legal Info</a></li>
+            <li><a href="https://www.cmu.edu/">www.cmu.edu</a></li>
           </ul>
-        </li>
-        <li><a class="external" href="https://cmutli.github.io/cmu-placemellon/">PlaceMellon</a></li>
-        <li class="secondary"><a class="external" href="https://github.com/CMUTLI/cmu-web-kit">Carnegie Mellon Web Kit on GitHub</a></li>
-        </ul>
-      </nav>
+          <ul>
+            <li>&copy; 2026 Carnegie Mellon University</li>
+          </ul>
+        </div>
+        <div></div>
+        <div>
+          <nav id="nav">
+            <ul>
+              <li><a href="start.html">Get Started</a></li>
+              <li><a href="layout.html">Page Layout</a></li>
+              <li class="active">
+                <a href="components.html" aria-current="page">Components</a>
+                <ul>
+                  <li>
+                    <a href="standard.html">CMU Standard</a>
+                    <ul>
+                      <li><a href="standard-sections.html">Page Sections</a></li>
+                      <li><a href="standard-sidebar.html">Sidebars</a></li>
+                      <li><a href="standard-news.html">News and Events</a></li>
+                      <li><a href="standard-people.html">People</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="cms.html">CMS Components</a>
+                    <ul>
+                      <li><a href="cms-top.html">Page Tops</a></li>
+                      <li><a href="cms-content.html">Content Blocks</a></li>
+                      <li><a href="cms-data.html">Pills and Tables</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="app.html">App Components</a>
+                    <ul>
+                      <li><a href="app-structure.html">Page Structure</a></li>
+                      <li><a href="app-messages.html">Messages and Dialogs</a></li>
+                      <li><a href="app-lists.html">Lists and Tables</a></li>
+                      <li><a href="app-users.html">Users</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="external" href="https://cmutli.github.io/cmu-placemellon/">PlaceMellon</a>
+              </li>
+              <li class="secondary">
+                <a class="external" href="https://github.com/CMUTLI/cmu-web-kit"
+                  >Carnegie Mellon Web Kit on GitHub</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
     </div>
-  </footer>
-</div>
-<script src="https://www.cmu.edu/common/standard-v6/js/list.min.js"></script>
-<script src="https://www.cmu.edu/common/standard-v6/js/jquery-1.10.1.min.js"></script>
-<script src="https://www.cmu.edu/common/standard-v6/js/main.6.7.min.js"></script>
-<script src="../js/cmu-app.js"></script>
-<script src="js/docs.js"></script>
-</body>
+    <script src="https://www.cmu.edu/common/standard-v6/js/list.min.js"></script>
+    <script src="https://www.cmu.edu/common/standard-v6/js/jquery-1.10.1.min.js"></script>
+    <script src="https://www.cmu.edu/common/standard-v6/js/main.6.7.min.js"></script>
+    <script src="../js/cmu-app.js"></script>
+    <script src="js/docs.js"></script>
+  </body>
 </html>

@@ -1,69 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Layout - Carnegie Mellon Web Kit - Carnegie Mellon University</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,700,700italic" rel="stylesheet" type="text/css">
-  <link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" media="screen" rel="stylesheet" type="text/css">
-  <link href="../css/cmu-cms.css" rel="stylesheet" type="text/css">
-  <link href="../css/cmu-app.css" rel="stylesheet" type="text/css">
-  <link href="css/docs.css" rel="stylesheet" type="text/css">
-  <link href="https://www.cmu.edu/favicon.ico" rel="icon">
-  <link href="https://www.cmu.edu/favicon-152.png" rel="apple-touch-icon-precomposed">
-  <meta content="#9f0000" name="msapplication-TileColor">
-  <meta content="https://www.cmu.edu/favicon-144.png" name="msapplication-TileImage">
-</head>
-<body class="no-js">
-<div id="container">
-  <header>
-    <div class="roof red invert">
-      <div>
-        <a class="wordmark" href="https://www.cmu.edu/">Carnegie Mellon University</a>
-        <button aria-label="toggle menu" aria-pressed="false" class="menu-btn" href="#nav"><b>&#8212;</b><b>&#8212;</b><b>&#8212;</b></button>
-      </div>
-    </div>
-    <div id="sitename">
-      <span class="sitetitle"><a href="index.html">Carnegie Mellon Web Kit</a></span>
-      <h2>Components for the CMU web template</h2>
-    </div>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Layout - Carnegie Mellon Web Kit - Carnegie Mellon University</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,700,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="../css/cmu-cms.css" rel="stylesheet" type="text/css" />
+    <link href="../css/cmu-app.css" rel="stylesheet" type="text/css" />
+    <link href="css/docs.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.cmu.edu/favicon.ico" rel="icon" />
+    <link href="https://www.cmu.edu/favicon-152.png" rel="apple-touch-icon-precomposed" />
+    <meta content="#9f0000" name="msapplication-TileColor" />
+    <meta content="https://www.cmu.edu/favicon-144.png" name="msapplication-TileImage" />
+  </head>
+  <body class="no-js">
+    <div id="container">
+      <header>
+        <div class="roof red invert">
+          <div>
+            <a class="wordmark" href="https://www.cmu.edu/">Carnegie Mellon University</a>
+            <button aria-label="toggle menu" aria-pressed="false" class="menu-btn" href="#nav">
+              <b>&#8212;</b><b>&#8212;</b><b>&#8212;</b>
+            </button>
+          </div>
+        </div>
+        <div id="sitename">
+          <span class="sitetitle"><a href="index.html">Carnegie Mellon Web Kit</a></span>
+          <h2>Components for the CMU web template</h2>
+        </div>
+      </header>
 
-  <main id="content">
-    <div class="breadcrumbs">
-      <a href="index.html">Carnegie Mellon Web Kit</a>&nbsp;&rsaquo;&nbsp;Page Layout
-    </div>
-    <div class="content wide"><div>
-      <h1>Page Layout</h1>
-      <p class="cmu-lead">The CMU template's own header, navigation, breadcrumbs, and footer, as on this page. Cascade builds them for you; an app writes them itself, using this markup.</p>
+      <main id="content">
+        <div class="breadcrumbs">
+          <a href="index.html">Carnegie Mellon Web Kit</a>&nbsp;&rsaquo;&nbsp;Page Layout
+        </div>
+        <div class="content wide">
+          <div>
+            <h1>Page Layout</h1>
+            <p class="cmu-lead">
+              The CMU template's own header, navigation, breadcrumbs, and footer, as on this page.
+              Cascade builds them for you; an app writes them itself, using this markup.
+            </p>
 
+            <div class="cmu-callout">
+              <p class="cmu-label">Cascade Sites</p>
+              <p>
+                Cascade writes all of this from the site's folders and settings, so on a Cascade
+                site you only write what goes inside the content area. This page is for apps, and
+                for knowing what the parts are called.
+              </p>
+            </div>
 
-      <div class="cmu-callout">
-        <p class="cmu-label">Cascade Sites</p>
-        <p>Cascade writes all of this from the site's folders and settings, so on a Cascade site you only write what goes inside the content area. This page is for apps, and for knowing what the parts are called.</p>
-      </div>
+            <h2 id="try-header" class="rule-top">Try the Header</h2>
+            <p>
+              Change this site's own header to see the options, then open the menu to see what moves
+              there. Your choices stay as you browse the rest of these pages, until you reset them
+              or close the tab.
+            </p>
+            <div class="kit-try">
+              <div>
+                <span class="cmu-label">Roof</span>
+                <button type="button" data-kit-set="roof:red">Red</button>
+                <button type="button" data-kit-set="roof:gray">Gray</button>
+                <button type="button" data-kit-set="roof:white">White</button>
+              </div>
+              <div>
+                <span class="cmu-label">Logo</span>
+                <button type="button" data-kit-set="logo:off">None</button>
+                <button type="button" data-kit-set="logo:on">Core4</button>
+              </div>
+              <div>
+                <span class="cmu-label">Search</span>
+                <button type="button" data-kit-set="search:off">Off</button>
+                <button type="button" data-kit-set="search:on">On</button>
+              </div>
+              <div>
+                <span class="cmu-label">Sign In</span>
+                <button type="button" data-kit-set="account:none">None</button>
+                <button type="button" data-kit-set="account:out">Signed Out</button>
+                <button type="button" data-kit-set="account:in">Signed In</button>
+                <button type="button" data-kit-set="account:photo">Signed In, With Photo</button>
+              </div>
+              <div>
+                <span class="cmu-label">Acting as Another User</span>
+                <button type="button" data-kit-set="acting:off">Off</button>
+                <button type="button" data-kit-set="acting:on">On</button>
+              </div>
+              <div><button type="button" class="btn small ghost" data-kit-reset>Reset</button></div>
+            </div>
+            <ul class="cmu-checks">
+              <li>
+                <strong>The roof</strong>, the template's name for the strip across the top with the
+                wordmark: <code>red invert</code> for red, <code>darkgrey invert</code> for dark
+                gray (as on Human Resources' pages), or nothing for white. Cascade sites set it in
+                the setup block.
+              </li>
+              <li>
+                <strong>A logo</strong> sits right of the site's name, as on the Core4 Student
+                Dashboard. On phones the template moves it below the name. See
+                <a href="#site-name">Site Name</a>.
+              </li>
+              <li>
+                <strong>Search</strong> sits left of the menu button; see
+                <a href="#search">Search</a>.
+              </li>
+              <li>
+                <strong>Signed out</strong>, a Sign In link sits in the roof and at the top of the
+                menu. <strong>Signed in</strong>, your name sits in the roof and opens the menu,
+                which starts with your name and Sign Out. On phones only the menu has them. See
+                <a href="app-users.html#account">Sign In and Sign Out</a>.
+              </li>
+              <li>
+                <strong>Acting as another user</strong> frames the whole window; see
+                <a href="app-users.html#acting-as">Acting as Another User</a>.
+              </li>
+            </ul>
 
-      <h2 id="try-header" class="rule-top">Try the Header</h2>
-      <p>Change this site's own header to see the options, then open the menu to see what moves there. Your choices stay as you browse the rest of these pages, until you reset them or close the tab.</p>
-      <div class="kit-try">
-        <div><span class="cmu-label">Roof</span> <button type="button" data-kit-set="roof:red">Red</button> <button type="button" data-kit-set="roof:gray">Gray</button> <button type="button" data-kit-set="roof:white">White</button></div>
-        <div><span class="cmu-label">Logo</span> <button type="button" data-kit-set="logo:off">None</button> <button type="button" data-kit-set="logo:on">Core4</button></div>
-        <div><span class="cmu-label">Search</span> <button type="button" data-kit-set="search:off">Off</button> <button type="button" data-kit-set="search:on">On</button></div>
-        <div><span class="cmu-label">Sign In</span> <button type="button" data-kit-set="account:none">None</button> <button type="button" data-kit-set="account:out">Signed Out</button> <button type="button" data-kit-set="account:in">Signed In</button> <button type="button" data-kit-set="account:photo">Signed In, With Photo</button></div>
-        <div><span class="cmu-label">Acting as Another User</span> <button type="button" data-kit-set="acting:off">Off</button> <button type="button" data-kit-set="acting:on">On</button></div>
-        <div><button type="button" class="btn small ghost" data-kit-reset>Reset</button></div>
-      </div>
-      <ul class="cmu-checks">
-        <li><strong>The roof</strong>, the template's name for the strip across the top with the wordmark: <code>red invert</code> for red, <code>darkgrey invert</code> for dark gray (as on Human Resources' pages), or nothing for white. Cascade sites set it in the setup block.</li>
-        <li><strong>A logo</strong> sits right of the site's name, as on the Core4 Student Dashboard. On phones the template moves it below the name. See <a href="#site-name">Site Name</a>.</li>
-        <li><strong>Search</strong> sits left of the menu button; see <a href="#search">Search</a>.</li>
-        <li><strong>Signed out</strong>, a Sign In link sits in the roof and at the top of the menu. <strong>Signed in</strong>, your name sits in the roof and opens the menu, which starts with your name and Sign Out. On phones only the menu has them. See <a href="app-users.html#account">Sign In and Sign Out</a>.</li>
-        <li><strong>Acting as another user</strong> frames the whole window; see <a href="app-users.html#acting-as">Acting as Another User</a>.</li>
-      </ul>
-
-      <h2 id="skeleton" class="rule-top">The Whole Page</h2>
-      <p>Every part has a fixed place. The navigation goes in the footer: the template's script copies it into the header and the menu, and without the script it stays a plain list in the footer.</p>
-      <pre class="kit-code"><code>&lt;!DOCTYPE html&gt;
+            <h2 id="skeleton" class="rule-top">The Whole Page</h2>
+            <p>
+              Every part has a fixed place. The navigation goes in the footer: the template's script
+              copies it into the header and the menu, and without the script it stays a plain list
+              in the footer.
+            </p>
+            <pre class="kit-code"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
   &lt;meta charset="utf-8"&gt;
@@ -115,32 +184,74 @@
 &lt;!-- Scripts, below --&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-      <ul class="cmu-checks">
-        <li><strong>Keep <code>no-js</code> on <code>&lt;body&gt;</code>.</strong> The template's script removes it, and the template styles the page differently until then.</li>
-        <li><strong>The roof</strong> (<code>div.roof</code>) is the strip across the top with the wordmark. Add <code>red invert</code> for a red roof, as here, or <code>darkgrey invert</code> for dark gray; without either it's white.</li>
-        <li><strong>The favicon</strong> is CMU's own, from www.cmu.edu, as on every CMS site: the four lines after the stylesheets.</li>
-        <li><strong>The footer</strong> starts with the site or app name, the same as in the header, on the line above Carnegie Mellon University's address.</li>
-        <li>Add <code>cmu-app</code> to <code>&lt;body&gt;</code> in an app (see <a href="app.html#setup">App Components</a>).</li>
-      </ul>
+            <ul class="cmu-checks">
+              <li>
+                <strong>Keep <code>no-js</code> on <code>&lt;body&gt;</code>.</strong> The
+                template's script removes it, and the template styles the page differently until
+                then.
+              </li>
+              <li>
+                <strong>The roof</strong> (<code>div.roof</code>) is the strip across the top with
+                the wordmark. Add <code>red invert</code> for a red roof, as here, or
+                <code>darkgrey invert</code> for dark gray; without either it's white.
+              </li>
+              <li>
+                <strong>The favicon</strong> is CMU's own, from www.cmu.edu, as on every CMS site:
+                the four lines after the stylesheets.
+              </li>
+              <li>
+                <strong>The footer</strong> starts with the site or app name, the same as in the
+                header, on the line above Carnegie Mellon University's address.
+              </li>
+              <li>
+                Add <code>cmu-app</code> to <code>&lt;body&gt;</code> in an app (see
+                <a href="app.html#setup">App Components</a>).
+              </li>
+            </ul>
 
-      <h2 id="site-name" class="rule-top">Site Name</h2>
-      <p>The site's name links to its home page. Under it, an optional <code>&lt;h2&gt;</code> names who runs it, such as a department, as a link to their site or as plain text.</p>
-      <pre class="kit-code"><code>&lt;div id="sitename"&gt;
+            <h2 id="site-name" class="rule-top">Site Name</h2>
+            <p>
+              The site's name links to its home page. Under it, an optional
+              <code>&lt;h2&gt;</code> names who runs it, such as a department, as a link to their
+              site or as plain text.
+            </p>
+            <pre class="kit-code"><code>&lt;div id="sitename"&gt;
   &lt;span class="sitetitle"&gt;&lt;a href="/"&gt;Office Hours Queue&lt;/a&gt;&lt;/span&gt;
   &lt;h2&gt;&lt;a href="https://www.cmu.edu/tli-office/"&gt;Teach, Learn, Innovate&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;</code></pre>
 
-      <p>For a logo, wrap the name and the <code>&lt;h2&gt;</code> in a <code>&lt;div&gt;</code> and put the logo, as a linked image, after it, as the Core4 Student Dashboard does with the Core Competencies Initiative's logo (<a href="#try-header">try it on this page</a>). The template puts the logo on the right, up to 150px tall, and below the name on phones. Use only an official logo for your unit from University Communications &amp; Marketing. Leave no space between the <code>&lt;/div&gt;</code> and the <code>&lt;a&gt;</code>: the two share the width exactly, so a space pushes the logo onto its own line. On phones the template moves the logo below the name and subtitle, at up to half the screen's width, so keep the image no larger than you want it shown there. <a class="cta" href="sample.html">See a Sample Page With a Logo</a></p>
-      <pre class="kit-code"><code>&lt;div id="sitename"&gt;
+            <p>
+              For a logo, wrap the name and the <code>&lt;h2&gt;</code> in a
+              <code>&lt;div&gt;</code> and put the logo, as a linked image, after it, as the Core4
+              Student Dashboard does with the Core Competencies Initiative's logo (<a
+                href="#try-header"
+                >try it on this page</a
+              >). The template puts the logo on the right, up to 150px tall, and below the name on
+              phones. Use only an official logo for your unit from University Communications &amp;
+              Marketing. Leave no space between the <code>&lt;/div&gt;</code> and the
+              <code>&lt;a&gt;</code>: the two share the width exactly, so a space pushes the logo
+              onto its own line. On phones the template moves the logo below the name and subtitle,
+              at up to half the screen's width, so keep the image no larger than you want it shown
+              there. <a class="cta" href="sample.html">See a Sample Page With a Logo</a>
+            </p>
+            <pre class="kit-code"><code>&lt;div id="sitename"&gt;
   &lt;div&gt;
     &lt;span class="sitetitle"&gt;&lt;a href="/"&gt;Office Hours Queue&lt;/a&gt;&lt;/span&gt;
     &lt;h2&gt;&lt;a href="https://www.cmu.edu/tli-office/"&gt;Teach, Learn, Innovate&lt;/a&gt;&lt;/h2&gt;
   &lt;/div&gt;&lt;a href="https://www.cmu.edu/tli-office/"&gt;&lt;img src="/images/logo.png" alt="Teach, Learn, Innovate"&gt;&lt;/a&gt;
 &lt;/div&gt;</code></pre>
 
-      <h2 id="search" class="rule-top">Search</h2>
-      <p>The template's search box goes in the roof, after the menu button. It searches cmu.edu, with a "Search this site only" box that appears when someone clicks in it; set that box's <code>value</code> to your Cascade site's ID. The template also puts a copy at the top of the menu, and on phones shows it as a row under the wordmark. <a class="cta" href="sample.html">See It on the Sample Page</a></p>
-      <pre class="kit-code"><code>&lt;form action="https://search.cmu.edu" class="search search-form" method="get" name="customForm"&gt;
+            <h2 id="search" class="rule-top">Search</h2>
+            <p>
+              The template's search box goes in the roof, after the menu button. It searches
+              cmu.edu, with a "Search this site only" box that appears when someone clicks in it;
+              set that box's <code>value</code> to your Cascade site's ID. The template also puts a
+              copy at the top of the menu, and on phones shows it as a row under the wordmark.
+              <a class="cta" href="sample.html">See It on the Sample Page</a>
+            </p>
+            <pre
+              class="kit-code"
+            ><code>&lt;form action="https://search.cmu.edu" class="search search-form" method="get" name="customForm"&gt;
   &lt;input name="form_id" type="hidden" value="basic-form"&gt;
   &lt;input name="site" type="hidden" value=""&gt;
   &lt;input name="ie" type="hidden" value="UTF-8"&gt;
@@ -148,20 +259,45 @@
   &lt;button title="Submit" type="submit"&gt;Search&lt;/button&gt;
   &lt;label class="searchSite"&gt;&lt;span&gt;Search this site only&lt;/span&gt; &lt;input checked name="site" type="checkbox" value="your-site-id"&gt;&lt;/label&gt;
 &lt;/form&gt;</code></pre>
-      <ul class="cmu-checks">
-        <li><strong>Cascade sites</strong> get it from the site's settings; you don't write it.</li>
-        <li><strong>Apps usually leave it out.</strong> It searches cmu.edu, not your app, so it competes with the app's own search. Put the app's search on the page where its results appear, like the Syllabus Registry's Browse page.</li>
-        <li><strong>With a <a href="app-users.html#account">Sign In link or your name</a> too</strong>, put it after the form. The kit lines them up as search, your name, then the menu button, keeping your name beside the menu it opens.</li>
-      </ul>
+            <ul class="cmu-checks">
+              <li>
+                <strong>Cascade sites</strong> get it from the site's settings; you don't write it.
+              </li>
+              <li>
+                <strong>Apps usually leave it out.</strong> It searches cmu.edu, not your app, so it
+                competes with the app's own search. Put the app's search on the page where its
+                results appear, like the Syllabus Registry's Browse page.
+              </li>
+              <li>
+                <strong
+                  >With a <a href="app-users.html#account">Sign In link or your name</a> too</strong
+                >, put it after the form. The kit lines them up as search, your name, then the menu
+                button, keeping your name beside the menu it opens.
+              </li>
+            </ul>
 
-      <h2 id="navigation" class="rule-top">Navigation</h2>
-      <p>One list, <code>nav#nav</code>, in the footer's third column. The template's script turns it into two things:</p>
-      <ul class="cmu-checks">
-        <li><strong>Header tabs</strong> under the site name, from 768px up: the first ten top-level items, without their sub-lists. The one you're on is red and underlined.</li>
-        <li><strong>The menu</strong> that slides out from the menu button, with every item and sub-list. Phones use only the menu.</li>
-      </ul>
-      <p>Nest pages the way the site is organized: the top level holds a few sections, and each section's pages go in a sub-list under it, as deep as the site needs. The tabs then stay short, and the menu shows the whole site with the current section open. The home page isn't in the list: the site name links to it.</p>
-      <pre class="kit-code"><code>&lt;nav id="nav"&gt;
+            <h2 id="navigation" class="rule-top">Navigation</h2>
+            <p>
+              One list, <code>nav#nav</code>, in the footer's third column. The template's script
+              turns it into two things:
+            </p>
+            <ul class="cmu-checks">
+              <li>
+                <strong>Header tabs</strong> under the site name, from 768px up: the first ten
+                top-level items, without their sub-lists. The one you're on is red and underlined.
+              </li>
+              <li>
+                <strong>The menu</strong> that slides out from the menu button, with every item and
+                sub-list. Phones use only the menu.
+              </li>
+            </ul>
+            <p>
+              Nest pages the way the site is organized: the top level holds a few sections, and each
+              section's pages go in a sub-list under it, as deep as the site needs. The tabs then
+              stay short, and the menu shows the whole site with the current section open. The home
+              page isn't in the list: the site name links to it.
+            </p>
+            <pre class="kit-code"><code>&lt;nav id="nav"&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href="/queues"&gt;Queues&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/my-courses"&gt;My Courses&lt;/a&gt;&lt;/li&gt;
@@ -182,28 +318,81 @@
     &lt;li class="secondary"&gt;&lt;a href="/logout"&gt;Sign Out&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;</code></pre>
-      <table class="alternate cmu-full">
-        <thead><tr><th scope="col">Mark</th><th scope="col">What it does</th></tr></thead>
-        <tbody>
-          <tr><td class="cmu-fit"><code>li.active</code></td><td>The page you're on, red in the menu. Put it on the current page's own item, however deep; the template marks the items above it, so its section's tab turns red too and its sub-lists open. Add <code>aria-current="page"</code> to its link for screen readers.</td></tr>
-          <tr><td class="cmu-fit">A sub-list (<code>ul</code> in an <code>li</code>)</td><td>A section's pages, shown only in the menu, folded under an arrow. Nest as deep as you need. The template opens the ones holding the active item.</td></tr>
-          <tr><td class="cmu-fit">A nested active item</td><td>On a computer screen, when the current page is below the top level or has pages of its own, the menu starts open beside the page, so people can see where they are. Top-level pages with nothing under them start with it closed. Tablets and phones always start closed.</td></tr>
-          <tr><td class="cmu-fit"><code>li.secondary</code></td><td>Kept out of the tabs; in the menu, shown in lighter type. For links such as Contact Us or Sign Out.</td></tr>
-          <tr><td class="cmu-fit"><code>a.external</code></td><td>Adds the template's leave-site icon to a link to another site.</td></tr>
-        </tbody>
-      </table>
-      <p>This site's own menu is an example: Components is a section, with its three pages under it. Keep labels short and in Title Case, and keep to about six top-level items so the tabs fit on one row. To show the signed-in person beside the menu button, see <a href="app-users.html#account">Sign In and Sign Out</a>.</p>
+            <table class="alternate cmu-full">
+              <thead>
+                <tr>
+                  <th scope="col">Mark</th>
+                  <th scope="col">What it does</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="cmu-fit"><code>li.active</code></td>
+                  <td>
+                    The page you're on, red in the menu. Put it on the current page's own item,
+                    however deep; the template marks the items above it, so its section's tab turns
+                    red too and its sub-lists open. Add <code>aria-current="page"</code> to its link
+                    for screen readers.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cmu-fit">A sub-list (<code>ul</code> in an <code>li</code>)</td>
+                  <td>
+                    A section's pages, shown only in the menu, folded under an arrow. Nest as deep
+                    as you need. The template opens the ones holding the active item.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cmu-fit">A nested active item</td>
+                  <td>
+                    On a computer screen, when the current page is below the top level or has pages
+                    of its own, the menu starts open beside the page, so people can see where they
+                    are. Top-level pages with nothing under them start with it closed. Tablets and
+                    phones always start closed.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cmu-fit"><code>li.secondary</code></td>
+                  <td>
+                    Kept out of the tabs; in the menu, shown in lighter type. For links such as
+                    Contact Us or Sign Out.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cmu-fit"><code>a.external</code></td>
+                  <td>Adds the template's leave-site icon to a link to another site.</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              This site's own menu is an example: Components is a section, with its three pages
+              under it. Keep labels short and in Title Case, and keep to about six top-level items
+              so the tabs fit on one row. To show the signed-in person beside the menu button, see
+              <a href="app-users.html#account">Sign In and Sign Out</a>.
+            </p>
 
-      <h2 id="breadcrumbs" class="rule-top">Breadcrumbs</h2>
-      <p>The trail from the site's home to the page, first inside <code>#content</code>. Each step before the current page is a link; the current page is plain text at the end. Leave them off the home page.</p>
-      <pre class="kit-code"><code>&lt;div class="breadcrumbs"&gt;
+            <h2 id="breadcrumbs" class="rule-top">Breadcrumbs</h2>
+            <p>
+              The trail from the site's home to the page, first inside <code>#content</code>. Each
+              step before the current page is a link; the current page is plain text at the end.
+              Leave them off the home page.
+            </p>
+            <pre class="kit-code"><code>&lt;div class="breadcrumbs"&gt;
   &lt;a href="/"&gt;Office Hours Queue&lt;/a&gt;&amp;nbsp;&amp;rsaquo;&amp;nbsp;&lt;a href="/help"&gt;Help&lt;/a&gt;&amp;nbsp;&amp;rsaquo;&amp;nbsp;For Course Staff
 &lt;/div&gt;</code></pre>
-      <p>Separate the steps with <code>&amp;nbsp;&amp;rsaquo;&amp;nbsp;</code> (&nbsp;&rsaquo;&nbsp;), as Cascade does, so a step never starts a new line with the arrow.</p>
+            <p>
+              Separate the steps with
+              <code>&amp;nbsp;&amp;rsaquo;&amp;nbsp;</code> (&nbsp;&rsaquo;&nbsp;), as Cascade does,
+              so a step never starts a new line with the arrow.
+            </p>
 
-      <h2 id="content-area" class="rule-top">Content and Sidebar</h2>
-      <p><code>.content</code> lays out its direct children as columns. Put the page in one <code>&lt;div&gt;</code> inside it, and for a sidebar, add a second <code>div.sidebar</code> beside it; on phones the sidebar drops below.</p>
-      <pre class="kit-code"><code>&lt;div class="content"&gt;
+            <h2 id="content-area" class="rule-top">Content and Sidebar</h2>
+            <p>
+              <code>.content</code> lays out its direct children as columns. Put the page in one
+              <code>&lt;div&gt;</code> inside it, and for a sidebar, add a second
+              <code>div.sidebar</code> beside it; on phones the sidebar drops below.
+            </p>
+            <pre class="kit-code"><code>&lt;div class="content"&gt;
   &lt;div&gt;
     &lt;h1&gt;Page Title&lt;/h1&gt;
     &lt;p&gt;The page.&lt;/p&gt;
@@ -214,78 +403,127 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-      <ul class="cmu-checks">
-        <li><strong>Leave no space between the page's <code>&lt;/div&gt;</code> and <code>&lt;div class="sidebar"&gt;</code></strong>, as above. The two columns fill the width exactly, so even a line break between them pushes the sidebar below the page. It's the same trap as a <a href="#site-name">logo</a> in the header.</li>
-        <li>Without <code>wide</code>, the page takes about 60% of the width, leaving room for the sidebar. Add <code>wide</code> to give it the full width when there's no sidebar.</li>
-        <li>Several <code>.content</code> blocks can follow one another, for a page in bands.</li>
-      </ul>
+            <ul class="cmu-checks">
+              <li>
+                <strong
+                  >Leave no space between the page's <code>&lt;/div&gt;</code> and
+                  <code>&lt;div class="sidebar"&gt;</code></strong
+                >, as above. The two columns fill the width exactly, so even a line break between
+                them pushes the sidebar below the page. It's the same trap as a
+                <a href="#site-name">logo</a> in the header.
+              </li>
+              <li>
+                Without <code>wide</code>, the page takes about 60% of the width, leaving room for
+                the sidebar. Add <code>wide</code> to give it the full width when there's no
+                sidebar.
+              </li>
+              <li>
+                Several <code>.content</code> blocks can follow one another, for a page in bands.
+              </li>
+            </ul>
 
-      <h2 id="scripts" class="rule-top">Scripts</h2>
-      <p>At the end of <code>&lt;body&gt;</code>, from the template, in this order. Without them the page still works, with the navigation as a list in the footer.</p>
-      <pre class="kit-code"><code>&lt;script src="https://www.cmu.edu/common/standard-v6/js/list.min.js"&gt;&lt;/script&gt;
+            <h2 id="scripts" class="rule-top">Scripts</h2>
+            <p>
+              At the end of <code>&lt;body&gt;</code>, from the template, in this order. Without
+              them the page still works, with the navigation as a list in the footer.
+            </p>
+            <pre
+              class="kit-code"
+            ><code>&lt;script src="https://www.cmu.edu/common/standard-v6/js/list.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://www.cmu.edu/common/standard-v6/js/jquery-1.10.1.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://www.cmu.edu/common/standard-v6/js/main.6.7.min.js"&gt;&lt;/script&gt;</code></pre>
-      <p>Besides the navigation, the script removes <code>style=""</code> from spans, and opens and closes the template's <code>.collapsed</code> headings.</p>
+            <p>
+              Besides the navigation, the script removes <code>style=""</code> from spans, and opens
+              and closes the template's <code>.collapsed</code> headings.
+            </p>
 
-      <h2 id="which-nav" class="rule-top">Navigation or Tabs?</h2>
-      <ul class="cmu-checks">
-        <li><strong>Pages of the site</strong> go in the navigation: Browse, My Courses, Help.</li>
-        <li><strong>Views of one page</strong> go in <a href="app-structure.html#tabs">tabs</a> (<code>cmu-tabs</code>) at the top of the content: semesters, or a list's sections.</li>
-        <li><strong>Where you are</strong> goes in the breadcrumbs, when a page sits below another.</li>
-      </ul>
-    </div></div>
-  </main>
+            <h2 id="which-nav" class="rule-top">Navigation or Tabs?</h2>
+            <ul class="cmu-checks">
+              <li>
+                <strong>Pages of the site</strong> go in the navigation: Browse, My Courses, Help.
+              </li>
+              <li>
+                <strong>Views of one page</strong> go in
+                <a href="app-structure.html#tabs">tabs</a> (<code>cmu-tabs</code>) at the top of the
+                content: semesters, or a list's sections.
+              </li>
+              <li>
+                <strong>Where you are</strong> goes in the breadcrumbs, when a page sits below
+                another.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
 
-  <footer class="grid column3 invert">
-    <div>
-      <p>Carnegie Mellon Web Kit<br>Carnegie Mellon University<br>5000 Forbes Avenue<br>Pittsburgh, PA 15213</p>
-      <ul><li><a href="https://www.cmu.edu/legal/">Legal Info</a></li><li><a href="https://www.cmu.edu/">www.cmu.edu</a></li></ul>
-      <ul><li>&copy; 2026 Carnegie Mellon University</li></ul>
-    </div>
-    <div></div>
-    <div>
-      <nav id="nav">
-        <ul>
-        <li><a href="start.html">Get Started</a></li>
-        <li class="active"><a href="layout.html" aria-current="page">Page Layout</a></li>
-        <li><a href="components.html">Components</a>
+      <footer class="grid column3 invert">
+        <div>
+          <p>
+            Carnegie Mellon Web Kit<br />Carnegie Mellon University<br />5000 Forbes Avenue<br />Pittsburgh,
+            PA 15213
+          </p>
           <ul>
-            <li><a href="standard.html">CMU Standard</a>
-              <ul>
-                <li><a href="standard-sections.html">Page Sections</a></li>
-                <li><a href="standard-sidebar.html">Sidebars</a></li>
-                <li><a href="standard-news.html">News and Events</a></li>
-                <li><a href="standard-people.html">People</a></li>
-              </ul>
-            </li>
-            <li><a href="cms.html">CMS Components</a>
-              <ul>
-                <li><a href="cms-top.html">Page Tops</a></li>
-                <li><a href="cms-content.html">Content Blocks</a></li>
-                <li><a href="cms-data.html">Pills and Tables</a></li>
-              </ul>
-            </li>
-            <li><a href="app.html">App Components</a>
-              <ul>
-                <li><a href="app-structure.html">Page Structure</a></li>
-                <li><a href="app-messages.html">Messages and Dialogs</a></li>
-                <li><a href="app-lists.html">Lists and Tables</a></li>
-                <li><a href="app-users.html">Users</a></li>
-              </ul>
-            </li>
+            <li><a href="https://www.cmu.edu/legal/">Legal Info</a></li>
+            <li><a href="https://www.cmu.edu/">www.cmu.edu</a></li>
           </ul>
-        </li>
-        <li><a class="external" href="https://cmutli.github.io/cmu-placemellon/">PlaceMellon</a></li>
-        <li class="secondary"><a class="external" href="https://github.com/CMUTLI/cmu-web-kit">Carnegie Mellon Web Kit on GitHub</a></li>
-        </ul>
-      </nav>
+          <ul>
+            <li>&copy; 2026 Carnegie Mellon University</li>
+          </ul>
+        </div>
+        <div></div>
+        <div>
+          <nav id="nav">
+            <ul>
+              <li><a href="start.html">Get Started</a></li>
+              <li class="active"><a href="layout.html" aria-current="page">Page Layout</a></li>
+              <li>
+                <a href="components.html">Components</a>
+                <ul>
+                  <li>
+                    <a href="standard.html">CMU Standard</a>
+                    <ul>
+                      <li><a href="standard-sections.html">Page Sections</a></li>
+                      <li><a href="standard-sidebar.html">Sidebars</a></li>
+                      <li><a href="standard-news.html">News and Events</a></li>
+                      <li><a href="standard-people.html">People</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="cms.html">CMS Components</a>
+                    <ul>
+                      <li><a href="cms-top.html">Page Tops</a></li>
+                      <li><a href="cms-content.html">Content Blocks</a></li>
+                      <li><a href="cms-data.html">Pills and Tables</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="app.html">App Components</a>
+                    <ul>
+                      <li><a href="app-structure.html">Page Structure</a></li>
+                      <li><a href="app-messages.html">Messages and Dialogs</a></li>
+                      <li><a href="app-lists.html">Lists and Tables</a></li>
+                      <li><a href="app-users.html">Users</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="external" href="https://cmutli.github.io/cmu-placemellon/">PlaceMellon</a>
+              </li>
+              <li class="secondary">
+                <a class="external" href="https://github.com/CMUTLI/cmu-web-kit"
+                  >Carnegie Mellon Web Kit on GitHub</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
     </div>
-  </footer>
-</div>
-<script src="https://www.cmu.edu/common/standard-v6/js/list.min.js"></script>
-<script src="https://www.cmu.edu/common/standard-v6/js/jquery-1.10.1.min.js"></script>
-<script src="https://www.cmu.edu/common/standard-v6/js/main.6.7.min.js"></script>
-<script src="../js/cmu-app.js"></script>
-<script src="js/docs.js"></script>
-</body>
+    <script src="https://www.cmu.edu/common/standard-v6/js/list.min.js"></script>
+    <script src="https://www.cmu.edu/common/standard-v6/js/jquery-1.10.1.min.js"></script>
+    <script src="https://www.cmu.edu/common/standard-v6/js/main.6.7.min.js"></script>
+    <script src="../js/cmu-app.js"></script>
+    <script src="js/docs.js"></script>
+  </body>
 </html>

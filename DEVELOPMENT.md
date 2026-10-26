@@ -56,12 +56,22 @@ template can change on its own.
 
 ESLint (`eslint.config.mjs`) checks the kit's script, the docs' script,
 and the tools with the recommended rules. Prettier (`.prettierrc.json`)
-formats CSS, JavaScript, Markdown, JSON, and YAML.
+formats CSS, JavaScript, Markdown, JSON, YAML, and the docs' HTML.
 
-Prettier leaves the HTML alone (see `.prettierignore`). The template needs
-some elements to touch with no whitespace between them, the docs show each
-example's markup exactly as written, and `tools/components.mjs` finds
-sections by their indentation, so format HTML by hand.
+Two kinds of HTML are marked `<!-- prettier-ignore -->` so Prettier leaves
+them as written:
+
+- **Every live example** (`<div class="kit-demo">`). The docs show each
+  example's markup as its code sample, so it stays the way people should
+  copy it.
+- **Places where the template needs elements to touch**, outside an
+  example: a sidebar right after the content's `</div>`, and a header logo
+  right after the site name's `</div>`. Whitespace between them breaks the
+  layout. Only the sample page has these; say why in a comment above the
+  mark.
+
+Prettier's HTML formatting otherwise changes no pixels; compare screenshots
+of a page before and after if you're unsure.
 
 ```bash
 npm run lint:fix
@@ -81,8 +91,9 @@ in the kit. To add one:
    template's class instead.
 2. Add a section to the right docs page: an `<h2 id="…" class="rule-top">`,
    a paragraph on when to use it, a `p.kit-classes` listing its classes,
-   and a live example inside `<div class="kit-demo">`. The docs' script
-   shows each example's markup under it, so write the example once.
+   and a live example inside `<div class="kit-demo">`, with a
+   `<!-- prettier-ignore -->` line right before it. The docs' script shows
+   each example's markup under it, so write the example once.
 3. Rebuild the Components table:
 
    ```bash
