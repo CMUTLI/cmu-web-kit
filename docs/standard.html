@@ -209,6 +209,46 @@
         <li><strong>Never put the credit in the alt text.</strong> Alt text describes the picture; a screen reader would read the credit as part of it.</li>
       </ul>
 
+      <h2 id="quotes" class="rule-top">Block Quotes</h2>
+      <p>A quote set large, with a thin line beside it, to let someone else make the page's point: a student, a faculty member, someone your office helped. Use the template's <code>&lt;blockquote&gt;</code>, with the words in a <code>&lt;p&gt;</code> as Cascade writes them (as on Wellbeing's Wellness Initiatives page); it's smaller in a sidebar and turns white on a color band (<code>invert</code>). Keep it to a sentence or two.</p>
+      <ul class="cmu-checks">
+        <li><strong>Say who said it</strong> in a <code>&lt;figcaption&gt;</code>, with the quote in a <code>&lt;figure&gt;</code>: their name, then their role. The name goes outside the <code>&lt;blockquote&gt;</code>, which holds only their words.</li>
+        <li><strong>Quote real people,</strong> with their permission, and don't add quotation marks: the size and the line already mark it as a quote.</li>
+        <li><strong>Not for indenting text.</strong> A block quote is someone's words; for a note or an aside, use a <a href="cms-content.html#callout">callout</a>.</li>
+      </ul>
+      <p class="kit-classes"><code>blockquote</code>, <code>figure</code>, <code>figcaption</code>, <code>invert</code></p>
+      <div class="kit-demo">
+        <figure>
+          <blockquote><p>Reserving a camera took a minute, and the kit had everything our film needed.</p></blockquote>
+          <figcaption>Jordan Lee, Senior, School of Drama</figcaption>
+        </figure>
+      </div>
+      <div class="kit-demo">
+        <div class="content">
+          <div>
+            <h2>Camera Kits</h2>
+            <p>The page's own content goes here, beside the quote.</p>
+          </div><div class="sidebar">
+            <div class="simple">
+              <figure>
+                <blockquote><p>We finally stopped buying cameras for one project each.</p></blockquote>
+                <figcaption>Priya Shah, Instructor, Design</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="kit-demo">
+        <div class="content wide darkgrey invert">
+          <div>
+            <figure>
+              <blockquote><p>The checkout desk is the first place I send new students.</p></blockquote>
+              <figcaption>Sam Ortiz, Academic Advisor</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
       <h2 id="more-template" class="rule-top">And More</h2>
       <ul class="cmu-checks">
         <li><strong>Tables:</strong> <code>table.alternate</code> for striped rows; see <a href="cms-data.html#tables">Tables</a>.</li>
