@@ -501,6 +501,13 @@
                 <code>&lt;/div&gt;&lt;div class="sidebar"&gt;</code>, or it drops below the page.
               </li>
               <li>
+                A formatter such as Prettier, run on your HTML or templates, can put a line break
+                between those two pairs, and the logo or sidebar drops. Put
+                <code>&lt;!-- prettier-ignore --&gt;</code> right before the site name's
+                <code>&lt;div&gt;</code> and before the <code>.content</code> block, so it leaves
+                them as written.
+              </li>
+              <li>
                 <code>.btn</code> and other classes that set <code>display</code> override a bare
                 <code>hidden</code> attribute. The kit makes <code>hidden</code> always hide.
               </li>
