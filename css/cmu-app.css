@@ -8,7 +8,7 @@
 body.cmu-framed { padding: 1.5rem; }
 
 /* Forms (the idiom of requests.eberly.cmu.edu) */
-body.cmu-app fieldset > ul { list-style-type: none; padding-left: 0; margin: 0; }
+body.cmu-app fieldset > ul { list-style-type: none; margin: 0; }
 body.cmu-app fieldset > ul > li { margin-left: 0; }
 /* A label right before a text box or menu, and a fieldset's legend: bold, on
    their own line (the template leaves them plain). Checkbox labels stay as
@@ -18,8 +18,6 @@ body.cmu-app fieldset > legend { display: block; font-weight: 700; margin: 0 0 .
 body.cmu-app fieldset { margin: 0 0 2em 0; min-width: 0; } /* browsers default to min-content, which overflows narrow columns */
 body.cmu-app input[type="checkbox"],
 body.cmu-app input[type="radio"] { max-width: 100%; margin-right: .5em; }
-body.cmu-app input[type="checkbox"] + label,
-body.cmu-app input[type="radio"] + label { display: inline; font-weight: normal; }
 body.cmu-app select,
 body.cmu-app input[type="text"] { width: 100%; margin-bottom: 2em; }
 body.cmu-app select.inline,
@@ -28,6 +26,8 @@ body.cmu-app input[type="text"].inline { width: auto; margin-bottom: 0; }
    To); they wrap onto more lines when the row is too narrow */
 body.cmu-app .cmu-field-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: .75em 1em; margin: 0 0 2em; }
 body.cmu-app .cmu-field-row > div { flex: 1 1 7em; min-width: 0; }
+/* Short fields (numbers, codes) keep to 7em instead of sharing the row */
+body.cmu-app .cmu-field-row--short > div { flex-grow: 0; }
 /* max-width: the template caps inputs at calc(100% - 6px - .5em), which
    leaves a gap in a border-box cell and pushes the separator off center */
 body.cmu-app .cmu-field-row :is(input, select) { width: 100%; max-width: 100%; margin: 0; box-sizing: border-box; }
@@ -109,7 +109,6 @@ nav li.cmu-account-menu .cmu-avatar { width: 56px; height: 56px; }
   flex-wrap: wrap;
   gap: .5em 1em;
 }
-.cmu-page-title h1 { margin: 0; }
 .cmu-page-title form { margin: 0; }
 
 /* Small text */
@@ -122,11 +121,10 @@ body.cmu-app :is(input, select, textarea, fieldset > ul) + p.cmu-hint { padding:
 body.cmu-app fieldset > ul + p.cmu-hint:last-child,
 body.cmu-app fieldset > p.cmu-hint:last-child { margin-bottom: 0; }
 /* Options that belong to one choice: inside its list item, lined up with
-   its label, shown only while it's picked (hide them with hidden). Menus
-   and text boxes fill the block, as they fill a column elsewhere. */
+   its label, shown only while it's picked (hide them with hidden) */
 body.cmu-app .cmu-sub-options { margin: .6em 0 .9em 1.65em; }
-body.cmu-app .cmu-sub-options :is(select, input[type="text"]) { width: 100%; max-width: 100%; box-sizing: border-box; margin-bottom: .75em; }
-body.cmu-app .cmu-sub-options > ul { list-style-type: none; padding-left: 0; margin: 0; }
+body.cmu-app .cmu-sub-options :is(select, input[type="text"]) { margin-bottom: .75em; }
+body.cmu-app .cmu-sub-options > ul { list-style-type: none; margin: 0; }
 body.cmu-app .cmu-sub-options > ul > li { margin-left: 0; }
 body.cmu-app .cmu-sub-options > ul + p.cmu-hint { padding: 0; margin: .35rem 0 0; }
 /* A short note beside a button, centered on it; wraps under it when narrow */
@@ -158,8 +156,8 @@ body.cmu-acting-as .scrolltop { bottom: 5em; }
 /* Flash messages: the result of what someone just did, shown once. Standing
    announcements are the template's own color bands instead. */
 .cmu-flash { margin: 1em 0; padding: .75em 1em; border-left: 4px solid; }
-.cmu-flash--error { background: var(--cmu-red-tint); border-color: var(--cmu-red); color: var(--cmu-red); }
-.cmu-flash--success { background: var(--cmu-green-tint); border-color: var(--cmu-green); color: var(--cmu-green); }
+.cmu-flash--error { background: var(--cmu-red-tint); color: var(--cmu-red); }
+.cmu-flash--success { background: var(--cmu-green-tint); color: var(--cmu-green); }
 .cmu-flash--notice { background: var(--cmu-amber-tint); border-color: var(--cmu-gold); color: var(--cmu-amber); }
 
 /* Buttons that look like links (POST actions next to plain links) */
@@ -190,7 +188,6 @@ a.cmu-link-button, a.cmu-link-button:hover { border-bottom: none; }
 /* Page rules such as "last child has no bottom margin" would pull it off center */
 .cmu-dialog:modal { margin: auto; }
 .cmu-dialog::backdrop { background: rgba(0, 0, 0, .45); }
-.cmu-dialog h2 { margin-top: 0; }
 /* .btn, .cmu-flash and friends set display, which beats a bare [hidden] */
 .cmu-dialog [hidden] { display: none !important; }
 .cmu-dialog-buttons { display: flex; gap: .5em; margin: 1.25em 0 0; }
@@ -263,7 +260,7 @@ a.cmu-link-button, a.cmu-link-button:hover { border-bottom: none; }
 .cmu-results-count { text-align: center; color: var(--cmu-muted); margin: 1.5em 0 0; }
 .cmu-load-more { text-align: center; margin: .75em 0 0; }
 .cmu-load-more[hidden] { display: none; }
-.cmu-load-more .btn { display: block; width: 50%; margin: 0 auto; text-align: center; }
+.cmu-load-more .btn { display: block; width: 50%; margin: 0 auto; }
 /* Pager (<div class="cmu-pager" role="navigation">; not <nav>, whose links
    the template strips of borders): one list of first, previous, the page
    numbers, next, and last. The current page has aria-current="page"; an
@@ -306,9 +303,10 @@ th[aria-sort] .cmu-sort { color: #c00; }
    cell, so it has no width of its own to hold the column open: the side
    padding plus min-width (the box) do that. */
 table .cmu-select-cell { position: relative; padding: 0 .85em; text-align: center; vertical-align: top; min-width: 1.15em; }
-.cmu-select-cell label { position: absolute; inset: 0; margin: 0; padding-top: .6em; cursor: pointer; display: flex; justify-content: center; align-items: flex-start; }
+.cmu-select-cell label { position: absolute; inset: 0; padding-top: .6em; cursor: pointer; display: flex; justify-content: center; align-items: flex-start; }
 .cmu-select-cell input[type="checkbox"] { width: 1.15em; height: 1.15em; margin: 0; cursor: pointer; }
 /* The template gives checkboxes a right margin, which pushes this one off center */
+/* beats body.cmu-app's margin-right on checkboxes */
 table .cmu-select-cell label input[type="checkbox"] { margin: 0; }
 #content table.alternate td.cmu-select-cell label { padding-top: 0; align-items: center; }
 
@@ -325,7 +323,6 @@ table .cmu-select-cell label input[type="checkbox"] { margin: 0; }
 #content .cmu-people > li { display: flex; align-items: center; gap: 1em; margin: 0; padding: .75em 0; border-top: 1px solid var(--cmu-line); }
 #content .cmu-people > li[hidden] { display: none; }
 .cmu-people img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
-.cmu-people p { margin: 0; padding: 0; }
 .cmu-people p + p { color: var(--cmu-muted); font-size: .9em; }
 
 /* Groups line up at the top, so their labels share one line; checkboxes
@@ -334,7 +331,7 @@ table .cmu-select-cell label input[type="checkbox"] { margin: 0; }
 .cmu-filter-group { display: flex; flex-direction: column; gap: .25em; }
 body.cmu-app .cmu-filter-group > .cmu-label { margin: 0; } /* beats the form label rule above */
 .cmu-filter-checks { display: flex; flex-wrap: wrap; align-items: center; gap: .75em; min-height: 2.2em; }
-.cmu-filter-checks label { display: flex; align-items: center; gap: .25em; margin: 0; font-weight: normal; }
+.cmu-filter-checks label { display: flex; align-items: center; gap: .25em; }
 body.cmu-app .cmu-filter-group input[type="text"] { min-width: 15em; margin: 0; }
 
 /* Bulk bar: a tinted band on top of a table, the selection count then the
@@ -363,7 +360,6 @@ body.cmu-app .cmu-filter-group input[type="text"] { min-width: 15em; margin: 0; 
    border) so rows don't change height with the label. Keep two-word
    phrases together with &nbsp;. */
 .cmu-row-buttons { display: grid; grid-auto-flow: column; grid-auto-columns: 8.5em; justify-content: start; gap: .4em; }
-.cmu-row-buttons > * { display: flex; }
 .cmu-row-buttons form { margin: 0; }
 .cmu-row-buttons .btn {
   display: flex; align-items: center; justify-content: center;
@@ -385,7 +381,6 @@ body.cmu-app .cmu-filter-group input[type="text"] { min-width: 15em; margin: 0; 
    already frames them */
 .cmu-panel { max-width: 44rem; }
 .cmu-panel-header h2 { margin: 0 0 .5rem; }
-.cmu-panel-header .cmu-muted { margin: 0; }
 .cmu-panel-body { padding: 1.5rem 0; }
 .cmu-panel-body > .cmu-label { margin: 0 0 .5rem; }
 .cmu-panel-body table.alternate { margin-bottom: 1.25rem; }

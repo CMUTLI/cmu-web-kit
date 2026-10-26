@@ -52,7 +52,7 @@ The code and documentation are under the BSD 3-Clause License (see
 `LICENSE`), copyright Carnegie Mellon University. It doesn't cover:
 
 * **Carnegie Mellon's names and marks**, including the Scotty image in
-  `docs/images/scotty.png` (the Office of Human Resources' Scotty avatar)
+  `docs/images/scotty.png` (Ask Scotty's avatar)
   and the Core Competencies logo in `docs/images/core4-logo.png`. The
   license grants no rights to them, and its third clause bars using the
   university's name to endorse or promote work derived from this code.

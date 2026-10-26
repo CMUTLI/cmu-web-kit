@@ -62,7 +62,7 @@
 /* The template pads every heading and paragraph; inside the hero the
    spacing is set here instead */
 .cmu-hero h1 {
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
   padding: 0;
   font-size: clamp(2.2rem, 4.6vw, 3.3rem);
   line-height: 1.08;
@@ -208,9 +208,9 @@ p:has(+ .cmu-snippet) { padding-bottom: .5em; }
   border: 1px solid var(--cmu-line);
   font-size: .85rem;
   line-height: 1.5;
-  white-space: pre;
+  white-space: pre; /* the template wraps pre */
 }
-.cmu-snippet code { font-family: Menlo, Consolas, monospace; background: none; padding: 0; }
+.cmu-snippet code { font-family: Menlo, Consolas, monospace; }
 .cmu-snippet--wrap { white-space: pre-wrap; overflow-wrap: anywhere; }
 .cmu-shot img {
   display: block;
