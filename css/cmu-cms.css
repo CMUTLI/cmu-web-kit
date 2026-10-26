@@ -14,9 +14,11 @@
   --cmu-line: #d9dde1;
   --cmu-tint: #f4f5f6;
   --cmu-green: #1d5a3a;
+  --cmu-green-fill: #00853e;
   --cmu-green-tint: #e3f1ea;
   --cmu-amber: #6b4d00;
   --cmu-amber-tint: #fff4d6;
+  --cmu-gold: #fdb515;
   --cmu-gray: #4a535b;
   --cmu-gray-tint: #eceef0;
   --cmu-red-tint: #fdf2f3;
@@ -31,6 +33,9 @@
   text-transform: uppercase;
   color: var(--cmu-red);
 }
+/* The template pads every heading and paragraph; an eyebrow sits right on its heading */
+.cmu-eyebrow { padding-bottom: 0; }
+.cmu-eyebrow + h1, .cmu-eyebrow + h2, .cmu-eyebrow + h3 { margin-top: 0; padding-top: 0; }
 .cmu-label { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--cmu-muted); }
 .cmu-lead { font-size: 1.2rem; line-height: 1.55; max-width: 44em; margin: 0 0 1.75rem; }
 .cmu-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin: 0 0 2.5rem; }
@@ -50,13 +55,18 @@
     var(--cmu-tint);
   border-top: 6px solid var(--cmu-red);
 }
+/* The template pads every heading and paragraph; inside the hero the
+   spacing is set here instead */
 .cmu-hero h1 {
   margin: 0 0 1rem;
+  padding: 0;
   font-size: clamp(2.2rem, 4.6vw, 3.3rem);
   line-height: 1.08;
   letter-spacing: -.01em;
 }
+.cmu-hero .cmu-lead { margin: 0 0 1.75rem; padding: 0; }
 .cmu-hero .cmu-cta-row { margin-bottom: .9rem; }
+.cmu-hero .cmu-cta-row:last-child { margin-bottom: 0; }
 .cmu-hero-art { position: relative; min-width: 0; }
 .cmu-hero-art img {
   display: block;
@@ -75,6 +85,16 @@
     #e4e7ea;
   border: 1px solid var(--cmu-line); border-bottom: 0;
 }
+/* Two or three screenshots, overlapping down and to the right, cropped to
+   one shape from the top; the last is in front */
+.cmu-hero-art--stack { display: grid; }
+.cmu-hero-art--stack::before { display: none; }
+.cmu-hero-art--stack img { grid-area: 1 / 1; width: 82%; aspect-ratio: 4 / 3; object-fit: cover; object-position: top; border-top: 1.6rem solid #e4e7ea; }
+.cmu-hero-art--stack img:nth-child(2) { margin: 9% 0 0 9%; }
+.cmu-hero-art--stack img:nth-child(3) { margin: 18% 0 0 18%; }
+/* A photo or a tartan pattern file, with no browser frame */
+.cmu-hero-art--plain::before { display: none; }
+.cmu-hero-art--plain img { border: 0; box-shadow: none; width: 100%; }
 @media (max-width: 820px) {
   .cmu-hero { grid-template-columns: 1fr; padding: 2rem 1.25rem; }
 }
@@ -158,9 +178,33 @@ ol.cmu-flow li strong { display: block; font-size: 1.15rem; margin-bottom: .25re
   align-items: start;
   margin: 0 0 2.75rem;
 }
-@media (max-width: 760px) { .cmu-split { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .cmu-split { grid-template-columns: minmax(0, 1fr); } }
 
 .cmu-shot { margin: 0 0 1.75rem; }
+
+/* A kit block that ends its content section (as each does in Cascade, one
+   block per section) leaves the space below to the section's own padding */
+#content .content > div > [class^="cmu-"]:last-child,
+#content .content > div > [class*=" cmu-"]:last-child { margin-bottom: 0; }
+
+/* Table cells centered vertically, so one-line cells sit level with wrapped
+   ones and with images (the template sets top or baseline) */
+#content table.alternate td { vertical-align: middle; }
+
+/* A block of code to read or copy: scrolls sideways by default; --wrap
+   wraps long lines (URLs, HTML) so all of it stays in view */
+.cmu-snippet {
+  margin: 0 0 1.75rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  background: var(--cmu-tint);
+  border: 1px solid var(--cmu-line);
+  font-size: .85rem;
+  line-height: 1.5;
+  white-space: pre;
+}
+.cmu-snippet code { font-family: Menlo, Consolas, monospace; background: none; padding: 0; }
+.cmu-snippet--wrap { white-space: pre-wrap; overflow-wrap: anywhere; }
 .cmu-shot img {
   display: block;
   border: 1px solid var(--cmu-line);
@@ -218,5 +262,20 @@ table.cmu-compare { table-layout: fixed; }
 .cmu-pill--green { background: var(--cmu-green-tint); color: var(--cmu-green); }
 .cmu-pill--amber { background: var(--cmu-amber-tint); color: var(--cmu-amber); }
 
-/* "On this page" box */
-.cmu-toc { margin: 0 0 2rem; padding: 1rem 1.25rem; background: var(--cmu-tint); }
+/* Dates: a month-and-day block in the style of the events.cmu.edu (LiveWhale)
+   widgets, for a date on its own or over a photo. A list of dates is the
+   template's .events. Markup: <time class="cmu-date" datetime="2026-10-28">
+   <span class="cmu-date-month">Oct</span> <span class="cmu-date-day">28</span></time> */
+.cmu-date { display: inline-flex; flex-direction: column; align-items: stretch; flex: 0 0 auto; min-width: 3.25em; border: 1px solid var(--cmu-gray); background: #fff; font-weight: 700; line-height: 1.5; text-transform: uppercase; text-align: center; }
+.cmu-date-month { background: var(--cmu-gray); color: #fff; padding: 0 .5em; letter-spacing: .05em; }
+.cmu-date-day { color: var(--cmu-ink); font-size: 1.25em; padding: 0 .4em; }
+.cmu-date--red { border-color: var(--cmu-red); }
+.cmu-date--red .cmu-date-month { background: var(--cmu-red); }
+/* Event cards: a photo with the date over its corner and a red rule under it */
+#content .cmu-event-cards, .cmu-event-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: 1.5rem; list-style: none; margin: 0 0 1.5em; padding: 0; }
+#content .cmu-event-cards > li { position: relative; margin: 0; padding: 0; }
+.cmu-event-cards img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-bottom: 4px solid var(--cmu-red); margin: 0 0 .5em; }
+.cmu-event-cards .cmu-date { position: absolute; top: .5rem; left: .5rem; }
+.cmu-event-cards h3 { margin: 0; padding: 0; font-size: 1.05em; font-weight: 700; }
+.cmu-event-cards p { margin: .25em 0 0; padding: 0; color: var(--cmu-muted); font-size: .9em; }
+

@@ -9,7 +9,13 @@ body.cmu-framed { padding: 1.5rem; }
 
 /* Forms (the idiom of requests.eberly.cmu.edu) */
 body.cmu-app fieldset > ul { list-style-type: none; padding-left: 0; margin: 0; }
-body.cmu-app fieldset { margin: 0 0 2em 0; }
+body.cmu-app fieldset > ul > li { margin-left: 0; }
+/* A label right before a text box or menu, and a fieldset's legend: bold, on
+   their own line (the template leaves them plain). Checkbox labels stay as
+   they are. */
+body.cmu-app label:has(+ select, + textarea, + input[type="text"], + input[type="email"], + input[type="search"], + input[type="number"], + input[type="date"]),
+body.cmu-app fieldset > legend { display: block; font-weight: 700; margin: 0 0 .35em; padding: 0; }
+body.cmu-app fieldset { margin: 0 0 2em 0; min-width: 0; } /* browsers default to min-content, which overflows narrow columns */
 body.cmu-app input[type="checkbox"],
 body.cmu-app input[type="radio"] { max-width: 100%; margin-right: .5em; }
 body.cmu-app input[type="checkbox"] + label,
@@ -38,13 +44,27 @@ body.cmu-app input[type="text"].inline { width: auto; margin-bottom: 0; }
    bold gray, red on hover. Signed in, the name is plain text. */
 .roof .cmu-account:not(.cmu-account-open) { font-weight: 700; color: rgba(0, 0, 0, .65); }
 .roof .cmu-account:not(.cmu-account-open):hover { color: #c00; }
-/* The name leaves the bar when the menu opens (as the menu button does);
+/* On a red roof (roof red invert), white either way: dark text on red is hard to read */
+.roof.invert .cmu-account { color: #fff; }
+.roof.invert .cmu-account:hover { color: rgba(255, 255, 255, .8); }
+/* The name leaves the roof when the menu opens (as the menu button does);
    the menu's account item has it instead. Below 768px the template's
-   wordmark fills the bar, so there it's only in the menu. */
+   wordmark fills the roof, so there it's only in the menu. */
 .menu-on .roof .cmu-account { display: none; }
+/* With the template's search as well: search, then the account, then the
+   menu button. Both join the roof's flex row instead of sitting on top of
+   each other at the right. */
+.roof > div:has(> .cmu-account) > form.search { position: relative; right: auto; margin-left: auto; align-self: stretch; height: auto; }
+.roof > div:has(> form.search) > .cmu-account { position: static; flex: 0 0 auto; max-width: 12em; margin: 0 3.4em 0 1.25em; }
 @media (max-width: 767px) { .roof .cmu-account { display: none; } }
 nav#nav li.cmu-account-menu { display: flex; flex-direction: column; align-items: flex-end; }
 .cmu-account-name, .cmu-account-name:hover { cursor: default; color: inherit; }
+/* With your photo (cmu-avatar): small and round before your name in the
+   roof, larger above it at the top of the menu, as in Workday */
+.cmu-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
+.roof .cmu-account .cmu-avatar { margin-right: .5em; }
+nav li.cmu-account-menu .cmu-account-name:has(.cmu-avatar) { display: flex; flex-direction: column; align-items: flex-end; gap: .4em; }
+nav li.cmu-account-menu .cmu-avatar { width: 56px; height: 56px; }
 
 /* Tabs: the one you're on is red and underlined, like the active nav tab */
 .cmu-tabs { display: flex; flex-wrap: wrap; gap: 0 1.75em; margin: 0 0 1.75em; border-bottom: 1px solid var(--cmu-line); }
@@ -58,12 +78,16 @@ nav#nav li.cmu-account-menu { display: flex; flex-direction: column; align-items
 }
 #content .cmu-tabs a:hover { color: var(--cmu-red); }
 #content .cmu-tabs a[aria-current="page"] { color: var(--cmu-red); border-bottom-color: var(--cmu-red); }
-/* Folded tabs (a cmu-more inside the tabs): the link stays at the end of
-   the first row (the details box itself drops out of the layout); opened,
-   the rest wrap below it */
+/* Folded tabs (a cmu-more inside the tabs), like a folded list: a "2 More"
+   cta at the end of the first row (the details box itself drops out of the
+   layout); opened, the rest wrap onto the next line and it says Show Fewer */
 .cmu-tabs-more { display: contents; }
+/* Newer browsers wrap a details' contents in ::details-content, which would
+   keep the folded tabs off the tabs' row; take it out of the layout too, and
+   hide the folded tabs ourselves while closed */
+.cmu-tabs-more::details-content { display: contents; }
+.cmu-tabs-more:not([open]) > div { display: none; }
 .cmu-tabs-more summary { margin: 0; padding: .2em 0 0; line-height: 2.2; }
-.cmu-tabs-more .cmu-more-link { margin-left: 0; }
 .cmu-tabs-more > div { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 0 1.75em; }
 
 /* Page title row: h1 with actions on the right */
@@ -80,14 +104,41 @@ nav#nav li.cmu-account-menu { display: flex; flex-direction: column; align-items
 /* Small text */
 .cmu-muted, .cmu-hint { color: var(--cmu-muted); }
 .cmu-hint { font-size: .85em; }
+/* A hint right under its field: the template's space below the field moves
+   below the hint, and the template's padding on every <p> goes */
+body.cmu-app :is(input, select, textarea):has(+ p.cmu-hint) { margin-bottom: 0; }
+body.cmu-app :is(input, select, textarea, fieldset > ul) + p.cmu-hint { padding: 0; margin: .35rem 0 2rem; }
+body.cmu-app fieldset > ul + p.cmu-hint:last-child { margin-bottom: 0; }
+/* A short note beside a button, centered on it; wraps under it when narrow */
+.cmu-button-note { display: flex; flex-wrap: wrap; align-items: center; gap: .5em 1em; margin: 0 0 1.5em; }
+.cmu-button-note > * { margin: 0; }
+.cmu-button-note > p { padding: 0; }
 .cmu-empty { text-align: center; color: var(--cmu-muted); padding: 1.25em; }
 /* Codes (departments, course numbers) kept on one line */
 .cmu-code { white-space: nowrap; }
 
-/* Banners: the result of what you just did */
-.cmu-banner { margin: 1em 0; padding: .75em 1em; border-left: 4px solid; }
-.cmu-banner--error { background: var(--cmu-red-tint); border-color: var(--cmu-red); color: var(--cmu-red); }
-.cmu-banner--success { background: var(--cmu-green-tint); border-color: var(--cmu-green); color: var(--cmu-green); }
+/* Acting as another user (an admin seeing the app as someone else): a thick
+   frame around the window and a bar fixed along its bottom edge, both in
+   the template's teal, so the session is never mistaken for your own. Put
+   cmu-acting-as on <body> and the bar anywhere inside it. (Fixed, not
+   sticky: on wide screens the template makes <body> one window tall.) */
+:root { --cmu-acting: #008285; }
+body.cmu-acting-as { padding-bottom: 4.5em; }
+body.cmu-acting-as::after { content: ""; position: fixed; inset: 0; border: 6px solid var(--cmu-acting); pointer-events: none; z-index: 2000; }
+body.cmu-acting-as .cmu-acting-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 1999; }
+.cmu-acting-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .5em 1.25em; margin: 0; padding: .6em 1em; background: var(--cmu-acting); color: #fff; font-weight: 700; text-align: center; }
+.cmu-acting-bar p { margin: 0; padding: 0; }
+.cmu-acting-bar .btn.ghost { margin: 0; color: #fff; border-color: #fff; }
+.cmu-acting-bar .btn.ghost:hover { background: rgba(0, 0, 0, .25); }
+body.cmu-acting-as .scrolltop { bottom: 5em; }
+@media (max-width: 600px) { body.cmu-acting-as { padding-bottom: 7em; } }
+
+/* Flash messages: the result of what someone just did, shown once. Standing
+   announcements are the template's own color bands instead. */
+.cmu-flash { margin: 1em 0; padding: .75em 1em; border-left: 4px solid; }
+.cmu-flash--error { background: var(--cmu-red-tint); border-color: var(--cmu-red); color: var(--cmu-red); }
+.cmu-flash--success { background: var(--cmu-green-tint); border-color: var(--cmu-green); color: var(--cmu-green); }
+.cmu-flash--notice { background: var(--cmu-amber-tint); border-color: var(--cmu-gold); color: var(--cmu-amber); }
 
 /* Buttons that look like links (POST actions next to plain links) */
 .cmu-link-button {
@@ -114,9 +165,11 @@ a.cmu-link-button, a.cmu-link-button:hover { border-bottom: none; }
   background: #fff;
   color: var(--cmu-ink);
 }
+/* Page rules such as "last child has no bottom margin" would pull it off center */
+.cmu-dialog:modal { margin: auto; }
 .cmu-dialog::backdrop { background: rgba(0, 0, 0, .45); }
 .cmu-dialog h2 { margin-top: 0; }
-/* .btn, .cmu-banner and friends set display, which beats a bare [hidden] */
+/* .btn, .cmu-flash and friends set display, which beats a bare [hidden] */
 .cmu-dialog [hidden] { display: none !important; }
 .cmu-dialog-buttons { display: flex; gap: .5em; margin: 1.25em 0 0; }
 .cmu-dialog-buttons .btn { margin: 0; }
@@ -159,7 +212,7 @@ a.cmu-link-button, a.cmu-link-button:hover { border-bottom: none; }
 .cmu-stat > .cmu-meter { flex: 1; height: 12px; }
 /* Divs, not spans: the template script strips style="" from spans */
 .cmu-meter { display: inline-block; vertical-align: middle; width: 8em; height: 10px; background: #e8eaec; }
-.cmu-meter > div { display: block; height: 100%; background: var(--cmu-green); }
+.cmu-meter > div { display: block; height: 100%; background: var(--cmu-green-fill); }
 .cmu-pct { font-weight: 700; vertical-align: middle; margin-left: .5em; }
 .cmu-pct--high { color: var(--cmu-green); }
 .cmu-pct--mid { color: var(--cmu-amber); }
@@ -171,22 +224,50 @@ a.cmu-link-button, a.cmu-link-button:hover { border-bottom: none; }
 .cmu-breakdown .cmu-pct { margin: 0; min-width: 3em; }
 .cmu-breakdown-more { flex-basis: 100%; margin-top: .5em; padding-top: .75em; border-top: 1px solid var(--cmu-line); }
 .cmu-breakdown-more .cmu-breakdown { border-top: 0; }
-.cmu-breakdown-more .cmu-more-link { margin-left: 0; }
 
-/* Folded long lists (<details class="cmu-more">): a summary line with a
-   Show all / Show fewer link (cmu-more-closed / cmu-more-open) */
+/* Folded long lists (<details class="cmu-more">): the summary reads as a
+   line of text ending in a template cta, the count of what's hidden ("6
+   More") or Show Fewer (cmu-more-closed / cmu-more-open). A plain space in
+   the markup separates the text and the cta. */
 .cmu-more summary { cursor: pointer; list-style: none; color: var(--cmu-muted); }
 .cmu-more summary::-webkit-details-marker { display: none; }
-.cmu-more .cmu-more-link { margin-left: .5em; color: var(--cmu-red); font-weight: 600; }
-.cmu-more summary:hover .cmu-more-link { text-decoration: underline; }
+.cmu-more summary:hover .cta { color: var(--cmu-red); }
 .cmu-more .cmu-more-open, .cmu-more[open] .cmu-more-closed { display: none; }
 .cmu-more[open] .cmu-more-open { display: inline; }
 
-/* Tables: the template's table.alternate, plus numeric and fitted columns.
-   Cells are centered vertically, so one-line cells sit level with wrapped
-   ones. */
+/* Long results: a count under the list, then either Load More or a pager.
+   Load More is a ghost btn half the width of the page, as in Cascade's news
+   indexes (the template's .loadmore); full width on phones. */
+.cmu-results-count { text-align: center; color: var(--cmu-muted); margin: 1.5em 0 0; }
+.cmu-load-more { text-align: center; margin: .75em 0 0; }
+.cmu-load-more[hidden] { display: none; }
+.cmu-load-more .btn { display: block; width: 50%; margin: 0 auto; text-align: center; }
+/* Pager (<div class="cmu-pager" role="navigation">; not <nav>, whose links
+   the template strips of borders): one list of first, previous, the page
+   numbers, next and last. The current page has aria-current="page"; an
+   arrow that goes nowhere has no href and aria-disabled="true". On phones
+   the first and last arrows (cmu-pager-end) give way to the numbers. */
+.cmu-pager { margin: .75em 0 0; }
+.cmu-pager ol { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; list-style: none; margin: 0; padding: 0; gap: .25em; }
+/* (#content: the template indents an ol's 10th item on, for two-digit numbers) */
+#content .cmu-pager li { margin: 0; padding: 0; }
+#content .cmu-pager a, .cmu-pager span { display: block; box-sizing: border-box; min-width: 2.25em; padding: .3em .35em; text-align: center; line-height: 1.5; border: 1px solid transparent; border-radius: 2px; text-decoration: none; }
+#content .cmu-pager a[href]:hover { border-color: var(--cmu-line); }
+#content .cmu-pager a[aria-current="page"] { background: var(--cmu-red); border-color: var(--cmu-red); color: #fff; font-weight: 700; }
+#content .cmu-pager a[aria-disabled="true"] { color: var(--cmu-muted); opacity: .45; cursor: default; }
+.cmu-pager .cmu-pager-arrow { font-weight: 700; }
+.cmu-pager span { color: var(--cmu-muted); }
+@media (max-width: 600px) {
+  .cmu-pager .cmu-pager-end { display: none; }
+  .cmu-pager ol { gap: .1em; }
+  #content .cmu-pager a, .cmu-pager span { min-width: 1.9em; padding: .3em .15em; }
+  .cmu-load-more .btn { width: 100%; }
+}
+}
+
+/* Tables: the template's table.alternate (cells centered vertically in
+   cmu-cms.css), plus numeric and fitted columns. */
 table.alternate th.num, table.alternate td.num { text-align: right; font-variant-numeric: tabular-nums; }
-#content table.alternate td { vertical-align: middle; }
 .cmu-fit { width: 1%; white-space: nowrap; }
 /* Sortable headers: the header text is the button */
 th[data-sort-key] .cmu-sort {
@@ -210,6 +291,21 @@ table .cmu-select-cell label input[type="checkbox"] { margin: 0; }
 #content table.alternate td.cmu-select-cell label { padding-top: 0; align-items: center; }
 
 /* Filter rows above a list */
+/* Search over a list: a sentence saying what you can search by, then a
+   full-width box whose <label> is for screen readers (sr-only) */
+.cmu-search-bar { margin-bottom: .5em; }
+.cmu-search-bar p { margin: 0 0 .5em; }
+.cmu-search-bar input[type="text"], body.cmu-app .cmu-search-bar input[type="text"] { width: 100%; margin-bottom: 0; }
+
+/* People list: a small round headshot beside each name and title, as on
+   CMU's experts page. Pair it with filters for a long list. */
+#content .cmu-people, .cmu-people { list-style: none; margin: 0 0 1.5em; padding: 0; }
+#content .cmu-people > li { display: flex; align-items: center; gap: 1em; margin: 0; padding: .75em 0; border-top: 1px solid var(--cmu-line); }
+#content .cmu-people > li[hidden] { display: none; }
+.cmu-people img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
+.cmu-people p { margin: 0; padding: 0; }
+.cmu-people p + p { color: var(--cmu-muted); font-size: .9em; }
+
 .cmu-filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 1em 1.5em; margin-bottom: 1em; }
 .cmu-filter-group { display: flex; flex-direction: column; gap: .25em; }
 .cmu-filter-checks { display: flex; flex-wrap: wrap; gap: .75em; }
@@ -234,6 +330,8 @@ body.cmu-app .cmu-filter-group input[type="text"] { min-width: 15em; margin-bott
 .cmu-bulk-bar .btn { margin: 0; }
 /* .btn and button display rules would otherwise beat the template's bare [hidden] */
 .cmu-bulk-bar [hidden] { display: none !important; }
+/* The template gives tables a top margin; the bar sits right on the table */
+#content .cmu-bulk-bar + table, #content .cmu-bulk-bar + * table:first-child { margin-top: 0; }
 
 /* Row buttons: the bulk bar's small buttons in a table cell, one fixed
    width alone or in a pair, as tall as a two-line button (2 lines, padding,

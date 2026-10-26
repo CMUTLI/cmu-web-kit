@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Blocks - CMS Components - Carnegie Mellon Web Kit - Carnegie Mellon University</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,700,700italic" rel="stylesheet" type="text/css">
+  <link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="../css/cmu-cms.css" rel="stylesheet" type="text/css">
+  <link href="../css/cmu-app.css" rel="stylesheet" type="text/css">
+  <link href="css/docs.css" rel="stylesheet" type="text/css">
+  <link href="https://www.cmu.edu/favicon.ico" rel="icon">
+  <link href="https://www.cmu.edu/favicon-152.png" rel="apple-touch-icon-precomposed">
+  <meta content="#9f0000" name="msapplication-TileColor">
+  <meta content="https://www.cmu.edu/favicon-144.png" name="msapplication-TileImage">
+</head>
+<body class="no-js">
+<div id="container">
+  <header>
+    <div class="roof red invert">
+      <div>
+        <a class="wordmark" href="https://www.cmu.edu/">Carnegie Mellon University</a>
+        <button aria-label="toggle menu" aria-pressed="false" class="menu-btn" href="#nav"><b>&#8212;</b><b>&#8212;</b><b>&#8212;</b></button>
+      </div>
+    </div>
+    <div id="sitename">
+      <span class="sitetitle"><a href="index.html">Carnegie Mellon Web Kit</a></span>
+      <h2>Components for the CMU web template</h2>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="breadcrumbs">
+      <a href="index.html">Carnegie Mellon Web Kit</a>&nbsp;&rsaquo;&nbsp;<a href="components.html">Components</a>&nbsp;&rsaquo;&nbsp;<a href="cms.html">CMS Components</a>&nbsp;&rsaquo;&nbsp;Content Blocks
+    </div>
+    <div class="content wide"><div>
+      <h1>Content Blocks</h1>
+      <p class="cmu-lead">Blocks for the body of a page: path cards, how it works, steps, check lists, callouts, questions, text with a screenshot, and code blocks with a copy button.</p>
+
+
+      <h2 id="paths" class="rule-top">Path Cards</h2>
+      <p>Whole-card links that send each audience to its own page. They fit as many columns as the width allows; <code>cmu-paths--two</code> keeps a pair side by side. The <code>cta</code> line is the template's own.</p>
+      <p class="kit-classes"><code>cmu-paths</code>, <code>cmu-paths--two</code>, <code>cmu-path</code></p>
+      <div class="kit-demo">
+        <div class="cmu-paths">
+          <a class="cmu-path" href="#paths">
+            <span class="cmu-eyebrow">Students</span>
+            <strong>Find a Syllabus</strong>
+            <span>Search by course number, title, or instructor.</span>
+            <span class="cta">See How to Browse</span>
+          </a>
+          <a class="cmu-path" href="#paths">
+            <span class="cmu-eyebrow">Instructors</span>
+            <strong>Add Your Syllabus</strong>
+            <span>Upload a file on the web, or pick it from Canvas.</span>
+            <span class="cta">Read the Instructor Guide</span>
+          </a>
+          <a class="cmu-path" href="#paths">
+            <span class="cmu-eyebrow">Administrators</span>
+            <strong>Track Your Department</strong>
+            <span>See what's missing and upload for many sections at once.</span>
+            <span class="cta">Read the Quick-Start Guide</span>
+          </a>
+        </div>
+      </div>
+
+      <h2 id="flow" class="rule-top">How It Works</h2>
+      <p>A process in a few numbered columns, for an overview. For instructions people follow, use numbered steps instead.</p>
+      <p class="kit-classes"><code>ol.cmu-flow</code></p>
+      <div class="kit-demo">
+        <ol class="cmu-flow">
+          <li><strong>Instructors add syllabi</strong>On the web or from Canvas.</li>
+          <li><strong>Departments fill the gaps</strong>Upload for many sections at once.</li>
+          <li><strong>Everyone can find them</strong>Search by course, semester or department.</li>
+        </ol>
+      </div>
+
+      <h2 id="steps" class="rule-top">Numbered Steps</h2>
+      <p>Instructions to follow in order, with the step numbers in red circles.</p>
+      <p class="kit-classes"><code>ol.cmu-steps</code></p>
+      <div class="kit-demo">
+        <ol class="cmu-steps">
+          <li>Sign in and select <strong>My Courses</strong>.</li>
+          <li>Pick the course whose office hours you're going to.</li>
+          <li>Select <strong>Join the Queue</strong> and say what you need help with.</li>
+        </ol>
+      </div>
+
+      <h2 id="checks" class="rule-top">Check List</h2>
+      <p>A list of points or tips, each with a red check mark. Start each item with a short bold phrase.</p>
+      <p class="kit-classes"><code>ul.cmu-checks</code></p>
+      <div class="kit-demo">
+        <ul class="cmu-checks">
+          <li><strong>Borrowing for a class?</strong> Give the course number, and you can keep it for a week.</li>
+          <li><strong>Late returns</strong> pause your borrowing until the equipment is back.</li>
+        </ul>
+      </div>
+
+      <h2 id="callout" class="rule-top">Callout and Note</h2>
+      <p>A callout is a labeled aside on a page, with roomy spacing: the label sits beside the text when there's space. A note is a plainer tinted box for a message among other content, such as in an app.</p>
+      <p class="kit-classes"><code>cmu-callout</code> with <code>cmu-label</code>, <code>cmu-note</code></p>
+      <div class="kit-demo">
+        <div class="cmu-callout">
+          <p class="cmu-label">When to join</p>
+          <p>Up to 15 minutes before office hours start. Course staff see the line as soon as they open.</p>
+        </div>
+        <div class="cmu-note">
+          <p>You aren't in any queues right now.</p>
+        </div>
+      </div>
+
+      <h2 id="qa" class="rule-top">Question Teasers</h2>
+      <p>A few common questions and short answers in columns, usually followed by a link to the full FAQ.</p>
+      <p class="kit-classes"><code>cmu-qa</code></p>
+      <div class="kit-demo">
+        <div class="cmu-qa">
+          <div>
+            <h3>Who can see my question?</h3>
+            <p>Only your course's staff. Other students see just how many are ahead of them.</p>
+          </div>
+          <div>
+            <h3>Can I leave the queue?</h3>
+            <p>Yes, at any time. Your place goes to the next person.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="split" class="rule-top">Text With a Screenshot</h2>
+      <p>Two columns: text on the left, a framed screenshot with a caption on the right. One column below 760px.</p>
+      <p class="kit-classes"><code>cmu-split</code>, <code>figure.cmu-shot</code></p>
+      <div class="kit-demo">
+        <div class="cmu-split">
+          <div>
+            <ol class="cmu-steps">
+              <li>Search by course number, title, or instructor.</li>
+              <li>Narrow it down with the filters on the left.</li>
+            </ol>
+          </div>
+          <figure class="cmu-shot">
+            <img src="images/screenshot.png" alt="A searchable table of course sections with filters on the left.">
+            <figcaption>Search, then filter.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <h2 id="snippet" class="rule-top">Code Block</h2>
+      <p>Code or an address for people to read or copy, on a light gray box. Long lines scroll sideways, which keeps code's line breaks where they belong; add <code>cmu-snippet--wrap</code> when the whole of each line has to stay in view, such as a long address someone will copy. Put the text inside <code>&lt;code&gt;</code>, and write <code>&amp;lt;</code> for each <code>&lt;</code> in HTML.</p>
+      <p class="kit-classes"><code>pre.cmu-snippet</code>, <code>cmu-snippet--wrap</code></p>
+      <div class="kit-demo">
+        <pre class="cmu-snippet"><code>&lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-cms.css" rel="stylesheet"&gt;</code></pre>
+        <pre class="cmu-snippet cmu-snippet--wrap"><code>https://www.cmu.edu/example/a-long-address-that-should-stay-in-view?with=parameters&amp;and=more-of-them</code></pre>
+      </div>
+
+      <h2 id="copy" class="rule-top">Copy Button</h2>
+      <p>A button under a code block that copies it, for an address or markup people will paste somewhere else. Give the block an <code>id</code> and point the button's <code>data-cmu-copy</code> at it. It needs <code>cmu-app.js</code>.</p>
+      <ul class="cmu-checks">
+        <li><strong>Under the block,</strong> so people see what they'll copy before they copy it.</li>
+        <li><strong>Name what it copies:</strong> "Copy Address", "Copy HTML", not just "Copy", and never an icon alone.</li>
+        <li><strong>It says it worked.</strong> The button reads "Copied" for two seconds, and screen readers hear "Copied."</li>
+        <li><strong>Without the clipboard</strong> (a page on plain http, or an old browser), it selects the text instead and says which keys copy it.</li>
+      </ul>
+      <p class="kit-classes"><code>data-cmu-copy</code>, <code>cmu-snippet</code>, <code>btn</code></p>
+      <div class="kit-demo">
+        <h3>Your Address</h3>
+        <pre class="cmu-snippet cmu-snippet--wrap" id="kit-copy-address"><code>https://www.cmu.edu/example/photos/campus?width=900&amp;height=600</code></pre>
+        <p><button class="btn" type="button" data-cmu-copy="#kit-copy-address">Copy Address</button></p>
+      </div>
+    </div></div>
+  </main>
+
+  <footer class="grid column3 invert">
+    <div>
+      <p>Carnegie Mellon Web Kit<br>Carnegie Mellon University<br>5000 Forbes Avenue<br>Pittsburgh, PA 15213</p>
+      <ul><li><a href="https://www.cmu.edu/legal/">Legal Info</a></li><li><a href="https://www.cmu.edu/">www.cmu.edu</a></li></ul>
+      <ul><li>&copy; 2026 Carnegie Mellon University</li></ul>
+    </div>
+    <div></div>
+    <div>
+      <nav id="nav">
+        <ul>
+        <li><a href="start.html">Get Started</a></li>
+        <li><a href="layout.html">Page Layout</a></li>
+        <li><a href="components.html">Components</a>
+          <ul>
+            <li><a href="standard.html">CMU Standard</a>
+              <ul>
+                <li><a href="standard-sections.html">Page Sections</a></li>
+                <li><a href="standard-sidebar.html">Sidebars</a></li>
+                <li><a href="standard-news.html">News and Events</a></li>
+                <li><a href="standard-people.html">People</a></li>
+              </ul>
+            </li>
+            <li><a href="cms.html">CMS Components</a>
+              <ul>
+                <li><a href="cms-top.html">Page Tops</a></li>
+                <li class="active"><a href="cms-content.html" aria-current="page">Content Blocks</a></li>
+                <li><a href="cms-data.html">Pills and Tables</a></li>
+              </ul>
+            </li>
+            <li><a href="app.html">App Components</a>
+              <ul>
+                <li><a href="app-structure.html">Page Structure</a></li>
+                <li><a href="app-messages.html">Messages and Dialogs</a></li>
+                <li><a href="app-lists.html">Lists and Tables</a></li>
+                <li><a href="app-users.html">Users</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a class="external" href="https://cmutli.github.io/cmu-placemellon/">PlaceMellon</a></li>
+        <li class="secondary"><a class="external" href="https://github.com/CMUTLI/cmu-web-kit">Carnegie Mellon Web Kit on GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</div>
+<script src="https://www.cmu.edu/common/standard-v6/js/list.min.js"></script>
+<script src="https://www.cmu.edu/common/standard-v6/js/jquery-1.10.1.min.js"></script>
+<script src="https://www.cmu.edu/common/standard-v6/js/main.6.7.min.js"></script>
+<script src="../js/cmu-app.js"></script>
+<script src="js/docs.js"></script>
+</body>
+</html>

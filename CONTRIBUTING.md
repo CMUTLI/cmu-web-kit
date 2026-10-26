@@ -1,4 +1,4 @@
-# Working on cmu-web-kit
+# Working on the Carnegie Mellon Web Kit
 
 ## Rules for Components
 
@@ -12,6 +12,21 @@
   for what only apps need.
 * Every component gets a section in the docs with a live example.
 
+## Folders
+
+Named the way CMU's own sites name them (`/common/standard-v6/css/`,
+`/common/standard-v6/js/`, `/common/standard-v6/images/`):
+
+* `css/`: stylesheets.
+* `js/`: JavaScript that runs in the browser. Never `javascript/` or
+  `scripts/`.
+* `images/`: images, never `img/`.
+* `tools/`: scripts you run from the command line (checks, the
+  components table, releases). Elsewhere these go in `scripts/`; that name
+  is only ever for command-line and ops scripts, never browser code.
+
+The docs follow the same rule: `docs/css/`, `docs/js/`, `docs/images/`.
+
 ## Docs
 
 The docs are in `docs/` and published with GitHub Pages from the `main`
@@ -24,15 +39,17 @@ python3 -m http.server 8123
 
 then open http://127.0.0.1:8123/docs/.
 
-Write each example once inside a `.kit-demo` block; `docs/docs.js` shows
+Write each example once inside a `.kit-demo` block; `docs/js/docs.js` shows
 its markup under it. The live examples use the CSS on `main`, so mark
 anything not yet released ("New in 0.2") until it is.
 
 ## Checks
 
 `npm run check` fails if the live CMU template starts defining one of our
-class names, or if a version in the docs or README doesn't match
-`package.json`.
+class names, if a version in the docs or README doesn't match
+`package.json`, or if the table of every component on the Components page
+is out of date. Rebuild that table with `npm run components` after adding,
+renaming or removing a section.
 
 ## Releasing
 

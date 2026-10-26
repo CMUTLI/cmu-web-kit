@@ -1,7 +1,8 @@
-# cmu-web-kit
+# Carnegie Mellon Web Kit
 
-Ready-made page components for Carnegie Mellon's web template, for Cascade
-sites and for web apps that use the same template: path cards, numbered
+The Carnegie Mellon Web Kit (`cmu-web-kit`) is a set of ready-made page
+components for Carnegie Mellon's web template, for Cascade sites and for web
+apps that use the same template: path cards, numbered
 steps, callouts, status pills, tabs, dialogs, file drop zones, bulk
 selection bars and more. They fill the gaps in the template without
 changing how it looks.

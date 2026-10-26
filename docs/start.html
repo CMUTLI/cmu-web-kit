@@ -3,51 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get Started - cmu-web-kit - Carnegie Mellon University</title>
+  <title>Get Started - Carnegie Mellon Web Kit - Carnegie Mellon University</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,700,700italic" rel="stylesheet" type="text/css">
   <link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" media="screen" rel="stylesheet" type="text/css">
   <link href="../css/cmu-cms.css" rel="stylesheet" type="text/css">
   <link href="../css/cmu-app.css" rel="stylesheet" type="text/css">
-  <link href="docs.css" rel="stylesheet" type="text/css">
+  <link href="css/docs.css" rel="stylesheet" type="text/css">
   <link href="https://www.cmu.edu/favicon.ico" rel="icon">
+  <link href="https://www.cmu.edu/favicon-152.png" rel="apple-touch-icon-precomposed">
+  <meta content="#9f0000" name="msapplication-TileColor">
+  <meta content="https://www.cmu.edu/favicon-144.png" name="msapplication-TileImage">
 </head>
-<body>
+<body class="no-js">
 <div id="container">
   <header>
-    <div class="roof red invert"><div>
-      <a class="wordmark" href="https://www.cmu.edu/">Carnegie Mellon University</a>
-    </div></div>
-    <div id="sitename"><div>
-      <span class="sitetitle"><a href="index.html">cmu-web-kit</a></span>
+    <div class="roof red invert">
+      <div>
+        <a class="wordmark" href="https://www.cmu.edu/">Carnegie Mellon University</a>
+        <button aria-label="toggle menu" aria-pressed="false" class="menu-btn" href="#nav"><b>&#8212;</b><b>&#8212;</b><b>&#8212;</b></button>
+      </div>
+    </div>
+    <div id="sitename">
+      <span class="sitetitle"><a href="index.html">Carnegie Mellon Web Kit</a></span>
       <h2>Components for the CMU web template</h2>
-    </div></div>
+    </div>
   </header>
 
   <main id="content">
+    <div class="breadcrumbs">
+      <a href="index.html">Carnegie Mellon Web Kit</a>&nbsp;&rsaquo;&nbsp;Get Started
+    </div>
     <div class="content wide"><div>
-      <nav class="cmu-tabs" aria-label="Documentation">
-        <a href="index.html">Overview</a>
-        <a href="start.html" aria-current="page">Get Started</a>
-        <a href="cms.html">CMS Components</a>
-        <a href="app.html">App Components</a>
-      </nav>
-
       <h1>Get Started</h1>
       <p class="cmu-lead">Add the kit to a Cascade site or a web app. Either way you pin one exact version, and nothing changes until you move to a newer one.</p>
 
-      <div class="cmu-toc">
-        <p><strong>On this page</strong></p>
-        <ul>
-          <li><a href="#versions">Versions</a></li>
-          <li><a href="#cascade">Cascade Sites</a></li>
-          <li><a href="#node">Node Apps</a></li>
-          <li><a href="#other">Other Apps</a></li>
-          <li><a href="#prototype">Prototypes and Static Pages</a></li>
-          <li><a href="#upgrade">Moving to a New Version</a></li>
-        </ul>
-      </div>
 
-      <h2 id="versions">Versions</h2>
+      <h2 id="versions" class="rule-top">Versions</h2>
       <p>Each release is a git tag, such as <code>0.1.0</code>, listed on the <a href="https://github.com/CMUTLI/cmu-web-kit/releases">releases page</a>. jsDelivr serves every tag's files at a fixed address:</p>
       <pre class="kit-code"><code>https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-cms.css
 https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css</code></pre>
@@ -56,7 +47,7 @@ https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css</code></pre
         <li><strong>Versions follow semver.</strong> A patch (0.1.1) fixes things, a minor version (0.2.0) adds things, and a major version (1.0.0) can rename or remove classes.</li>
       </ul>
 
-      <h2 id="cascade">Cascade Sites</h2>
+      <h2 id="cascade" class="rule-top">Cascade Sites</h2>
       <p>Cascade sites load only <code>cmu-cms.css</code>, from jsDelivr. Cascade adds extra code to every page's head from a text block, which the site's <code>setup</code> block points to.</p>
       <ol class="cmu-steps">
         <li>In the site's content, open the text block that holds its head code (often named <code>style</code>, holding a link to the site's <code>css/style.css</code>). If the site has none, choose <strong>Add Content</strong> &gt; <strong>Text Block</strong>, and check <strong>Advanced editor</strong>.</li>
@@ -73,7 +64,7 @@ https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css</code></pre
         <li><strong>Try a new version on staging first:</strong> change the version in the link, check the pages, then publish.</li>
       </ul>
 
-      <h2 id="node">Node Apps</h2>
+      <h2 id="node" class="rule-top">Node Apps</h2>
       <p>Install the tagged release as a dependency, serve its <code>css</code> folder, and link it from your page layout. The app then keeps its own copy, so it doesn't depend on jsDelivr being up, and the version is in <code>package.json</code> with everything else.</p>
       <ol class="cmu-steps">
         <li>Install the version you want:
@@ -94,7 +85,7 @@ app.use("/vendor/cmu-web-kit", express.static(kit));</code></pre>
       </ol>
       <p>Builds need to reach GitHub to install the package. If yours can't, copy the files in instead, as below.</p>
 
-      <h2 id="other">Other Apps</h2>
+      <h2 id="other" class="rule-top">Other Apps</h2>
       <p>For Python, PHP, Java or anything else: copy a release's two files into your app's static folder and commit them, with the version in the folder name so it's obvious which one you have.</p>
       <pre class="kit-code"><code>V=0.1.0
 mkdir -p static/vendor/cmu-web-kit-$V
@@ -103,13 +94,13 @@ for f in cmu-cms.css cmu-app.css; do
 done</code></pre>
       <p>Then link them as in step 3 above. Don't edit the copied files; change your own stylesheet, or ask for a change to the kit.</p>
 
-      <h2 id="prototype">Prototypes and Static Pages</h2>
+      <h2 id="prototype" class="rule-top">Prototypes and Static Pages</h2>
       <p>For a mockup, a one-off page or a page served while your app is down, link the CDN directly. It's the quickest way to start, at the cost of depending on jsDelivr.</p>
       <pre class="kit-code"><code>&lt;link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" rel="stylesheet"&gt;
 &lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-cms.css" rel="stylesheet"&gt;
 &lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css" rel="stylesheet"&gt;</code></pre>
 
-      <h2 id="upgrade">Moving to a New Version</h2>
+      <h2 id="upgrade" class="rule-top">Moving to a New Version</h2>
       <ol class="cmu-steps">
         <li>Read the release notes on the <a href="https://github.com/CMUTLI/cmu-web-kit/releases">releases page</a>. For a major version, they list every renamed or removed class.</li>
         <li>Change the version: in the Cascade head block, in <code>package.json</code> (then <code>npm install</code>), or in your copied folder.</li>
@@ -120,14 +111,54 @@ done</code></pre>
 
   <footer class="grid column3 invert">
     <div>
-      <p>Carnegie Mellon University<br>5000 Forbes Avenue<br>Pittsburgh, PA 15213</p>
-      <ul><li><a href="https://github.com/CMUTLI/cmu-web-kit">cmu-web-kit on GitHub</a></li><li><a href="https://www.cmu.edu/legal/">Legal Info</a></li></ul>
+      <p>Carnegie Mellon Web Kit<br>Carnegie Mellon University<br>5000 Forbes Avenue<br>Pittsburgh, PA 15213</p>
+      <ul><li><a href="https://www.cmu.edu/legal/">Legal Info</a></li><li><a href="https://www.cmu.edu/">www.cmu.edu</a></li></ul>
       <ul><li>&copy; 2026 Carnegie Mellon University</li></ul>
     </div>
     <div></div>
-    <div></div>
+    <div>
+      <nav id="nav">
+        <ul>
+        <li class="active"><a href="start.html" aria-current="page">Get Started</a></li>
+        <li><a href="layout.html">Page Layout</a></li>
+        <li><a href="components.html">Components</a>
+          <ul>
+            <li><a href="standard.html">CMU Standard</a>
+              <ul>
+                <li><a href="standard-sections.html">Page Sections</a></li>
+                <li><a href="standard-sidebar.html">Sidebars</a></li>
+                <li><a href="standard-news.html">News and Events</a></li>
+                <li><a href="standard-people.html">People</a></li>
+              </ul>
+            </li>
+            <li><a href="cms.html">CMS Components</a>
+              <ul>
+                <li><a href="cms-top.html">Page Tops</a></li>
+                <li><a href="cms-content.html">Content Blocks</a></li>
+                <li><a href="cms-data.html">Pills and Tables</a></li>
+              </ul>
+            </li>
+            <li><a href="app.html">App Components</a>
+              <ul>
+                <li><a href="app-structure.html">Page Structure</a></li>
+                <li><a href="app-messages.html">Messages and Dialogs</a></li>
+                <li><a href="app-lists.html">Lists and Tables</a></li>
+                <li><a href="app-users.html">Users</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a class="external" href="https://cmutli.github.io/cmu-placemellon/">PlaceMellon</a></li>
+        <li class="secondary"><a class="external" href="https://github.com/CMUTLI/cmu-web-kit">Carnegie Mellon Web Kit on GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
   </footer>
 </div>
-<script src="docs.js"></script>
+<script src="https://www.cmu.edu/common/standard-v6/js/list.min.js"></script>
+<script src="https://www.cmu.edu/common/standard-v6/js/jquery-1.10.1.min.js"></script>
+<script src="https://www.cmu.edu/common/standard-v6/js/main.6.7.min.js"></script>
+<script src="../js/cmu-app.js"></script>
+<script src="js/docs.js"></script>
 </body>
 </html>

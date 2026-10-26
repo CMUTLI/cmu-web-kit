@@ -6,7 +6,8 @@
     "css"
   ],
   "scripts": {
-    "check": "node tools/check-template.mjs && node tools/versions.mjs",
+    "check": "node tools/check-template.mjs && node tools/versions.mjs && node tools/components.mjs --check",
+    "components": "node tools/components.mjs",
     "release": "node tools/versions.mjs"
   },
   "private": true
