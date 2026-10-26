@@ -209,6 +209,29 @@
         <li><strong>Never put the credit in the alt text.</strong> Alt text describes the picture; a screen reader would read the credit as part of it.</li>
       </ul>
 
+      <h2 id="videos" class="rule-top">Videos</h2>
+      <p>A YouTube video in the page, or beside a few sentences about it on a band, as on Wellbeing's home page. Paste YouTube's embed code (Share, then Embed) and keep its <code>width</code> and <code>height</code>: the template's script fits the video to its column and keeps that shape, on phones too.</p>
+      <ul class="cmu-checks">
+        <li><strong>Give it a <code>title</code></strong> that names the video, not "YouTube video player": screen readers announce it for the frame.</li>
+        <li><strong>Use <code>youtube-nocookie.com</code></strong> in the address instead of <code>youtube.com</code>, so YouTube doesn't set its tracking cookies until someone plays the video.</li>
+        <li><strong>Turn on captions</strong> in YouTube, and check them: automatic captions get names and terms wrong.</li>
+        <li>Add <code>loading="lazy"</code> so the video loads only when someone scrolls to it.</li>
+      </ul>
+      <p class="kit-classes"><code>iframe</code>, <code>grid column2 grey</code></p>
+      <div class="kit-demo">
+        <iframe width="1280" height="720" src="https://www.youtube-nocookie.com/embed/qq7J92y0wws" title="Carnegie Mellon University and the I'm fine. Project" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="kit-demo">
+        <div class="grid column2 grey">
+          <div>
+            <iframe width="1280" height="720" src="https://www.youtube-nocookie.com/embed/qq7J92y0wws" title="Carnegie Mellon University and the I'm fine. Project" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+          </div><div>
+            <h2>CMU and the I'm fine. Project</h2>
+            <p>A few sentences about the video: who's in it, and why to watch.</p>
+          </div>
+        </div>
+      </div>
+
       <h2 id="quotes" class="rule-top">Block Quotes</h2>
       <p>A quote set large, with a thin line beside it, to let someone else make the page's point: a student, a faculty member, someone your office helped. Use the template's <code>&lt;blockquote&gt;</code>, with the words in a <code>&lt;p&gt;</code> as Cascade writes them (as on Wellbeing's Wellness Initiatives page); it's smaller in a sidebar and turns white on a color band (<code>invert</code>). Keep it to a sentence or two.</p>
       <ul class="cmu-checks">
