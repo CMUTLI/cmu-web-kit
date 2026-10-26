@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Carnegie Mellon Web Kit - Carnegie Mellon University</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,700,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="../css/cmu-cms.css" rel="stylesheet" type="text/css" />
+    <link href="../css/cmu-app.css" rel="stylesheet" type="text/css" />
+    <link href="css/docs.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.cmu.edu/favicon.ico" rel="icon" />
+    <link href="https://www.cmu.edu/favicon-152.png" rel="apple-touch-icon-precomposed" />
+    <meta content="#9f0000" name="msapplication-TileColor" />
+    <meta content="https://www.cmu.edu/favicon-144.png" name="msapplication-TileImage" />
+  </head>
+  <body class="no-js">
+    <div id="container">
+      <header>
+        <div class="roof red invert">
+          <div>
+            <a class="wordmark" href="https://www.cmu.edu/">Carnegie Mellon University</a>
+            <button aria-label="toggle menu" aria-pressed="false" class="menu-btn" href="#nav">
+              <b>&#8212;</b><b>&#8212;</b><b>&#8212;</b>
+            </button>
+          </div>
+        </div>
+        <div id="sitename">
+          <span class="sitetitle"><a href="index.html">Carnegie Mellon Web Kit</a></span>
+          <h2>Components for the CMU web template</h2>
+        </div>
+      </header>
+
+      <main id="content">
+        <div class="breadcrumbs">
+          <a href="index.html">Carnegie Mellon Web Kit</a>&nbsp;&rsaquo;&nbsp;About
+        </div>
+        <div class="content wide">
+          <div>
+            <h1>About the Carnegie Mellon Web Kit</h1>
+            <p class="cmu-lead">
+              The Carnegie Mellon Web Kit fills the gaps in Carnegie Mellon's web template with
+              ready-made components, so Cascade sites and the web apps around them look like one
+              university.
+            </p>
+
+            <h2 id="origin" class="rule-top">Where It Comes From</h2>
+            <p>
+              Teaching &amp; Learning Innovation built the kit while making the Syllabus Registry,
+              an app and a Cascade site that had to match each other and the rest of cmu.edu. Each
+              component started from a real CMU page that already does it well, and the docs name
+              those pages, so you can see the pattern in use.
+            </p>
+            <p>
+              The kit builds on CMU's web template, which the university hosts at
+              www.cmu.edu/common/standard-v6. It isn't an official University Communications &amp;
+              Marketing product: for brand questions, see
+              <a class="external" href="https://brand.cmu.edu/">brand.cmu.edu</a>.
+            </p>
+
+            <h2 id="rules" class="rule-top">Rules</h2>
+            <ul class="cmu-checks">
+              <li>
+                <strong>The template comes first.</strong> See what it already has on
+                <a href="standard.html">CMU Standard</a>, and use its classes as they are:
+                <code>btn</code>, <code>btn small</code>, <code>ghost</code>, <code>cta</code>,
+                <code>table.alternate</code>, <code>.sidebar</code>, <code>.sr-only</code>. The kit
+                never copies the template's rules or values, and adds a class only where the
+                template has nothing.
+              </li>
+              <li>
+                <strong>Everything in the kit starts with <code>cmu-</code></strong
+                >: classes, custom properties (<code>--cmu-red</code>), and JavaScript hooks
+                (<code>data-cmu-copy</code>). Variations use a double hyphen
+                (<code>cmu-pill--green</code>). Give your own classes your own prefix, never
+                <code>cmu-</code>.
+              </li>
+              <li>
+                <strong>Versions follow semver.</strong> Renaming or removing a class is a new major
+                version.
+              </li>
+            </ul>
+
+            <h2 id="writing" class="rule-top">Writing Conventions</h2>
+            <ul class="cmu-checks">
+              <li>
+                Title Case for buttons, headings, labels, and navigation; sentence case for
+                sentences. "Sign In", not "Log In".
+              </li>
+              <li>Links go somewhere; buttons do something.</li>
+              <li>
+                Button and call-to-action (<code>btn</code>, <code>cta</code>) text starts with a
+                verb and says what people will do: "See the Options", "Upload Syllabus", "Add
+                Categories, Random Photos, and More". Not a topic, a list of nouns ("Categories,
+                grayscale, and more", "Options"), or a bare "Learn More". Let the action lead;
+                echoing the destination page's heading is nice when it fits, but not required.
+              </li>
+              <li>
+                A button (<code>btn</code>) is the page's main action, and can go wherever that
+                action happens: your app, its sign-in, or a request form in another system. A call
+                to action (<code>cta</code>) is a next step on your own site or app. Any other link
+                to another site is an ordinary link with the template's <code>external</code> class,
+                in sentence case: "Browse the code on GitHub". A link is a <code>cta</code> or
+                <code>external</code>, never both.
+              </li>
+              <li>
+                End a section with its one call to action, after everything that makes the case for
+                it, rather than scattering them through the section.
+              </li>
+              <li>Headings and hero titles don't end in a period.</li>
+              <li>Use the Oxford comma: "red, white, and blue".</li>
+              <li>
+                A link that needs sign-in gets plain text " [login required]" after it; a link to a
+                file gets its type, " [PDF]". Use one label, never both.
+              </li>
+              <li>
+                Never leave a lone "a" at the end of a line: join it to the next word with
+                <code>&amp;nbsp;</code>.
+              </li>
+            </ul>
+
+            <h2 id="versions" class="rule-top">Versions and Checks</h2>
+            <p>
+              Each release is a Git tag, served at a fixed address by jsDelivr, so a page links one
+              exact version and never changes until you move it to a newer one; see
+              <a href="start.html#versions">Get Started</a>. Every week, and on every change, a
+              check downloads the live template and fails if it has started using a class name the
+              kit uses, so a template update can't collide with the kit unnoticed.
+            </p>
+
+            <h2 id="code" class="rule-top">Code and License</h2>
+            <p>
+              The kit's code is public, under the BSD 3-Clause License. The
+              <a class="external" href="https://github.com/CMUTLI/cmu-web-kit">GitHub repository</a>
+              has the CSS, the script, these docs, and how to work on them. To report a problem or
+              ask for a component, open an issue or send a pull request. The license doesn't cover
+              Carnegie Mellon's names and marks, including Scotty, or the template itself.
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="grid column3 invert">
+        <div>
+          <p>
+            Carnegie Mellon Web Kit<br />Carnegie Mellon University<br />5000 Forbes Avenue<br />Pittsburgh,
+            PA 15213
+          </p>
+          <ul>
+            <li><a href="https://www.cmu.edu/legal/">Legal Info</a></li>
+            <li><a href="https://www.cmu.edu/">www.cmu.edu</a></li>
+          </ul>
+          <ul>
+            <li>&copy; 2026 Carnegie Mellon University</li>
+          </ul>
+        </div>
+        <div></div>
+        <div>
+          <nav id="nav">
+            <ul>
+              <li><a href="start.html">Get Started</a></li>
+              <li><a href="layout.html">Page Layout</a></li>
+              <li class="active"><a href="about.html" aria-current="page">About</a></li>
+              <li>
+                <a href="components.html">Components</a>
+                <ul>
+                  <li>
+                    <a href="standard.html">CMU Standard</a>
+                    <ul>
+                      <li><a href="standard-sections.html">Page Sections</a></li>
+                      <li><a href="standard-sidebar.html">Sidebars</a></li>
+                      <li><a href="standard-news.html">News and Events</a></li>
+                      <li><a href="standard-people.html">People</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="cms.html">CMS Components</a>
+                    <ul>
+                      <li><a href="cms-top.html">Page Tops</a></li>
+                      <li><a href="cms-content.html">Content Blocks</a></li>
+                      <li><a href="cms-data.html">Pills and Tables</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="app.html">App Components</a>
+                    <ul>
+                      <li><a href="app-structure.html">Page Structure</a></li>
+                      <li><a href="app-messages.html">Messages and Dialogs</a></li>
+                      <li><a href="app-lists.html">Lists and Tables</a></li>
+                      <li><a href="app-users.html">Users</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="external" href="https://cmutli.github.io/cmu-placemellon/">PlaceMellon</a>
+              </li>
+              <li class="secondary">
+                <a class="external" href="https://github.com/CMUTLI/cmu-web-kit"
+                  >Carnegie Mellon Web Kit on GitHub</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+    </div>
+    <script src="https://www.cmu.edu/common/standard-v6/js/list.min.js"></script>
+    <script src="https://www.cmu.edu/common/standard-v6/js/jquery-1.10.1.min.js"></script>
+    <script src="https://www.cmu.edu/common/standard-v6/js/main.6.7.min.js"></script>
+    <script src="../js/cmu-app.js"></script>
+    <script src="js/docs.js"></script>
+  </body>
+</html>

@@ -116,28 +116,6 @@
 &lt;link href="/your-site.css" rel="stylesheet"&gt;</code></pre>
             <p><a class="cta" href="start.html">Add It to a Cascade Site or an App</a></p>
 
-            <h1 id="rules">Rules</h1>
-            <ul class="cmu-checks">
-              <li>
-                <strong>The template comes first.</strong> See what it already has on
-                <a href="standard.html">CMU Standard</a>, and use its classes as they are:
-                <code>btn</code>, <code>btn small</code>, <code>ghost</code>, <code>cta</code>,
-                <code>table.alternate</code>, <code>.sidebar</code>, <code>.sr-only</code>. The kit
-                never copies the template's rules or values, and adds a class only where the
-                template has nothing.
-              </li>
-              <li>
-                <strong>Everything in the kit starts with <code>cmu-</code></strong
-                >: classes, custom properties (<code>--cmu-red</code>) and, later, JavaScript hooks.
-                Variations use a double hyphen (<code>cmu-pill--green</code>). Give your own classes
-                your own prefix, never <code>cmu-</code>.
-              </li>
-              <li>
-                <strong>Versions follow semver.</strong> Renaming or removing a class is a new major
-                version.
-              </li>
-            </ul>
-
             <h1 id="quirks">Template Quirks to Know</h1>
             <ul>
               <li>
@@ -168,50 +146,13 @@
               </li>
             </ul>
 
-            <h1 id="writing">Writing Conventions</h1>
-            <ul class="cmu-checks">
-              <li>
-                Title Case for buttons, headings, labels, and navigation; sentence case for
-                sentences. "Sign In", not "Log In".
-              </li>
-              <li>Links go somewhere; buttons do something.</li>
-              <li>
-                Button and call-to-action (<code>btn</code>, <code>cta</code>) text starts with a
-                verb and says what people will do: "See the Options", "Upload Syllabus", "Add
-                Categories, Random Photos, and More". Not a topic, a list of nouns ("Categories,
-                grayscale, and more", "Options"), or a bare "Learn More". Let the action lead;
-                echoing the destination page's heading is nice when it fits, but not required.
-              </li>
-              <li>
-                A button (<code>btn</code>) is the page's main action, and can go wherever that
-                action happens: your app, its sign-in, or a request form in another system. A call
-                to action (<code>cta</code>) is a next step on your own site or app. Any other link
-                to another site is an ordinary link with the template's <code>external</code> class,
-                in sentence case: "Browse the code on GitHub". A link is a <code>cta</code> or
-                <code>external</code>, never both.
-              </li>
-              <li>
-                End a section with its one call to action, after everything that makes the case for
-                it, rather than scattering them through the section.
-              </li>
-              <li>Headings and hero titles don't end in a period.</li>
-              <li>Use the Oxford comma: "red, white, and blue".</li>
-              <li>
-                A link that needs sign-in gets plain text " [login required]" after it; a link to a
-                file gets its type, " [PDF]". Use one label, never both.
-              </li>
-              <li>
-                Never leave a lone "a" at the end of a line: join it to the next word with
-                <code>&amp;nbsp;</code>.
-              </li>
-            </ul>
-
             <div class="cmu-callout">
-              <p class="cmu-label">Coming in 0.2</p>
+              <p class="cmu-label">Coming Soon</p>
               <p>
-                <code>cmu-app.js</code>: drag-and-drop for the file drop zone, the selection count
-                and select-all, filtering that keeps table stripes even, and sortable headers. Until
-                then, the app components describe the states your own script should set.
+                <code>cmu-app.js</code> has copy buttons today. Still to come: drag-and-drop for the
+                file drop zone, the selection count and select-all, filtering that keeps table
+                stripes even, and sortable headers. Until then, the app components describe the
+                states your own script should set.
               </p>
             </div>
           </div>
@@ -238,6 +179,7 @@
             <ul>
               <li><a href="start.html">Get Started</a></li>
               <li><a href="layout.html">Page Layout</a></li>
+              <li><a href="about.html">About</a></li>
               <li>
                 <a href="components.html">Components</a>
                 <ul>
