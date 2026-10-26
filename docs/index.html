@@ -69,12 +69,22 @@
             </div>
 
             <h1 id="using">Using the Kit</h1>
-            <p class="cmu-lead">
-              Two stylesheets and a script, loaded after CMU's template. For the template's own
-              habits, see <a href="layout.html#quirks">Template Quirks to Know</a>.
+            <p class="cmu-lead" id="install">
+              Load CMU's template first, then the kit, then your own stylesheet.
             </p>
-            <h2 id="files" class="rule-top">Two Files, Two Layers</h2>
-            <table class="alternate cmu-full">
+            <p>
+              Use <code>&lt;link&gt;</code> tags rather than CSS <code>@import</code>, which makes
+              the browser load the files one after another. The script goes at the end of
+              <code>&lt;body&gt;</code>, after the template's scripts.
+            </p>
+            <pre
+              class="kit-code"
+            ><code>&lt;link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" rel="stylesheet"&gt;
+&lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-cms.css" rel="stylesheet"&gt;
+&lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css" rel="stylesheet"&gt;  &lt;!-- apps only --&gt;
+&lt;link href="/your-site.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/js/cmu-app.js"&gt;&lt;/script&gt;  &lt;!-- apps only --&gt;</code></pre>
+            <table class="alternate cmu-full" id="files">
               <thead>
                 <tr>
                   <th scope="col">File</th>
@@ -100,25 +110,17 @@
                     panels
                   </td>
                 </tr>
+                <tr>
+                  <td class="cmu-fit"><code>cmu-app.js</code></td>
+                  <td>Apps, after the template's scripts</td>
+                  <td>Behavior for the components that need it, such as copy buttons</td>
+                </tr>
               </tbody>
             </table>
             <p>
-              Your site or app adds its own stylesheet last, for whatever is particular to it, with
-              its own prefix.
+              Your own stylesheet holds whatever is particular to your site or app, with its own
+              prefix.
             </p>
-
-            <h2 id="install" class="rule-top">Add It to a Page</h2>
-            <p>
-              Load the template first, then the kit, then your own stylesheet. Use
-              <code>&lt;link&gt;</code> tags rather than CSS <code>@import</code>, which makes the
-              browser load the files one after another.
-            </p>
-            <pre
-              class="kit-code"
-            ><code>&lt;link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" rel="stylesheet"&gt;
-&lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-cms.css" rel="stylesheet"&gt;
-&lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css" rel="stylesheet"&gt;  &lt;!-- apps only --&gt;
-&lt;link href="/your-site.css" rel="stylesheet"&gt;</code></pre>
             <p><a class="cta" href="start.html">Add It to a Cascade Site or an App</a></p>
           </div>
         </div>
