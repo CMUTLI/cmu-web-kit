@@ -45,10 +45,10 @@
           <div>
             <div class="cmu-hero">
               <div>
-                <h1>Ready-Made Components for CMU's Web Template</h1>
+                <h1>Components for CMU's Web Template</h1>
                 <p class="cmu-lead">
-                  The Carnegie Mellon Web Kit fills the gaps in Carnegie Mellon's web template, for
-                  Cascade sites and for web apps that use the same template.
+                  The Carnegie Mellon Web Kit builds on Carnegie Mellon's web template, for Cascade
+                  sites and the web apps that use it.
                 </p>
                 <div class="cmu-cta-row">
                   <a class="btn" href="start.html">Get Started</a>
@@ -70,8 +70,8 @@
 
             <h1 id="using">Using the Kit</h1>
             <p class="cmu-lead">
-              Two stylesheets and a script, loaded after CMU's template, and a few of the template's
-              habits worth knowing before you start.
+              Two stylesheets and a script, loaded after CMU's template. For the template's own
+              habits, see <a href="layout.html#quirks">Template Quirks to Know</a>.
             </p>
             <h2 id="files" class="rule-top">Two Files, Two Layers</h2>
             <table class="alternate cmu-full">
@@ -120,36 +120,6 @@
 &lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css" rel="stylesheet"&gt;  &lt;!-- apps only --&gt;
 &lt;link href="/your-site.css" rel="stylesheet"&gt;</code></pre>
             <p><a class="cta" href="start.html">Add It to a Cascade Site or an App</a></p>
-
-            <h2 id="quirks" class="rule-top">Template Quirks to Know</h2>
-            <ul>
-              <li>
-                Tables are <code>display: block</code> so they scroll on phones, which stops them
-                stretching. Add <code>cmu-full</code> to stretch one to full width from 768px up.
-              </li>
-              <li>
-                The template's script removes <code>style=""</code> from spans. Use a div when you
-                need an inline style, such as a bar's width.
-              </li>
-              <li>
-                <code>.content</code> lays out its direct children as columns, so put one wrapper
-                <code>&lt;div&gt;</code> inside it.
-              </li>
-              <li>
-                A logo in the header must follow the site name's <code>&lt;div&gt;</code> with no
-                space between them, or it drops below the name.
-              </li>
-              <li>
-                A sidebar must follow the page's <code>&lt;div&gt;</code> in
-                <code>.content</code> the same way,
-                <code>&lt;/div&gt;&lt;div class="sidebar"&gt;</code>, or it drops below the page.
-              </li>
-              <li>
-                <code>.btn</code> and other classes that set <code>display</code> override a bare
-                <code>hidden</code> attribute. The kit restores <code>hidden</code> inside its
-                dialogs and bulk bar.
-              </li>
-            </ul>
 
             <div class="cmu-callout">
               <p class="cmu-label">Coming Soon</p>

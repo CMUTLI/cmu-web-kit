@@ -23,7 +23,7 @@ Update the docs whenever a component changes.
 - **The template comes first.** Link CMU's template CSS and use its
   classes as they are: `btn`, `btn small`, `ghost`, `cta`,
   `table.alternate`, `.sidebar`, `.sr-only`. Never copy its rules or
-  values. Add a component only where the template has nothing, and prefer
+  values. Add a component only for what the template doesn't already do, and prefer
   the template's own spacing to an override.
 - **Prefix `cmu-`** for every class, custom property (`--cmu-red`), and
   JavaScript hook (`data-cmu-copy`). Modifiers use `--` (`cmu-pill--green`).

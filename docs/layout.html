@@ -453,6 +453,35 @@
                 another.
               </li>
             </ul>
+
+            <h2 id="quirks" class="rule-top">Template Quirks to Know</h2>
+            <ul>
+              <li>
+                Tables are <code>display: block</code> so they scroll on phones, which stops them
+                stretching. Add <code>cmu-full</code> to stretch one to full width from 768px up.
+              </li>
+              <li>
+                The template's script removes <code>style=""</code> from spans. Use a div when you
+                need an inline style, such as a bar's width.
+              </li>
+              <li>
+                <code>.content</code> lays out its direct children as columns, so put one wrapper
+                <code>&lt;div&gt;</code> inside it.
+              </li>
+              <li>
+                A logo in the header must follow the site name's <code>&lt;div&gt;</code> with no
+                space between them, or it drops below the name.
+              </li>
+              <li>
+                A sidebar must follow the page's <code>&lt;div&gt;</code> in
+                <code>.content</code> the same way,
+                <code>&lt;/div&gt;&lt;div class="sidebar"&gt;</code>, or it drops below the page.
+              </li>
+              <li>
+                <code>.btn</code> and other classes that set <code>display</code> override a bare
+                <code>hidden</code> attribute. The kit makes <code>hidden</code> always hide.
+              </li>
+            </ul>
           </div>
         </div>
       </main>
