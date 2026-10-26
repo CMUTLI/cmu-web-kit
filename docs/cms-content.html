@@ -120,13 +120,11 @@
 
             <h2 id="checks" class="rule-top">Bullet and Check Lists</h2>
             <p>
-              For ordinary points or tips, use the template's own list: a plain
-              <code>&lt;ul&gt;</code>
-              with no class, which gets gray open circles. Save check marks for lists where each
-              item is something you get or something that's done, such as what a kit includes or
-              which requirements a course meets; a page where every list is checked reads like a
-              to-do list. Either way, start each item with a short bold phrase when it helps people
-              scan.
+              For describing things (the parts of a component, the options there are), use the
+              template's own list: a plain <code>&lt;ul&gt;</code> with no class, which gets gray
+              open circles. Use check marks for a list of dos and don'ts, or of things you get, such
+              as what a kit includes; when every list is checked, a page reads like a to-do list.
+              Either way, start each item with a short bold phrase when it helps people scan.
             </p>
             <p class="kit-classes"><code>ul</code>, <code>ul.cmu-checks</code></p>
             <!-- prettier-ignore -->
@@ -229,7 +227,7 @@
               somewhere else. Give the block an <code>id</code> and point the button's
               <code>data-cmu-copy</code> at it. It needs <code>cmu-app.js</code>.
             </p>
-            <ul>
+            <ul class="cmu-checks">
               <li>
                 <strong>Under the block,</strong> so people see what they'll copy before they copy
                 it.

@@ -1,6 +1,19 @@
 // Docs only: show each live example's markup under it, so every example is
 // written once. Elements marked data-demo-skip are left out of the code.
-var COLORS = ["grey", "darkgrey", "red", "gold", "blue", "teal", "green", "darkgreen", "invert"];
+// A section's background classes: its color, invert for dark ones, and its pattern
+var BAND = [
+  "grey",
+  "darkgrey",
+  "red",
+  "gold",
+  "blue",
+  "teal",
+  "green",
+  "darkgreen",
+  "invert",
+  "plaid",
+  "globe",
+];
 document.querySelectorAll(".kit-demo").forEach(function (demo) {
   var copy = demo.cloneNode(true);
   copy.querySelectorAll("[data-demo-skip]").forEach(function (el) {
@@ -29,20 +42,24 @@ document.querySelectorAll(".kit-demo").forEach(function (demo) {
     .replace(/ data-preview/g, "")
     .replace(/ data-kit-[\w-]+="[^"]*"/g, "");
   pre.appendChild(code);
-  // A wide example is a real page section, edge to edge; its code goes in a
-  // content block of its own, at the page's normal width
+  // A wide example is a real page section, edge to edge. Its code goes at
+  // the top of the content block after it (kit-follow, which can also hold
+  // notes about the example), on the example's color and pattern, so the
+  // two read as one section.
   if (demo.classList.contains("kit-demo--wide")) {
-    var wrap = document.createElement("div");
-    wrap.className = "content wide";
-    // On the example's color too (not its plaid or globe), so the code reads
-    // as part of the same section
+    var follow = demo.nextElementSibling;
+    if (!follow || !follow.classList.contains("kit-follow")) {
+      follow = document.createElement("div");
+      follow.className = "content wide kit-follow";
+      follow.appendChild(document.createElement("div"));
+      demo.after(follow);
+    }
+    follow.firstElementChild.prepend(pre);
     var section = demo.querySelector(".content, .grid");
     if (section)
-      COLORS.forEach(function (c) {
-        if (section.classList.contains(c)) wrap.classList.add(c);
+      BAND.forEach(function (c) {
+        if (section.classList.contains(c)) follow.classList.add(c);
       });
-    wrap.appendChild(document.createElement("div")).appendChild(pre);
-    demo.after(wrap);
   } else {
     demo.after(pre);
   }

@@ -7,6 +7,21 @@
   display: flow-root; /* keep floated photos inside the box */
   background: #fff;
 }
+/* The template zeroes padding on a section's first and last element; code
+   samples keep theirs */
+#content .kit-code {
+  padding: 1rem 1.25rem;
+}
+/* After a band with a background, the change of color marks the next
+   section, so its heading needs no line */
+#content
+  > .kit-follow:is(.grey, .darkgrey, .red, .gold, .blue, .teal, .green, .darkgreen)
+  + .content
+  > div
+  > h2.rule-top:first-child {
+  border-top: 0;
+  margin-top: 2rem;
+}
 /* A wide example is a real section of the page: no box around it */
 .kit-demo--wide {
   margin: 0;
