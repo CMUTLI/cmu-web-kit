@@ -60,12 +60,9 @@
   border-top: 6px solid var(--cmu-red);
 }
 /* The template pads every heading and paragraph; inside the hero the
-   spacing is set here instead */
+   lead's spacing is set here instead (the h1 keeps the template's) */
 .cmu-hero h1 {
-  margin: 0 0 2rem;
-  padding: 0;
   font-size: clamp(2.2rem, 4.6vw, 3.3rem);
-  line-height: 1.08;
   letter-spacing: -.01em;
 }
 .cmu-hero .cmu-lead { margin: 0 0 2.5rem; padding: 0; }
