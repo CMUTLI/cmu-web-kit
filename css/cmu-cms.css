@@ -192,9 +192,12 @@ ol.cmu-flow li strong { display: block; font-size: 1.15rem; margin-bottom: .25re
 #content table.alternate td { vertical-align: middle; }
 
 /* A block of code to read or copy: scrolls sideways by default; --wrap
-   wraps long lines (URLs, HTML) so all of it stays in view */
+   wraps long lines (URLs, HTML) so all of it stays in view. It belongs to
+   the sentence that introduces it, so it sits close under it (like a line
+   break), then a paragraph's space before what follows. */
+p:has(+ .cmu-snippet) { padding-bottom: .5em; }
 .cmu-snippet {
-  margin: 0 0 1.75rem;
+  margin: 0 0 1em;
   padding: 1rem 1.25rem;
   overflow-x: auto;
   background: var(--cmu-tint);
