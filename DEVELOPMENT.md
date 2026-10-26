@@ -97,15 +97,17 @@ in the kit. To add one:
    For a whole page section (a color band, a grid, content with a sidebar),
    make it a wide example instead: close the page's text block, add
    `<div class="kit-demo kit-demo--wide">` directly in `#content`, and open
-   a new text block after it. It then runs the full width like a real
-   section, and its code sample follows in the next text block.
-3. Rebuild the Components table:
+   a new text block after it. It runs the full width like a real section.
+   Notes about it go in a `<div class="content wide kit-follow">` right
+   after it. When the section has a background, the docs' script moves its
+   code and those notes inside it, so the color and pattern run unbroken;
+   otherwise they stay in that block.
 
    ```bash
    npm run components
    ```
 
-4. Check it at desktop and phone widths, with nothing scrolling sideways.
+3. Check it at desktop and phone widths, with nothing scrolling sideways.
 
 Behavior goes in `js/cmu-app.js`, hooked onto a `data-cmu-*` attribute and
 working on markup added later. Pages load it after the template's scripts.

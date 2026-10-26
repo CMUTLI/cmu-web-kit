@@ -42,24 +42,38 @@ document.querySelectorAll(".kit-demo").forEach(function (demo) {
     .replace(/ data-preview/g, "")
     .replace(/ data-kit-[\w-]+="[^"]*"/g, "");
   pre.appendChild(code);
-  // A wide example is a real page section, edge to edge. Its code goes at
-  // the top of the content block after it (kit-follow, which can also hold
-  // notes about the example), on the example's color and pattern, so the
-  // two read as one section.
+  // A wide example is a real page section, edge to edge. Its code, and any
+  // notes in the content block after it (kit-follow), go with it: inside
+  // the section itself when it has a background, so the color and pattern
+  // run on unbroken; otherwise in that block, at the page's normal width.
   if (demo.classList.contains("kit-demo--wide")) {
     var follow = demo.nextElementSibling;
-    if (!follow || !follow.classList.contains("kit-follow")) {
-      follow = document.createElement("div");
-      follow.className = "content wide kit-follow";
-      follow.appendChild(document.createElement("div"));
-      demo.after(follow);
-    }
-    follow.firstElementChild.prepend(pre);
+    if (!follow || !follow.classList.contains("kit-follow")) follow = null;
     var section = demo.querySelector(".content, .grid");
-    if (section)
-      BAND.forEach(function (c) {
-        if (section.classList.contains(c)) follow.classList.add(c);
+    var banded =
+      section &&
+      BAND.some(function (c) {
+        return section.classList.contains(c);
       });
+    if (banded) {
+      var inner = document.createElement("div");
+      inner.className = "kit-follow-in";
+      inner.appendChild(pre);
+      if (follow) {
+        while (follow.firstElementChild.firstChild)
+          inner.appendChild(follow.firstElementChild.firstChild);
+        follow.remove();
+      }
+      section.appendChild(inner);
+    } else {
+      if (!follow) {
+        follow = document.createElement("div");
+        follow.className = "content wide kit-follow";
+        follow.appendChild(document.createElement("div"));
+        demo.after(follow);
+      }
+      follow.firstElementChild.prepend(pre);
+    }
   } else {
     demo.after(pre);
   }
