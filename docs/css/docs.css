@@ -7,6 +7,13 @@
   display: flow-root; /* keep floated photos inside the box */
   background: #fff;
 }
+/* A wide example is a real section of the page: no box around it */
+.kit-demo--wide {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
 .kit-demo > :last-child:not(dialog) {
   margin-bottom: 0;
 }

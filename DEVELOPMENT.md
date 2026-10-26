@@ -94,6 +94,11 @@ in the kit. To add one:
    and a live example inside `<div class="kit-demo">`, with a
    `<!-- prettier-ignore -->` line right before it. The docs' script shows
    each example's markup under it, so write the example once.
+   For a whole page section (a color band, a grid, content with a sidebar),
+   make it a wide example instead: close the page's text block, add
+   `<div class="kit-demo kit-demo--wide">` directly in `#content`, and open
+   a new text block after it. It then runs the full width like a real
+   section, and its code sample follows in the next text block.
 3. Rebuild the Components table:
 
    ```bash

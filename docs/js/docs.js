@@ -28,7 +28,16 @@ document.querySelectorAll(".kit-demo").forEach(function (demo) {
     .replace(/ data-preview/g, "")
     .replace(/ data-kit-[\w-]+="[^"]*"/g, "");
   pre.appendChild(code);
-  demo.after(pre);
+  // A wide example is a real page section, edge to edge; its code goes in a
+  // content block of its own, at the page's normal width
+  if (demo.classList.contains("kit-demo--wide")) {
+    var wrap = document.createElement("div");
+    wrap.className = "content wide";
+    wrap.appendChild(document.createElement("div")).appendChild(pre);
+    demo.after(wrap);
+  } else {
+    demo.after(pre);
+  }
 });
 
 // Forms in the examples don't go anywhere

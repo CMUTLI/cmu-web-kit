@@ -86,7 +86,7 @@ if (next === html && !html.includes("<!-- components:start"))
 const unmarked = readdirSync(docs)
   .filter((f) => f.endsWith(".html"))
   .flatMap((f) =>
-    [...read(f).matchAll(/(.*)\n\s*<div class="kit-demo"/g)]
+    [...read(f).matchAll(/(.*)\n\s*<div class="kit-demo[" ]/g)]
       .filter((m) => !m[1].includes("<!-- prettier-ignore -->"))
       .map(() => f),
   );
