@@ -28,6 +28,8 @@
   --cmu-gray: #4a535b;
   --cmu-gray-tint: #eceef0;
   --cmu-red-tint: #fdf2f3;
+  --cmu-blue: #043673; /* the template's blue */
+  --cmu-blue-tint: #e9eff7;
 }
 
 /* Small capitals: eyebrow (red, above a heading), label (gray) */
@@ -271,6 +273,36 @@ ol.cmu-flow li strong {
 .cmu-callout p {
   margin: 0;
   padding: 0;
+}
+/* Colors, for what kind of aside it is: blue for a note, green for a tip,
+   gold for a warning, red for a caution. The label takes the color too. */
+.cmu-callout--blue {
+  background: var(--cmu-blue-tint);
+  border-left-color: var(--cmu-blue);
+}
+.cmu-callout--green {
+  background: var(--cmu-green-tint);
+  border-left-color: var(--cmu-green-fill);
+}
+.cmu-callout--gold {
+  background: var(--cmu-amber-tint);
+  border-left-color: var(--cmu-gold);
+}
+.cmu-callout--red {
+  background: var(--cmu-red-tint);
+  border-left-color: var(--cmu-red);
+}
+.cmu-callout--blue .cmu-label {
+  color: var(--cmu-blue);
+}
+.cmu-callout--green .cmu-label {
+  color: var(--cmu-green);
+}
+.cmu-callout--gold .cmu-label {
+  color: var(--cmu-amber);
+}
+.cmu-callout--red .cmu-label {
+  color: var(--cmu-red);
 }
 
 /* Note: a plain tinted message among other content */

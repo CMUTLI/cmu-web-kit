@@ -148,16 +148,52 @@
             <p>
               A callout is a labeled aside on a page, with roomy spacing: the label sits beside the
               text when there's space. A note is a plainer tinted box for a message among other
-              content, such as in an app.
+              content, such as in an app. Give a callout a color for what kind of aside it is: blue
+              for a note, green for a tip, gold for a warning, red for a caution; the plain gray one
+              suits anything else. Keep color for asides that need it, so it still stands out.
             </p>
+            <ul class="cmu-checks">
+              <li>
+                <strong>A callout</strong> is an aside within a section, for the people reading that
+                part of the page: a note, a tip, a warning. It stays until someone edits the page.
+              </li>
+              <li>
+                <strong>Not the result of something someone just did</strong>, such as saving a
+                form: that's a <a href="app-messages.html#flash">flash message</a>, shown once.
+              </li>
+              <li>
+                <strong>Not a notice everyone should see first</strong>, such as who a page is for
+                or a deadline: that's an
+                <a href="standard-sections.html#announcements">announcement</a>, a color band at the
+                top of the page.
+              </li>
+            </ul>
             <p class="kit-classes">
-              <code>cmu-callout</code> with <code>cmu-label</code>, <code>cmu-note</code>
+              <code>cmu-callout</code> with <code>cmu-label</code>, <code>cmu-callout--blue</code>,
+              <code>cmu-callout--green</code>, <code>cmu-callout--gold</code>,
+              <code>cmu-callout--red</code>, <code>cmu-note</code>
             </p>
             <!-- prettier-ignore -->
             <div class="kit-demo">
         <div class="cmu-callout">
           <p class="cmu-label">When to join</p>
           <p>Up to 15 minutes before office hours start. Course staff see the line as soon as they open.</p>
+        </div>
+        <div class="cmu-callout cmu-callout--blue">
+          <p class="cmu-label">Note</p>
+          <p>Queues open 15 minutes before office hours start.</p>
+        </div>
+        <div class="cmu-callout cmu-callout--green">
+          <p class="cmu-label">Tip</p>
+          <p>Add a question when you join, so course staff can group similar ones.</p>
+        </div>
+        <div class="cmu-callout cmu-callout--gold">
+          <p class="cmu-label">Warning</p>
+          <p>Leaving the page doesn't take you out of the line.</p>
+        </div>
+        <div class="cmu-callout cmu-callout--red">
+          <p class="cmu-label">Caution</p>
+          <p>Removing a queue removes everyone waiting in it.</p>
         </div>
         <div class="cmu-note">
           <p>You aren't in any queues right now.</p>
