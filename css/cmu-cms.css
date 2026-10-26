@@ -344,6 +344,15 @@ ol.cmu-flow li strong {
   vertical-align: middle;
 }
 
+/* A page from another site in a frame (a dashboard, a form): the width of
+   its column at any screen size; set its height with the height attribute.
+   The template sizes only video iframes. */
+.cmu-embed {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--cmu-line);
+}
+
 /* A block of code to read or copy: scrolls sideways by default; --wrap
    wraps long lines (URLs, HTML) so all of it stays in view. It belongs to
    the sentence that introduces it, so it sits close under it (like a line

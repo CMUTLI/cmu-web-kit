@@ -206,6 +206,40 @@
         </div>
       </div>
 
+            <h2 id="embed" class="rule-top">Embedded Page</h2>
+            <p>
+              A page from another site shown in a frame, such as a dashboard or a form. Give the
+              <code>&lt;iframe&gt;</code> the <code>cmu-embed</code> class, and it fills its column
+              at any screen size; set its height in the <code>height</code> attribute, tall enough
+              for what's in it. The template sizes YouTube and other video frames itself (see
+              <a href="standard.html#videos">Videos</a>), but no others.
+            </p>
+            <ul class="cmu-checks">
+              <li>
+                <strong>Give it a <code>title</code></strong> that names what's in it: screen
+                readers announce it for the frame.
+              </li>
+              <li>
+                <strong>Link to it below</strong>, as an ordinary <code>external</code> link, for
+                people who'd rather open it in a tab of its own, and for phones, where a tall frame
+                is hard to scroll.
+              </li>
+              <li>
+                <strong>Add <code>loading="lazy"</code></strong> so it loads only when someone
+                scrolls to it.
+              </li>
+              <li>
+                <strong>Embed only pages that allow it.</strong> Many sites forbid being framed, and
+                the frame then stays blank; check it on a test page first.
+              </li>
+            </ul>
+            <p class="kit-classes"><code>cmu-embed</code></p>
+            <!-- prettier-ignore -->
+            <div class="kit-demo">
+        <iframe class="cmu-embed" src="https://carnegie-mellon-university-um.app.poweredbyenergycap.com/app/embedded?key=ZW5jLXB1YmxpYy1kYXNoYm9hcmR8UHJvZHVjdGlvbg%3D%3D.Y211fDEwMjQ%3D.NmQ2ZGU5YzYtYTAyYS00MjU1LTllZDMtNzAyYzM1ZWZiNTE4&amp;showGlobalFilter=1&amp;dashboardId=1538&amp;dashboardType=USER" title="Carnegie Mellon energy use dashboard" height="700" loading="lazy"></iframe>
+        <p><a class="external" href="https://carnegie-mellon-university-um.app.poweredbyenergycap.com/app/embedded?key=ZW5jLXB1YmxpYy1kYXNoYm9hcmR8UHJvZHVjdGlvbg%3D%3D.Y211fDEwMjQ%3D.NmQ2ZGU5YzYtYTAyYS00MjU1LTllZDMtNzAyYzM1ZWZiNTE4&amp;showGlobalFilter=1&amp;dashboardId=1538&amp;dashboardType=USER">Open the energy dashboard on its own page</a></p>
+      </div>
+
             <h2 id="snippet" class="rule-top">Code Block</h2>
             <p>
               Code or an address for people to read or copy, on a light gray box. Long lines scroll
