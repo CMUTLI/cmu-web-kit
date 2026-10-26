@@ -64,10 +64,10 @@
 .kit-classes code {
   color: var(--cmu-ink);
 }
-/* Section headings of the docs pages themselves, not headings inside examples:
-   the 64px a CMS page gets between content sections (32px padding each side).
-   The line over each is the template's rule-top. */
-#content > .content > div > :is(h1, h2)[id] {
+/* Section headings of the reference pages (h2, with the template's rule-top
+   line): the 64px a CMS page gets between content sections. Section h1s, as
+   on the home page, keep the template's own spacing. */
+#content > .content > div > h2[id] {
   margin-top: 4rem;
 }
 #content > .content > div > .cmu-hero + h1 {
