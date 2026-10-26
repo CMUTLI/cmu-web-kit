@@ -57,10 +57,12 @@ document.querySelectorAll(".kit-demo").forEach(function (demo) {
       });
     if (banded) {
       demo.classList.add("kit-demo--banded");
-      section.appendChild(pre);
+      // A grid takes them as rows; a content section, inside its one div
+      var into = section.classList.contains("content") ? section.firstElementChild : section;
+      into.appendChild(pre);
       if (follow) {
         while (follow.firstElementChild.firstChild)
-          section.appendChild(follow.firstElementChild.firstChild);
+          into.appendChild(follow.firstElementChild.firstChild);
         follow.remove();
       }
     } else {

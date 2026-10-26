@@ -344,6 +344,82 @@ ol.cmu-flow li strong {
   vertical-align: middle;
 }
 
+/* Testimonial: a quote from a person, with their name, role, and square
+   photo beside it, as on CMU Global's and Dietrich College's home pages. Put
+   it in a band such as content wide grey. Stacks on phones, photo first. */
+.cmu-testimonial {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+.cmu-testimonial > img {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+.cmu-testimonial > figure {
+  margin: 0;
+}
+/* The red quotation-mark tile; decoration, so screen readers skip it */
+.cmu-testimonial > figure::before {
+  content: "\201C" / "";
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  background: var(--cmu-red);
+  color: #fff;
+  font:
+    700 5rem/1.15 Georgia,
+    "Times New Roman",
+    serif;
+  text-align: center;
+  overflow: hidden;
+}
+/* The template's blockquote is 2.35em and light; here the quote is set at
+   about lead size, semibold, keeping the template's thin rule beside it */
+#content .cmu-testimonial blockquote {
+  margin: 1.75rem 0 0;
+  padding: 0 0 0 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--cmu-ink);
+}
+#content .cmu-testimonial blockquote p {
+  margin: 0;
+  padding: 0;
+}
+.cmu-testimonial cite {
+  display: block;
+  margin-top: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.cmu-testimonial cite strong {
+  color: var(--cmu-red);
+  font-size: 1.25rem;
+}
+@media (max-width: 760px) {
+  .cmu-testimonial {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+  .cmu-testimonial > img {
+    grid-column: 1;
+    max-width: 16rem;
+  }
+  .cmu-testimonial > figure {
+    grid-row: 2;
+  }
+  #content .cmu-testimonial blockquote {
+    font-size: 1.3rem;
+  }
+}
+
 /* A page from another site in a frame (a dashboard, a form): the width of
    its column at any screen size; set its height with the height attribute.
    The template sizes only video iframes. */

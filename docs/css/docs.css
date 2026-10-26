@@ -33,6 +33,10 @@
   > h2.rule-top:first-child {
   border-top: 0;
 }
+/* Code under a testimonial in its band */
+.cmu-testimonial + .kit-code {
+  margin-top: 2rem;
+}
 /* A wide example is a real section of the page: no box around it */
 .kit-demo--wide {
   margin: 0;
