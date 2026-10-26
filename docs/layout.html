@@ -185,7 +185,12 @@
     &lt;/div&gt;
   &lt;/footer&gt;
 &lt;/div&gt;
-&lt;!-- Scripts, below --&gt;
+
+&lt;!-- The template's scripts (see Scripts, below), then the kit's --&gt;
+&lt;script src="https://www.cmu.edu/common/standard-v6/js/list.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://www.cmu.edu/common/standard-v6/js/jquery-1.10.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://www.cmu.edu/common/standard-v6/js/main.6.7.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/js/cmu-app.js"&gt;&lt;/script&gt;  &lt;!-- apps only --&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
             <ul>
@@ -436,10 +441,15 @@
               class="kit-code"
             ><code>&lt;script src="https://www.cmu.edu/common/standard-v6/js/list.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://www.cmu.edu/common/standard-v6/js/jquery-1.10.1.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://www.cmu.edu/common/standard-v6/js/main.6.7.min.js"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="https://www.cmu.edu/common/standard-v6/js/main.6.7.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/js/cmu-app.js"&gt;&lt;/script&gt;  &lt;!-- apps only --&gt;</code></pre>
             <p>
-              Besides the navigation, the script removes <code>style=""</code> from spans, and opens
-              and closes the template's <code>.collapsed</code> headings.
+              In an app, the kit's <code>cmu-app.js</code> comes last, after the template's, for the
+              components that need a script, such as copy buttons.
+            </p>
+            <p>
+              Besides the navigation, the template's script removes <code>style=""</code> from
+              spans, and opens and closes the template's <code>.collapsed</code> headings.
             </p>
 
             <h2 id="which-nav" class="rule-top">Navigation or Tabs?</h2>
