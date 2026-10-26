@@ -380,8 +380,11 @@ body.cmu-acting-as .scrolltop {
    announcements are the template's own color bands instead. */
 .cmu-flash {
   margin: 1em 0;
-  padding: 0.75em 1em;
   border-left: 4px solid;
+}
+/* Equal padding even on a p (see .cmu-note in cmu-cms.css) */
+:is(#content, body) .cmu-flash {
+  padding: 0.75em 1em;
 }
 .cmu-flash--error {
   background: var(--cmu-red-tint);

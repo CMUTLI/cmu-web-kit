@@ -12,34 +12,13 @@
 #content .kit-code {
   padding: 1rem 1.25rem;
 }
-/* A banded wide example's code and notes, inside its section: a row of
-   their own across the grid, notes in a box so they read on any background */
-#content .grid > div.kit-follow-in {
-  display: block;
+/* A banded wide example's code and notes join its grid: a row each */
+#content .kit-demo--wide .grid > :is(.kit-code, .cmu-note) {
   flex: 0 0 100%;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0 0 1.5em;
-}
-/* The template makes every link in a news grid a block card; links in the
-   notes are ordinary links */
-#content .grid .kit-follow-in a {
-  display: inline;
-  width: auto;
-  background: none;
-  border-bottom: 1px solid currentColor !important;
-  padding-bottom: 1px !important;
-}
-.kit-follow-in > :not(pre) {
-  margin: 0;
-  padding: 1rem 1.25rem;
-  background: #fff;
-  color: var(--cmu-ink);
-  border: 1px solid var(--cmu-line);
 }
 /* After a band with a background, the change of color marks the next
    section, so its heading needs no line */
-#content > .kit-demo--wide:has(.kit-follow-in) + .content > div > h2.rule-top:first-child {
+#content > .kit-demo--banded + .content > div > h2.rule-top:first-child {
   border-top: 0;
   margin-top: 2rem;
 }
@@ -72,6 +51,10 @@
   position: static;
   margin: 0;
   max-width: 100%;
+}
+.kit-classes::before {
+  content: "Classes: ";
+  color: var(--cmu-muted);
 }
 .kit-classes {
   margin: 0 0 0.5rem;

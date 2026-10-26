@@ -99,9 +99,10 @@ in the kit. To add one:
    `<div class="kit-demo kit-demo--wide">` directly in `#content`, and open
    a new text block after it. It runs the full width like a real section.
    Notes about it go in a `<div class="content wide kit-follow">` right
-   after it. When the section has a background, the docs' script moves its
-   code and those notes inside it, so the color and pattern run unbroken;
-   otherwise they stay in that block.
+   after it, as `<p class="cmu-note">`. When the section has a background,
+   the docs' script moves its code and those notes inside it, so the color
+   and pattern run unbroken; otherwise the code goes at the top of the text
+   block after it.
 
    ```bash
    npm run components

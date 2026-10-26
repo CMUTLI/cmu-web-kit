@@ -276,9 +276,15 @@ ol.cmu-flow li strong {
 /* Note: a plain tinted message among other content */
 .cmu-note {
   margin: 0 0 1.25em;
-  padding: 0.85em 1.1em;
   background: var(--cmu-tint);
   border-left: 4px solid var(--cmu-line);
+}
+/* Equal padding even on a p: the template zeroes a p's top padding when
+   it's first (p:first-child) and its bottom padding when it's last in a
+   grid (.grid p:last-child). The id in :is() only adds weight; body keeps
+   it working on pages without #content. */
+:is(#content, body) .cmu-note {
+  padding: 0.85em 1.1em;
 }
 .cmu-note p {
   margin: 0;
