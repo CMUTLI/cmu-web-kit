@@ -118,17 +118,31 @@
         </ol>
       </div>
 
-            <h2 id="checks" class="rule-top">Check List</h2>
+            <h2 id="checks" class="rule-top">Bullet and Check Lists</h2>
             <p>
-              A list of points or tips, each with a red check mark. Start each item with a short
-              bold phrase.
+              For ordinary points or tips, use the template's own list: a plain
+              <code>&lt;ul&gt;</code>
+              with no class, which gets gray open circles. Save check marks for lists where each
+              item is something you get or something that's done, such as what a kit includes or
+              which requirements a course meets; a page where every list is checked reads like a
+              to-do list. Either way, start each item with a short bold phrase when it helps people
+              scan.
             </p>
-            <p class="kit-classes"><code>ul.cmu-checks</code></p>
+            <p class="kit-classes"><code>ul</code>, <code>ul.cmu-checks</code></p>
             <!-- prettier-ignore -->
             <div class="kit-demo">
-        <ul class="cmu-checks">
+        <ul>
           <li><strong>Borrowing for a class?</strong> Give the course number, and you can keep it for a week.</li>
           <li><strong>Late returns</strong> pause your borrowing until the equipment is back.</li>
+        </ul>
+      </div>
+            <!-- prettier-ignore -->
+            <div class="kit-demo">
+        <p>Every camera kit includes:</p>
+        <ul class="cmu-checks">
+          <li><strong>A camera body</strong> with a zoom lens</li>
+          <li><strong>Two batteries</strong> and a charger</li>
+          <li><strong>A tripod</strong> and a carrying case</li>
         </ul>
       </div>
 
@@ -215,7 +229,7 @@
               somewhere else. Give the block an <code>id</code> and point the button's
               <code>data-cmu-copy</code> at it. It needs <code>cmu-app.js</code>.
             </p>
-            <ul class="cmu-checks">
+            <ul>
               <li>
                 <strong>Under the block,</strong> so people see what they'll copy before they copy
                 it.
