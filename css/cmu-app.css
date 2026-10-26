@@ -28,7 +28,9 @@ body.cmu-app input[type="text"].inline { width: auto; margin-bottom: 0; }
    To); they wrap onto more lines when the row is too narrow */
 body.cmu-app .cmu-field-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: .75em 1em; margin: 0 0 2em; }
 body.cmu-app .cmu-field-row > div { flex: 1 1 7em; min-width: 0; }
-body.cmu-app .cmu-field-row :is(input, select) { width: 100%; margin: 0; box-sizing: border-box; }
+/* max-width: the template caps inputs at calc(100% - 6px - .5em), which
+   leaves a gap in a border-box cell and pushes the separator off center */
+body.cmu-app .cmu-field-row :is(input, select) { width: 100%; max-width: 100%; margin: 0; box-sizing: border-box; }
 /* A separator (×, to) padded like a text box, so it lines up with the boxes */
 body.cmu-app .cmu-field-row > span { padding: .35em 0; border: 1px solid transparent; line-height: normal; }
 body.cmu-app .cmu-field-row:has(+ p.cmu-hint) { margin-bottom: 0; }
@@ -120,9 +122,10 @@ body.cmu-app :is(input, select, textarea, fieldset > ul) + p.cmu-hint { padding:
 body.cmu-app fieldset > ul + p.cmu-hint:last-child,
 body.cmu-app fieldset > p.cmu-hint:last-child { margin-bottom: 0; }
 /* Options that belong to one choice: inside its list item, lined up with
-   its label, shown only while it's picked (hide them with hidden) */
+   its label, shown only while it's picked (hide them with hidden). Menus
+   and text boxes fill the block, as they fill a column elsewhere. */
 body.cmu-app .cmu-sub-options { margin: .6em 0 .9em 1.65em; }
-body.cmu-app .cmu-sub-options :is(select, input[type="text"]) { width: auto; max-width: 100%; margin-bottom: .75em; }
+body.cmu-app .cmu-sub-options :is(select, input[type="text"]) { width: 100%; max-width: 100%; box-sizing: border-box; margin-bottom: .75em; }
 body.cmu-app .cmu-sub-options > ul { list-style-type: none; padding-left: 0; margin: 0; }
 body.cmu-app .cmu-sub-options > ul > li { margin-left: 0; }
 body.cmu-app .cmu-sub-options > ul + p.cmu-hint { padding: 0; margin: .35rem 0 0; }
