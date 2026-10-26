@@ -138,7 +138,8 @@ document.querySelectorAll("[data-kit-filter]").forEach(function (input) {
       sitename.appendChild(wrap);
       sitename.appendChild(
         html(
-          '<a class="kit-try-logo" href="https://www.cmu.edu/corecompetencies/"><img src="images/core4-logo.png" alt="Core Competencies Initiative"></a>',
+          // A placeholder from PlaceMellon: the round Scotty profile picture
+          '<a class="kit-try-logo" href="https://cmutli.github.io/cmu-placemellon/"><img src="https://placemellon.andrew.cmu.edu/150?profile" width="150" height="150" alt="Logo placeholder"></a>',
         ),
       );
     } else if (!on && wrap) {

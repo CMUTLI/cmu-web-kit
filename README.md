@@ -67,9 +67,8 @@ The code and documentation are under the BSD 3-Clause License (see
 `LICENSE`), copyright Carnegie Mellon University. It doesn't cover:
 
 - **Carnegie Mellon's names and marks**, including the Scotty image in
-  `docs/images/scotty.png` (the Scotty chatbot's avatar) and the Core
-  Competencies logo in `docs/images/core4-logo.png`. The license grants no
-  rights to them, and its third clause bars using the university's name to
+  `docs/images/scotty.png` (the Scotty chatbot's avatar). The license grants
+  no rights to them, and its third clause bars using the university's name to
   endorse or promote work derived from this code.
 - **CMU's web template**, which the kit builds on. The university hosts it
   at www.cmu.edu/common/standard-v6; it isn't part of this repository.
