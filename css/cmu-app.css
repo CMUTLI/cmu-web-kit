@@ -24,6 +24,15 @@ body.cmu-app select,
 body.cmu-app input[type="text"] { width: 100%; margin-bottom: 2em; }
 body.cmu-app select.inline,
 body.cmu-app input[type="text"].inline { width: auto; margin-bottom: 0; }
+/* Fields in one row, each with its label above (Width × Height, From and
+   To); they wrap onto more lines when the row is too narrow */
+body.cmu-app .cmu-field-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: .75em 1em; margin: 0 0 2em; }
+body.cmu-app .cmu-field-row > div { flex: 1 1 7em; min-width: 0; }
+body.cmu-app .cmu-field-row :is(input, select) { width: 100%; margin: 0; box-sizing: border-box; }
+/* A separator (×, to) padded like a text box, so it lines up with the boxes */
+body.cmu-app .cmu-field-row > span { padding: .35em 0; border: 1px solid transparent; line-height: normal; }
+body.cmu-app .cmu-field-row:has(+ p.cmu-hint) { margin-bottom: 0; }
+body.cmu-app .cmu-field-row + p.cmu-hint { padding: 0; margin: .35rem 0 2rem; }
 
 /* Account: your name (or Sign In) beside the menu button; in the menu, name and Sign Out (or Sign In) */
 .roof .cmu-account {
@@ -306,11 +315,14 @@ table .cmu-select-cell label input[type="checkbox"] { margin: 0; }
 .cmu-people p { margin: 0; padding: 0; }
 .cmu-people p + p { color: var(--cmu-muted); font-size: .9em; }
 
-.cmu-filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 1em 1.5em; margin-bottom: 1em; }
+/* Groups line up at the top, so their labels share one line; checkboxes
+   sit level with a text box beside them (its height, centered) */
+.cmu-filters { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1em 1.5em; margin-bottom: 1em; }
 .cmu-filter-group { display: flex; flex-direction: column; gap: .25em; }
-.cmu-filter-checks { display: flex; flex-wrap: wrap; gap: .75em; }
+body.cmu-app .cmu-filter-group > .cmu-label { margin: 0; } /* beats the form label rule above */
+.cmu-filter-checks { display: flex; flex-wrap: wrap; align-items: center; gap: .75em; min-height: 2.2em; }
 .cmu-filter-checks label { display: flex; align-items: center; gap: .25em; margin: 0; font-weight: normal; }
-body.cmu-app .cmu-filter-group input[type="text"] { min-width: 15em; margin-bottom: 0; }
+body.cmu-app .cmu-filter-group input[type="text"] { min-width: 15em; margin: 0; }
 
 /* Bulk bar: a tinted band on top of a table, the selection count then the
    actions. Its height is fixed so buttons appearing don't nudge the table. */
