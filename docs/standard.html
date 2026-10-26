@@ -62,7 +62,7 @@
 
       <div class="cmu-callout">
         <p class="cmu-label">Cascade Sites</p>
-        <p>Cascade builds most of these from its own content types (WYSIWYG, Grid, Slideshow and Wide) and sidebar options, so pick them there rather than pasting markup. The markup is for apps, and for the Source code view when you need one inside a WYSIWYG section.</p>
+        <p>Cascade builds most of these from its own content types (WYSIWYG, Grid, Slideshow, and Wide) and sidebar options, so pick them there rather than pasting markup. The markup is for apps, and for the Source code view when you need one inside a WYSIWYG section.</p>
       </div>
 
 
@@ -81,13 +81,14 @@
         <p><a class="external" href="https://www.cmu.edu/">A link to another site</a></p>
       </div>
       <p>Use <code>&lt;button class="btn"&gt;</code> for things that happen on the page and <code>&lt;a class="btn"&gt;</code> for things that go somewhere.</p>
-      <p>Start the text with a verb that says what happens, in Title Case; when it goes to a page, follow the verb with that page's heading.</p>
+      <p>Start the text with a verb that says what people will do, in Title Case. Let the action lead; echoing the destination page's heading is nice when it fits, but not required. A button is the page's main action and can go wherever that action happens, such as an app's sign-in or a request form in another system. A call to action is a next step on your own site or app. Any other link to another site is an ordinary <code>external</code> link in sentence case, as in the last row; a link is a <code>cta</code> or <code>external</code>, never both.</p>
       <table class="alternate cmu-full">
         <thead><tr><th scope="col">Do</th><th scope="col">Don't</th></tr></thead>
         <tbody>
-          <tr><td>Explore Categories, Grayscale, Scotty and More</td><td>Categories, grayscale, Scotty and more</td></tr>
+          <tr><td>Add Categories, Random Photos, and More</td><td>Categories, random photos, and more</td></tr>
           <tr><td>See the Loan Policies</td><td>Learn More</td></tr>
           <tr><td>Upload Syllabus</td><td>Syllabus Upload</td></tr>
+          <tr><td><a class="external" href="#buttons">Browse the code on GitHub</a></td><td><a class="cta" href="#buttons">Browse the Code</a> (to GitHub)</td></tr>
         </tbody>
       </table>
 
@@ -211,7 +212,7 @@
       <h2 id="more-template" class="rule-top">And More</h2>
       <ul class="cmu-checks">
         <li><strong>Tables:</strong> <code>table.alternate</code> for striped rows; see <a href="cms-data.html#tables">Tables</a>.</li>
-        <li><strong>Bio, News and Course pages:</strong> Cascade page types with their own layouts and indexes.</li>
+        <li><strong>Bio, News, and Course pages:</strong> Cascade page types with their own layouts and indexes.</li>
         <li><strong>Load More:</strong> news and bio indexes show 12 items, then a <code>btn ghost wide</code> Load More button that shows 12 more each time. Cascade writes the markup; you don't. In an app, the kit's <a href="app-lists.html#paging">Load More</a> matches it.</li>
       </ul>
     </div></div>

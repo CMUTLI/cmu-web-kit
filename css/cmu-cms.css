@@ -38,7 +38,11 @@
 .cmu-eyebrow + h1, .cmu-eyebrow + h2, .cmu-eyebrow + h3 { margin-top: 0; padding-top: 0; }
 .cmu-label { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--cmu-muted); }
 .cmu-lead { font-size: 1.2rem; line-height: 1.55; max-width: 44em; margin: 0 0 1.75rem; }
-.cmu-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin: 0 0 2.5rem; }
+.cmu-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin: 0 0 2rem; }
+/* A row of calls to action (no button) belongs to what's right above it:
+   it sits close under that paragraph or list, then leaves room below */
+p:not(.cmu-lead):has(+ .cmu-cta-row:not(:has(.btn))) { padding-bottom: .35em; }
+:is(ul, ol):has(+ .cmu-cta-row:not(:has(.btn))) { margin-bottom: .6em; }
 .cmu-cta-row a.btn { margin: 0; }
 .cmu-cta-note { margin: 0; color: var(--cmu-muted); font-size: .95rem; }
 

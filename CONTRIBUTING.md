@@ -6,7 +6,7 @@
   are: `btn`, `btn small`, `ghost`, `cta`, `table.alternate`, `.sidebar`,
   `.sr-only`. Never copy its rules or values. Add a component only where
   the template has nothing.
-* **Prefix `cmu-`** for every class, custom property (`--cmu-red`) and JS
+* **Prefix `cmu-`** for every class, custom property (`--cmu-red`), and JS
   hook. Modifiers use `--` (`cmu-pill--green`).
 * `cmu-cms.css` is for anything a Cascade page could use; `cmu-app.css` is
   for what only apps need.
@@ -55,7 +55,7 @@ renaming or removing a section.
 
 1. `npm run release -- 0.2.0` sets the version in `package.json` and in
    every example in the docs and README.
-2. Commit, tag and push:
+2. Commit, tag, and push:
    `git commit -am "chore: release 0.2.0" && git tag 0.2.0 && git push && git push --tags`
 3. On GitHub, add release notes to the tag. For a major version, list
    every renamed or removed class.

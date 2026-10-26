@@ -86,7 +86,7 @@ app.use("/vendor/cmu-web-kit", express.static(kit));</code></pre>
       <p>Builds need to reach GitHub to install the package. If yours can't, copy the files in instead, as below.</p>
 
       <h2 id="other" class="rule-top">Other Apps</h2>
-      <p>For Python, PHP, Java or anything else: copy a release's two files into your app's static folder and commit them, with the version in the folder name so it's obvious which one you have.</p>
+      <p>For Python, PHP, Java, or anything else: copy a release's two files into your app's static folder and commit them, with the version in the folder name so it's obvious which one you have.</p>
       <pre class="kit-code"><code>V=0.1.0
 mkdir -p static/vendor/cmu-web-kit-$V
 for f in cmu-cms.css cmu-app.css; do
@@ -95,7 +95,7 @@ done</code></pre>
       <p>Then link them as in step 3 above. Don't edit the copied files; change your own stylesheet, or ask for a change to the kit.</p>
 
       <h2 id="prototype" class="rule-top">Prototypes and Static Pages</h2>
-      <p>For a mockup, a one-off page or a page served while your app is down, link the CDN directly. It's the quickest way to start, at the cost of depending on jsDelivr.</p>
+      <p>For a mockup, a one-off page, or a page served while your app is down, link the CDN directly. It's the quickest way to start, at the cost of depending on jsDelivr.</p>
       <pre class="kit-code"><code>&lt;link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" rel="stylesheet"&gt;
 &lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-cms.css" rel="stylesheet"&gt;
 &lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css" rel="stylesheet"&gt;</code></pre>
