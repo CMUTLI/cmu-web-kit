@@ -117,11 +117,21 @@ nav li.cmu-account-menu .cmu-avatar { width: 56px; height: 56px; }
    below the hint, and the template's padding on every <p> goes */
 body.cmu-app :is(input, select, textarea):has(+ p.cmu-hint) { margin-bottom: 0; }
 body.cmu-app :is(input, select, textarea, fieldset > ul) + p.cmu-hint { padding: 0; margin: .35rem 0 2rem; }
-body.cmu-app fieldset > ul + p.cmu-hint:last-child { margin-bottom: 0; }
+body.cmu-app fieldset > ul + p.cmu-hint:last-child,
+body.cmu-app fieldset > p.cmu-hint:last-child { margin-bottom: 0; }
+/* Options that belong to one choice: inside its list item, lined up with
+   its label, shown only while it's picked (hide them with hidden) */
+body.cmu-app .cmu-sub-options { margin: .6em 0 .9em 1.65em; }
+body.cmu-app .cmu-sub-options :is(select, input[type="text"]) { width: auto; max-width: 100%; margin-bottom: .75em; }
+body.cmu-app .cmu-sub-options > ul { list-style-type: none; padding-left: 0; margin: 0; }
+body.cmu-app .cmu-sub-options > ul > li { margin-left: 0; }
+body.cmu-app .cmu-sub-options > ul + p.cmu-hint { padding: 0; margin: .35rem 0 0; }
 /* A short note beside a button, centered on it; wraps under it when narrow */
 .cmu-button-note { display: flex; flex-wrap: wrap; align-items: center; gap: .5em 1em; margin: 0 0 1.5em; }
 .cmu-button-note > * { margin: 0; }
 .cmu-button-note > p { padding: 0; }
+/* Right under a photo, it acts on that photo: close to it, room after */
+figure.image:has(+ .cmu-button-note) { padding-bottom: .75rem; }
 .cmu-empty { text-align: center; color: var(--cmu-muted); padding: 1.25em; }
 /* Codes (departments, course numbers) kept on one line */
 .cmu-code { white-space: nowrap; }

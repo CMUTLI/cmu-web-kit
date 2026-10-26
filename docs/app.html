@@ -106,6 +106,30 @@
         </form>
       </div>
 
+      <h2 id="sub-options" class="rule-top">Options Under a Choice</h2>
+      <p>Options that only apply to one choice go inside that choice's list item, lined up with its label, in a <code>cmu-sub-options</code> block. Show them only while that choice is picked: set <code>hidden</code> on the block when another one is. Menus and text boxes inside keep their natural width.</p>
+      <p class="kit-classes"><code>cmu-sub-options</code></p>
+      <div class="kit-demo">
+        <form>
+          <fieldset>
+            <legend>Image</legend>
+            <ul>
+              <li><input type="radio" name="kit-kind" id="kit-kind-photo" checked><label for="kit-kind-photo">A Photo</label>
+                <div class="cmu-sub-options">
+                  <label for="kit-cat">Category</label>
+                  <select id="kit-cat"><option>Any</option><option>Campus</option><option>Labs</option></select>
+                  <ul>
+                    <li><input type="checkbox" id="kit-random" aria-describedby="kit-random-hint"><label for="kit-random">Random Photo</label></li>
+                  </ul>
+                  <p class="cmu-hint" id="kit-random-hint">A different photo each time the page loads.</p>
+                </div>
+              </li>
+              <li><input type="radio" name="kit-kind" id="kit-kind-logo"><label for="kit-kind-logo">A Logo</label></li>
+            </ul>
+          </fieldset>
+        </form>
+      </div>
+
       <h2 id="text" class="rule-top">Small Text</h2>
       <p>Gray secondary text, a smaller hint under a field, a centered empty-list message, and codes kept on one line.</p>
       <p class="kit-classes"><code>cmu-muted</code>, <code>cmu-hint</code>, <code>cmu-empty</code>, <code>cmu-code</code>, <code>cmu-label</code></p>
@@ -117,7 +141,7 @@
       </div>
 
       <h2 id="button-note" class="rule-top">Button With a Note</h2>
-      <p>A short note beside a button, centered on it top to bottom, saying what the button does or what to expect. On a narrow screen the note wraps under the button. Keep it to a sentence; anything longer belongs above the button.</p>
+      <p>A short note beside a button, centered on it top to bottom, saying what the button does or what to expect. On a narrow screen the note wraps under the button. Keep it to a sentence; anything longer belongs above the button. Right under a photo (<code>figure.image</code>), it sits close to the photo it acts on, as with a Show Another Photo button; the note is optional.</p>
       <p class="kit-classes"><code>cmu-button-note</code>, <code>cmu-hint</code></p>
       <div class="kit-demo">
         <div class="cmu-button-note">
