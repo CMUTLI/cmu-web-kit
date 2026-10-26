@@ -1,5 +1,6 @@
 // Docs only: show each live example's markup under it, so every example is
 // written once. Elements marked data-demo-skip are left out of the code.
+var COLORS = ["grey", "darkgrey", "red", "gold", "blue", "teal", "green", "darkgreen", "invert"];
 document.querySelectorAll(".kit-demo").forEach(function (demo) {
   var copy = demo.cloneNode(true);
   copy.querySelectorAll("[data-demo-skip]").forEach(function (el) {
@@ -33,6 +34,13 @@ document.querySelectorAll(".kit-demo").forEach(function (demo) {
   if (demo.classList.contains("kit-demo--wide")) {
     var wrap = document.createElement("div");
     wrap.className = "content wide";
+    // On the example's color too (not its plaid or globe), so the code reads
+    // as part of the same section
+    var section = demo.querySelector(".content, .grid");
+    if (section)
+      COLORS.forEach(function (c) {
+        if (section.classList.contains(c)) wrap.classList.add(c);
+      });
     wrap.appendChild(document.createElement("div")).appendChild(pre);
     demo.after(wrap);
   } else {
