@@ -46,7 +46,7 @@ Prettier formats CSS, JavaScript, Markdown, JSON, YAML, and the docs' HTML
 [linting and formatting](DEVELOPMENT.md#linting-and-formatting).
 
 For the docs and for text in examples, follow the
-[writing conventions](https://cmutli.github.io/cmu-web-kit/docs/about.html#writing):
+[writing conventions](https://cmu-web.github.io/cmu-web-kit/docs/about.html#writing):
 Title Case for headings, buttons, and labels; buttons and calls to action
 that start with a verb; and the Oxford comma. Otherwise, follow the
 [GitHub Docs style guide](https://docs.github.com/en/contributing/style-guide-and-content-model/style-guide)

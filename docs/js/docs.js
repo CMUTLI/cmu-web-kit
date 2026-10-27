@@ -173,7 +173,7 @@ document.querySelectorAll("[data-kit-filter]").forEach(function (input) {
       sitename.appendChild(
         html(
           // A placeholder from PlaceMellon: the round Scotty profile picture
-          '<a class="kit-try-logo" href="https://cmutli.github.io/cmu-placemellon/"><img src="https://placemellon.andrew.cmu.edu/150?profile" width="150" height="150" alt="Logo placeholder"></a>',
+          '<a class="kit-try-logo" href="https://cmu-web.github.io/cmu-web-placemellon/"><img src="https://placemellon.andrew.cmu.edu/150?profile" width="150" height="150" alt="Logo placeholder"></a>',
         ),
       );
     } else if (!on && wrap) {

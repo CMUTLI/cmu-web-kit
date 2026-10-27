@@ -55,13 +55,13 @@
             <h2 id="versions" class="rule-top">Versions</h2>
             <p>
               Each release is a git tag, such as <code>0.1.0</code>, listed on the
-              <a href="https://github.com/CMUTLI/cmu-web-kit/releases">releases page</a>. jsDelivr
+              <a href="https://github.com/cmu-web/cmu-web-kit/releases">releases page</a>. jsDelivr
               serves every tag's files at a fixed address:
             </p>
             <pre
               class="kit-code"
-            ><code>https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-cms.css
-https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css</code></pre>
+            ><code>https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@0.1.0/css/cmu-cms.css
+https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@0.1.0/css/cmu-app.css</code></pre>
             <ul class="cmu-checks">
               <li>
                 <strong>Always pin an exact version.</strong> An address with a version range
@@ -92,7 +92,7 @@ https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css</code></pre
                 site's own stylesheet, so the site's styles come last:
                 <pre
                   class="kit-code"
-                ><code>&lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-cms.css" media="screen" rel="stylesheet" type="text/css"/&gt;
+                ><code>&lt;link href="https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@0.1.0/css/cmu-cms.css" media="screen" rel="stylesheet" type="text/css"/&gt;
 &lt;link href="/css/style.css" media="screen" rel="stylesheet" type="text/css"/&gt;</code></pre>
                 Then save it.
               </li>
@@ -134,7 +134,9 @@ https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css</code></pre
             <ol class="cmu-steps">
               <li>
                 Install the version you want:
-                <pre class="kit-code"><code>npm install github:CMUTLI/cmu-web-kit#0.1.0</code></pre>
+                <pre
+                  class="kit-code"
+                ><code>npm install github:cmu-web/cmu-web-kit#0.1.0</code></pre>
               </li>
               <li>
                 Serve its files. With Express:
@@ -172,7 +174,7 @@ app.use("/vendor/cmu-web-kit", express.static(kit));</code></pre>
             <pre class="kit-code"><code>V=0.1.0
 mkdir -p static/vendor/cmu-web-kit-$V
 for f in cmu-cms.css cmu-app.css; do
-  curl -fsSL "https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@$V/css/$f" -o "static/vendor/cmu-web-kit-$V/$f"
+  curl -fsSL "https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@$V/css/$f" -o "static/vendor/cmu-web-kit-$V/$f"
 done</code></pre>
             <p>
               Then link them as in step 3 above. Don't edit the copied files; change your own
@@ -187,14 +189,14 @@ done</code></pre>
             <pre
               class="kit-code"
             ><code>&lt;link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" rel="stylesheet"&gt;
-&lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-cms.css" rel="stylesheet"&gt;
-&lt;link href="https://cdn.jsdelivr.net/gh/CMUTLI/cmu-web-kit@0.1.0/css/cmu-app.css" rel="stylesheet"&gt;</code></pre>
+&lt;link href="https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@0.1.0/css/cmu-cms.css" rel="stylesheet"&gt;
+&lt;link href="https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@0.1.0/css/cmu-app.css" rel="stylesheet"&gt;</code></pre>
 
             <h2 id="upgrade" class="rule-top">Moving to a New Version</h2>
             <ol class="cmu-steps">
               <li>
                 Read the release notes on the
-                <a href="https://github.com/CMUTLI/cmu-web-kit/releases">releases page</a>. For a
+                <a href="https://github.com/cmu-web/cmu-web-kit/releases">releases page</a>. For a
                 major version, they list every renamed or removed class.
               </li>
               <li>
@@ -262,10 +264,12 @@ done</code></pre>
               </li>
               <li><a href="about.html">About</a></li>
               <li>
-                <a class="external" href="https://cmutli.github.io/cmu-placemellon/">PlaceMellon</a>
+                <a class="external" href="https://cmu-web.github.io/cmu-web-placemellon/"
+                  >PlaceMellon</a
+                >
               </li>
               <li class="secondary">
-                <a class="external" href="https://github.com/CMUTLI/cmu-web-kit"
+                <a class="external" href="https://github.com/cmu-web/cmu-web-kit"
                   >Carnegie Mellon Web Kit on GitHub</a
                 >
               </li>
