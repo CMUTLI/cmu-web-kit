@@ -465,7 +465,7 @@ ol.cmu-flow li strong {
    wraps long lines (URLs, HTML) so all of it stays in view. It belongs to
    the sentence that introduces it, so it sits close under it (like a line
    break), then a paragraph's space before what follows. */
-p:has(+ .cmu-snippet) {
+p:has(+ :is(.cmu-snippet, .cmu-copyable)) {
   padding-bottom: 0.5em;
 }
 .cmu-snippet {
@@ -484,6 +484,57 @@ p:has(+ .cmu-snippet) {
 .cmu-snippet--wrap {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+}
+
+/* A code block with a copy icon in its top right corner, as on GitHub. The
+   wrapper holds the button still while the code scrolls sideways under it.
+   Needs cmu-app.js. Icons: GitHub's Octicons copy and check, MIT license,
+   Copyright (c) 2023 GitHub Inc. */
+.cmu-copyable {
+  position: relative;
+  margin: 0 0 1em;
+}
+/* The template zeroes a first and last child's padding; keep the block's */
+:is(#content, body) .cmu-copyable > .cmu-snippet {
+  margin: 0;
+  padding: 1rem 3.25rem 1rem 1.25rem;
+}
+.cmu-copy {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid var(--cmu-line);
+  border-radius: 6px;
+  color: #6d6e71;
+  cursor: pointer;
+}
+/* The template darkens every button on hover (and a tap leaves it there) */
+.cmu-copy:hover {
+  background: #fff;
+  color: #222;
+  border-color: #6d6e71;
+}
+.cmu-copy::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z'/%3E%3Cpath d='M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+.cmu-copy[data-cmu-copy-state="copied"] {
+  color: var(--cmu-green);
+  border-color: currentColor;
+}
+.cmu-copy[data-cmu-copy-state="copied"]::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'/%3E%3C/svg%3E");
 }
 .cmu-shot img {
   display: block;

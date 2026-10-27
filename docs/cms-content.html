@@ -341,22 +341,24 @@
 
             <h2 id="copy" class="rule-top">Copy Button</h2>
             <p>
-              A button under a code block that copies it, for an address or markup people will paste
-              somewhere else. Give the block an <code>id</code> and point the button's
-              <code>data-cmu-copy</code> at it. It needs <code>cmu-app.js</code>.
+              Copies a code block for people to paste somewhere else. Give the block an
+              <code>id</code> and point the button's <code>data-cmu-copy</code> at it. It needs
+              <code>cmu-app.js</code>. There are two kinds:
             </p>
             <ul class="cmu-checks">
               <li>
-                <strong>Under the block,</strong> so people see what they'll copy before they copy
-                it.
+                <strong>Code gets an icon in its corner,</strong> as on GitHub, where anyone who
+                copies code expects it. Put the block and the button in a
+                <code>cmu-copyable</code> box, and name the button with <code>aria-label</code> and
+                <code>title</code> ("Copy Code", "Copy HTML") for screen readers and the tooltip.
               </li>
               <li>
-                <strong>Name what it copies:</strong> "Copy Address", "Copy HTML", not just "Copy",
-                and never an icon alone.
+                <strong>Anything else gets a named button under the block,</strong> such as an
+                address for people who don't copy code every day: "Copy Address", not just "Copy".
               </li>
               <li>
-                <strong>It says it worked.</strong> The button reads "Copied" for two seconds, and
-                screen readers hear "Copied."
+                <strong>It says it worked.</strong> The icon turns into a green check, the named
+                button reads "Copied" for two seconds, and screen readers hear "Copied."
               </li>
               <li>
                 <strong>Without the clipboard</strong> (a page on plain http, or an old browser), it
@@ -364,8 +366,16 @@
               </li>
             </ul>
             <p class="kit-classes">
-              <code>data-cmu-copy</code>, <code>cmu-snippet</code>, <code>btn</code>
+              <code>data-cmu-copy</code>, <code>cmu-copyable</code>, <code>cmu-copy</code>,
+              <code>cmu-snippet</code>, <code>btn</code>
             </p>
+            <!-- prettier-ignore -->
+            <div class="kit-demo">
+        <div class="cmu-copyable">
+          <pre class="cmu-snippet" id="kit-copy-html"><code>&lt;link href="https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@0.1.0/css/cmu-cms.css" rel="stylesheet"&gt;</code></pre>
+          <button class="cmu-copy" type="button" data-cmu-copy="#kit-copy-html" aria-label="Copy HTML" title="Copy HTML"></button>
+        </div>
+      </div>
             <!-- prettier-ignore -->
             <div class="kit-demo">
         <h3>Your Address</h3>
