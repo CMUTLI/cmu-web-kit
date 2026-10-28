@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get Started - Carnegie Mellon Web Kit - Carnegie Mellon University</title>
+    <title>Install the Kit - Carnegie Mellon Web Kit - Carnegie Mellon University</title>
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,700,700italic"
       rel="stylesheet"
@@ -42,14 +42,71 @@
 
       <main id="content">
         <div class="breadcrumbs">
-          <a href="index.html">Carnegie Mellon Web Kit</a>&nbsp;&rsaquo;&nbsp;Get Started
+          <a href="index.html">Carnegie Mellon Web Kit</a>&nbsp;&rsaquo;&nbsp;Install the Kit
         </div>
         <div class="content wide">
           <div>
-            <h1>Get Started</h1>
+            <h1>Install the Kit</h1>
             <p class="cmu-lead">
               Add the kit to a Cascade site or a web app. Either way you pin one exact version, and
               nothing changes until you move to a newer one.
+            </p>
+
+            <h2 id="files" class="rule-top">What to Load</h2>
+            <p>
+              In the page's <code>&lt;head&gt;</code>, link CMU's template first, then the kit, then
+              your own stylesheet, with <code>&lt;link&gt;</code> tags rather than
+              <code>@import</code>, which loads files one at a time.
+            </p>
+            <pre
+              class="kit-code"
+            ><code>&lt;link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" rel="stylesheet"&gt;
+&lt;link href="https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@0.1.0/css/cmu-cms.css" rel="stylesheet"&gt;
+&lt;link href="https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@0.1.0/css/cmu-app.css" rel="stylesheet"&gt;  &lt;!-- apps only --&gt;
+&lt;link href="/your-site.css" rel="stylesheet"&gt;</code></pre>
+            <p>
+              In an app, the kit's script goes just before <code>&lt;/body&gt;</code>, after the
+              template's scripts:
+            </p>
+            <pre
+              class="kit-code"
+            ><code>&lt;script src="https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@0.1.0/js/cmu-app.js"&gt;&lt;/script&gt;</code></pre>
+            <table class="alternate cmu-full">
+              <thead>
+                <tr>
+                  <th scope="col">File</th>
+                  <th scope="col">Load it on</th>
+                  <th scope="col">What's in it</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="cmu-fit"><code>cmu-cms.css</code></td>
+                  <td>CMS sites and apps</td>
+                  <td>
+                    Colors and page content: hero, path cards, steps, check lists, callouts and
+                    notes, text with a screenshot, pills, and tables
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cmu-fit"><code>cmu-app.css</code></td>
+                  <td>Apps, after <code>cmu-cms.css</code></td>
+                  <td>
+                    Forms, tabs, flash messages, dialogs and file drop zones, the bulk selection
+                    bar, row buttons, sortable headers, filters, progress bars, folded lists, and
+                    panels
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cmu-fit"><code>cmu-app.js</code></td>
+                  <td>Apps, after the template's scripts</td>
+                  <td>Behavior for the components that need it, such as copy buttons</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Your own stylesheet holds whatever is particular to your site or app, with its own
+              prefix.
             </p>
 
             <h2 id="versions" class="rule-top">Versions</h2>
@@ -229,7 +286,7 @@ done</code></pre>
         <div>
           <nav id="nav">
             <ul>
-              <li class="active"><a href="start.html" aria-current="page">Get Started</a></li>
+              <li class="active"><a href="install.html" aria-current="page">Install</a></li>
               <li><a href="layout.html">Page Layout</a></li>
               <li>
                 <a href="components.html">Components</a>

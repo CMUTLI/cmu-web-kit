@@ -26,7 +26,7 @@ in the head, above your site's own stylesheet:
 ```
 
 Then paste components into a content section's Source code view. The
-[Get Started](https://cmu-web.github.io/cmu-web-kit/docs/start.html) page
+[Install](https://cmu-web.github.io/cmu-web-kit/docs/install.html) page
 walks through it step by step.
 
 ## Add It to an App
@@ -50,7 +50,7 @@ The kit's script goes just before `</body>`, after the template's scripts:
 ```
 
 For an app in production, keep your own copy of a release instead; the
-[Get Started](https://cmu-web.github.io/cmu-web-kit/docs/start.html) page
+[Install](https://cmu-web.github.io/cmu-web-kit/docs/install.html) page
 shows how for Node and other stacks.
 
 ## Versions

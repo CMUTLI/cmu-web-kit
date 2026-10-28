@@ -51,8 +51,8 @@
                   sites and the web apps that use it.
                 </p>
                 <div class="cmu-cta-row">
-                  <a class="btn" href="start.html">Get Started</a>
-                  <a class="cta" href="components.html">See the Components</a>
+                  <a class="btn" href="install.html">Install the Kit</a>
+                  <a class="cta" href="#get-started">Get Started</a>
                 </div>
               </div>
               <div class="cmu-hero-art cmu-hero-art--stack">
@@ -68,63 +68,40 @@
               </div>
             </div>
 
-            <h1 id="using">Using the Kit</h1>
-            <p id="install">
-              In the page's <code>&lt;head&gt;</code>, link CMU's template first, then the kit, then
-              your own stylesheet, with <code>&lt;link&gt;</code> tags rather than
-              <code>@import</code>, which loads files one at a time.
-            </p>
-            <pre
-              class="kit-code"
-            ><code>&lt;link href="https://www.cmu.edu/common/standard-v6/css/main.6.7.min.css" rel="stylesheet"&gt;
-&lt;link href="https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@0.1.0/css/cmu-cms.css" rel="stylesheet"&gt;
-&lt;link href="https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@0.1.0/css/cmu-app.css" rel="stylesheet"&gt;  &lt;!-- apps only --&gt;
-&lt;link href="/your-site.css" rel="stylesheet"&gt;</code></pre>
+            <h1 id="get-started">Get Started</h1>
             <p>
-              In an app, the kit's script goes just before <code>&lt;/body&gt;</code>, after the
-              template's scripts:
+              The kit is two stylesheets and a script that go after CMU's template. Start from what
+              you're building:
             </p>
-            <pre
-              class="kit-code"
-            ><code>&lt;script src="https://cdn.jsdelivr.net/gh/cmu-web/cmu-web-kit@0.1.0/js/cmu-app.js"&gt;&lt;/script&gt;</code></pre>
-            <table class="alternate cmu-full" id="files">
-              <thead>
-                <tr>
-                  <th scope="col">File</th>
-                  <th scope="col">Load it on</th>
-                  <th scope="col">What's in it</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="cmu-fit"><code>cmu-cms.css</code></td>
-                  <td>CMS sites and apps</td>
-                  <td>
-                    Colors and page content: hero, path cards, steps, check lists, callouts and
-                    notes, text with a screenshot, pills, and tables
-                  </td>
-                </tr>
-                <tr>
-                  <td class="cmu-fit"><code>cmu-app.css</code></td>
-                  <td>Apps, after <code>cmu-cms.css</code></td>
-                  <td>
-                    Forms, tabs, flash messages, dialogs and file drop zones, the bulk selection
-                    bar, row buttons, sortable headers, filters, progress bars, folded lists, and
-                    panels
-                  </td>
-                </tr>
-                <tr>
-                  <td class="cmu-fit"><code>cmu-app.js</code></td>
-                  <td>Apps, after the template's scripts</td>
-                  <td>Behavior for the components that need it, such as copy buttons</td>
-                </tr>
-              </tbody>
-            </table>
-            <p>
-              Your own stylesheet holds whatever is particular to your site or app, with its own
-              prefix.
-            </p>
-            <p><a class="cta" href="start.html">Add It to the CMS or an App</a></p>
+            <div class="cmu-paths">
+              <a class="cmu-path" href="install.html#cascade">
+                <span class="cmu-eyebrow">Cascade site editors</span>
+                <strong>Add It to Your Site</strong>
+                <span
+                  >Paste one line into your site's head block, then use the components in any
+                  content section.</span
+                >
+                <span class="cta">Set Up a Cascade Site</span>
+              </a>
+              <a class="cmu-path" href="install.html#node">
+                <span class="cmu-eyebrow">App developers</span>
+                <strong>Build an App That Matches</strong>
+                <span
+                  >Install a release in a Node app, or copy its files into any other stack, then use
+                  the app components.</span
+                >
+                <span class="cta">Set Up an App</span>
+              </a>
+              <a class="cmu-path" href="install.html#prototype">
+                <span class="cmu-eyebrow">Designers</span>
+                <strong>Try an Idea</strong>
+                <span
+                  >Link the kit straight from the CDN in a mockup or a one-off page, and see it in a
+                  browser right away.</span
+                >
+                <span class="cta">Start a Prototype</span>
+              </a>
+            </div>
           </div>
         </div>
       </main>
@@ -147,7 +124,7 @@
         <div>
           <nav id="nav">
             <ul>
-              <li><a href="start.html">Get Started</a></li>
+              <li><a href="install.html">Install</a></li>
               <li><a href="layout.html">Page Layout</a></li>
               <li>
                 <a href="components.html">Components</a>

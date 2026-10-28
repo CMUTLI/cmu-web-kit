@@ -78,7 +78,7 @@ npm install github:cmu-web/cmu-web-kit#0.1.0
 
 `package.json` limits the install to `css/` and `js/`. Apps on other stacks
 copy a release's files from jsDelivr into their own static folder, as the
-[Get Started](https://cmu-web.github.io/cmu-web-kit/docs/start.html) page
+[Install](https://cmu-web.github.io/cmu-web-kit/docs/install.html) page
 shows.
 
 ## GitHub Pages
